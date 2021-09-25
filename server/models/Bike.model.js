@@ -47,16 +47,10 @@ const bikeSchema = new Schema({
         require: true,
     },
     specifications: {
-        color: {
-            //Hexadecimal!!!????
-        },
+        // color: {
+        //     //Hexadecimal!!!????
+        // },
         batteryRange: {
-            type: Number,
-            required: true,
-            minlength: 1,
-            maxlength: 100,
-        },
-        chargingTime: {
             type: Number,
             required: true,
             minlength: 1,
