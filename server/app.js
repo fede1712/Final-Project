@@ -9,8 +9,7 @@ const app = express();
 
 require("./config")(app);
 
-
-require("./routes")(app)
+const allRoutes = require("./routes");
 app.use("/api", allRoutes);
 
 require("./error-handling")(app);
