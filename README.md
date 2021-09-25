@@ -23,7 +23,7 @@ Aplicación web de comercio online para la venta de bicicletas de diseño electr
 |             | PUT                       | /bike/:id                  | Update Bike                                      |
 |             | DELETE                    | /bike/:id                  | Delete Bike                                      |
 | Shops
-|             | GET                       | /shops                     | All shops                                        |
+|             | GET                       | /shop                      | All shops                                        |
 |             | POST                      | /shop                      | Create shop                                      |
 |             | PUT                       | /shop/:id                  | Update shop                                      |
 |             | DELETE                    | /shop/:id                  | Delete shop                                      |
