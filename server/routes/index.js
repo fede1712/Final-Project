@@ -1,5 +1,7 @@
-module.exports = app => {
-  app.use('/bike', require('./bikes.routes'))
-  app.use('/auth', require('./auth.routes'))
-  app.use('/shop', require('./shops.routes'))
-}
+const router = require("express").Router();
+
+// router.use('/bike', require('./bikes.routes'))
+router.use('/auth', require('./auth.routes'))
+// router.use('/shop', require('./shops.routes'))
+
+module.exports = router;
