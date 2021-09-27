@@ -11,10 +11,15 @@ const cartSchema = new Schema({
             ref: 'Bike'
         }
     ],
-    total: {
+    quantity: {
         type: Number,
         required: true,
-        default: 0
+        min: [1, 'La cantidad no puede ser inferior a  1'],
+        default: 1
+
+    },
+    totalPrice: {
+        type: Number
     }
 }, {
     timestamps: true
