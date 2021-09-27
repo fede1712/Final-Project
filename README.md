@@ -27,6 +27,17 @@ Aplicación web de comercio online para la venta de bicicletas de diseño electr
 |             | POST                      | /shop                      | Create shop                                      |
 |             | PUT                       | /shop/:id                  | Update shop                                      |
 |             | DELETE                    | /shop/:id                  | Delete shop                                      |
+| Cart
+|             | GET                       | /cart/:id                  | Get cart by id                                   |
+|             | POST                      | /cart                      | Create cart                                      |
+|             | PUT                       | /cart/:id                  | Update cart                                      |
+|             | DELETE                    | /cart/:id                  | Delete cart                                      |
+| Bill
+|             | GET                       | /bill/:id                  | Get a bill by id                                 |
+|             | GET                       | /bill                      | Get all bills                                    |
+|             | POST                      | /bill/                     | Create a bill                                    |
+
+
 
 ## Front-end Endpoints
 
