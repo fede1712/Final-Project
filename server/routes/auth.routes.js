@@ -8,19 +8,19 @@ const bcryptSalt = 10
 // Signup (post)
 router.post('/signup', (req, res) => {
 
-    const { userName, password, email } = req.body
+    const { userName, pwd, email } = req.body
 
     User
         .findOne({ email })
         .then(user => {
 
-            if (user) {
-                res.status(400).json({ code: 400, message: 'userName already exixts' })
+            if (email) {
+                res.status(400).json({ code: 400, message: 'Email already exixts' })
                 return
             }
 
             const salt = bcrypt.genSaltSync(bcryptSalt)
-            const hashPass = bcrypt.hashSync(password, salt)
+            const hashPass = bcrypt.hashSync(pwd, salt)
             User
                 .create({ userName, password: hashPass, email })
                 .then(() => res.json({ code: 200, message: 'User created' }))
@@ -32,18 +32,18 @@ router.post('/signup', (req, res) => {
 // Login (post)
 router.post('/login', (req, res) => {
 
-    const { password, email } = req.body
+    const { pwd, email } = req.body
 
     User
         .findOne({ email })
-        .then(user => {
+        .then(email => {
 
-            if (!user) {
+            if (!email) {
                 res.status(401).json({ code: 401, message: 'Email not registered' })
                 return
             }
 
-            if (bcrypt.compareSync(password, user.password) === false) {
+            if (bcrypt.compareSync(pwd, user.password) === false) {
                 res.status(401).json({ code: 401, message: 'Incorrect password' })
                 return
             }
