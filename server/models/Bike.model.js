@@ -73,9 +73,8 @@ const bikeSchema = new Schema({
             maxlength: 100,
         },
     },
-
-
-
+}, {
+    timestamps: true
 })
 
 const Bike = model("Bike", bikeSchema);
