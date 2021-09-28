@@ -16,10 +16,10 @@ const shopSchema = new Schema({
         minlength: 3,
         maxlength: 100,
     },
-    bike: {
+    bikes: [{
         type: Schema.Types.ObjectId,
         ref: 'Bike'
-    },
+    }],
     address: {
         type: {
             type: String,

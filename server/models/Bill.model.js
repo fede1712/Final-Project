@@ -6,6 +6,10 @@ const billSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Cart'
     },
+    shopId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Shop'
+    },
     date: {
         type: Date,
         required: true,
