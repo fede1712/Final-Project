@@ -8,7 +8,7 @@ export default function Home(props) {
     return (
 
         <div>
-            <section class="heroImg">
+            <section className="heroImg">
 
                 <Row className="align-items-center">
 

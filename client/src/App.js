@@ -1,30 +1,39 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/layout/Navigation/Navigation';
-import Home from './components/Pages/Home/Home';
 import Routes from './components/Routes/Index';
-//import 'bootstrap/dist/css/bootstrap.min.css';
-//import Navigation from './components/layout/Navigation/Navigation';
+import React, { Component } from 'react'
+import AuthService from './services/auth.service';
+import Footer from './components/layout/Footer/Footer';
 
-function App() {
+export default class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      loggedUser: undefined
+    }
+    this.authService = new AuthService()
+  }
+  componentDidMount = () => {
+    this.fetchUser()
+  }
 
-  return (
-    <div className="App">
+  storeUser = (user) => this.setState({ loggedUser: user })
+  fetchUser = () => {
+    this.authService.isloggedin()
+      .then(res => this.storeUser(res.data))
+      .catch(err => this.storeUser(null))
+  }
 
-      <header className="App-header">
-
-        <div>
-
-          <Navigation />
-
-          < Home />
-
-        </div>
-
-        <Routes />
-      </header>
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Navigation loggedUser={this.state.loggedUser} storeUser={this.storeUser} />
+          <Routes storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
+          <Footer />
+        </header>
+      </div>
+    )
+  }
 }
-
-export default App;
