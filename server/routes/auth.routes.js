@@ -27,8 +27,7 @@ router.post('/signup', (req, res) => {
         })
         .catch(err => res.status(500).json({ code: 500, message: 'DB error while fetching user', err: err.message }))
 })
-
-// Login (post)
+// Login
 router.post('/login', (req, res) => {
 
     const { pwd, email } = req.body

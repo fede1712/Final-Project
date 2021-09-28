@@ -27,7 +27,6 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  //PASARELA DE PAGO?????????????
 }, {
   timestamps: true
 })
