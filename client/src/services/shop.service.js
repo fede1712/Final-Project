@@ -7,7 +7,7 @@ class BikeService {
         })
     }
 
-    findShops = (data) => this.instance.get('/:id', { data })
+    findShops = (data) => this.instance.get('/', { data })
     createShop = (data) => this.instance.post('/', { data })
     editShop = (data) => this.instance.put('/:id', { data })
     deleteShop = (data) => this.instance.delete('/:id', { data })

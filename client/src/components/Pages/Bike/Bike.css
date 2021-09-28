@@ -4,7 +4,6 @@
     height: 100vh;
     background-size: 200%;
     background-position-x: center;
-    background-image: url(./tricycle_hero.jpg);
     overflow-x: hidden;
 }
  
@@ -22,12 +21,9 @@
     
 }
 
-.alingItems{
+.alingItems1{
     height: 100vh;
-    align-items: flex-end;
-    
-    
-
+    align-items: center;
 }
 
  .buttonHero{

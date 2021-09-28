@@ -25,8 +25,11 @@ export default function Home(props) {
 
                         </Col>
                         <Col md={12}>
+
                             <div class="buyNow">
-                                <a href="#">Compra ya tu Tricycle 4</a>
+                                <a href="#" class="">
+                                    Compra ya tu Tricycle 4<i class="fa fa-arrow-right hvr-icon"></i>
+                                </a>
                             </div>
                         </Col>
                     </Row>

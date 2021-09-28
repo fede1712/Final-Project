@@ -3,14 +3,15 @@ import axios from 'axios';
 class BikeService {
     constructor() {
         this.instance = axios.create({
-            baseURL: `${process.env.REACT_APP_API_URL}/bikes`
+            baseURL: `${process.env.REACT_APP_API_URL}/bikes`,
+            withCredentials: true
         })
     }
 
-    findOneBike = (data) => this.instance.get('/:id', { data })
+    findOneBike = (id) => this.instance.get(`/${id}`)
     createBike = (data) => this.instance.post('/', { data })
-    editBike = (data) => this.instance.put('/:id', { data })
-    deleteBike = (data) => this.instance.delete('/:id', { data })
+    editBike = (data, id) => this.instance.put(`/${id}`, { data })
+    deleteBike = (id) => this.instance.delete(`/${id}`)
 }
 
 export default BikeService;
