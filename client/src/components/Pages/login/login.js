@@ -1,6 +1,6 @@
 import { Container, Form, Button } from 'react-bootstrap'
 import 'bootstrap'
-import AuthService from './../../../services/auth.service'
+import AuthService from '../../../services/auth.service'
 
 import React, { Component } from 'react'
 

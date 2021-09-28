@@ -10,22 +10,39 @@ export default function Home(props) {
         <div>
             <section class="heroImg">
 
-                <Row className="align-items-center">
+                <div >
 
-                    <Col md={6}>
-                        <h1>Tricycle 4</h1>
-                        <div>
-                            <a className="heroBotton" to="/">Más información</a>
-                        </div>
+                    <Row className="alingItems">
+                        <Col md={{ span: 4, offset: 4 }}>
+                            <div class="h1Css">
+                                <h1>Tricycle 4</h1>
+                                <h3>Un viaje suave y ágil.</h3>
 
-                    </Col>
+                            </div>
+                            <div className="d-flex justify-content-center">
+                                <Link className="btn btn-secondary buttonHero" variant="outline-secondary" to="/">Más información</Link>
+                            </div>
 
-                </Row>
+                        </Col>
+                        <Col md={12}>
+                            <div class="buyNow">
+                                <a href="#">Compra ya tu Tricycle 4</a>
+                            </div>
+                        </Col>
+                    </Row>
 
-                {/* <img src={HeroImg} alt="Imagen del hero" /> */}
+                </div>
+
+            </section >
+
+            <section class="prueba">
+                <div >
+
+                </div>
             </section>
 
-        </div>
+
+        </div >
 
     )
 }

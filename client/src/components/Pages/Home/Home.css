@@ -1,13 +1,59 @@
 
 .heroImg{
+
     height: 100vh;
     background-size: 200%;
     background-position-x: center;
     background-image: url(./tricycle_hero.jpg);
+    overflow-x: hidden;
+}
+ 
+.heroImg h1{
+    color: rgb(182, 182, 182);
+     text-align: center; 
+     text-transform: lowercase;  
+     text-transform: capitalize;
+     font-size: 5.5em;
+}
+.heroImg h3{
+    color: rgb(182, 182, 182);
+     text-align: center; 
+     text-transform: lowercase;  
+     text-transform: capitalize;
+    
 }
 
-.heroImg h1{
+.alingItems{
+    height: 100vh;
+    align-items: flex-end;
+    text-transform: lowercase;  
+     text-transform: capitalize;
     
-    margin-top: 300px;
-    width: 800px;
+
+}
+
+ .buttonHero{
+     background-color:rgba(255, 255, 255, 0.24);
+     margin-top: 20px;
+    border-radius: 50px;
+    padding: 15px 40px;
+    border-color: rgba(182, 182, 182, 0);
+}
+
+.buttomHeroAling{
+    justify-content: center;
+}
+
+.prueba{
+align-items: center;
+    height: 100vh;
+    background-color: chocolate;
+}
+
+.buyNow{
+    border-top: rgba(255, 255, 255, 0.295) 0.5px solid;
+   display: flex;
+   justify-content: flex-end;
+   padding: 20px 0px;
+    background-color: rgba(255, 255, 255, 0.048);
 }

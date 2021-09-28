@@ -20,16 +20,22 @@ export default function Navigation(props) {
 
     return (
 
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Container>
+        <Navbar className="navCss" collapseOnSelect expand="lg" fixed="top"  >
+
+            <Container fluid>
+
                 <Navbar><Link to="/" ><img class='logoStyle' src={Logo} alt='logo'></img></Link></Navbar>
+
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
                 <Navbar.Collapse id="responsive-navbar-nav">
+
                     <Nav className="me-auto">
                         <Nav.Link href="#features"><span>Tricycle 3</span></Nav.Link>
                         <Nav.Link href="#features"><span>Tricycle 4</span></Nav.Link>
                         <Nav.Link href="#features"><span>Tricycle 4 rs</span></Nav.Link>
                     </Nav>
+
                     <Nav>
                         {props.loggedUser ?
                             <>
@@ -43,8 +49,11 @@ export default function Navigation(props) {
                             </>
                         }
                     </Nav>
+
                 </Navbar.Collapse>
+
             </Container>
+
         </Navbar>
 
 
@@ -96,7 +105,6 @@ export default function Navigation(props) {
                 </Navbar.Collapse>
             </Col>
         </Row>
-
     </Container>
 
 </Navbar > */}
