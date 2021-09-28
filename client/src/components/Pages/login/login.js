@@ -4,7 +4,7 @@ import AuthService from './../../../services/auth.service'
 
 import React, { Component } from 'react'
 
-export default class login extends Component {
+export default class Login extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -36,13 +36,13 @@ export default class login extends Component {
                 <Container>
                     <Form onSubmit={this.handleFormSubmit}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>email</Form.Label>
-                            <Form.Control name="email" value={this.state.email} onChange={this.handleInput} type="text" placeholder="Enter email" />
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control name="email" value={this.state.email} onChange={this.handleInput} type="text" placeholder="Email" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Contraseña</Form.Label>
-                            <Form.Control name="pwd" value={this.state.pwd} onChange={this.handleInput} type="password" placeholder="Password" />
+                            <Form.Control name="pwd" value={this.state.pwd} onChange={this.handleInput} type="password" placeholder="Contraseña" />
                         </Form.Group>
 
                         <Button variant="primary" type="submit">
