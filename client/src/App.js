@@ -2,10 +2,9 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from './components/layout/Navigation/Navigation';
 import Routes from './components/Routes/Index';
-import { Component } from 'react';
-import AuthService from './services/auth.service'
-//import 'bootstrap/dist/css/bootstrap.min.css';
-//import Navigation from './components/layout/Navigation/Navigation';
+import React, { Component } from 'react'
+import AuthService from './services/auth.service';
+import Footer from './components/layout/Footer/Footer';
 
 export default class App extends Component {
   constructor() {
@@ -15,7 +14,6 @@ export default class App extends Component {
     }
     this.authService = new AuthService()
   }
-
   componentDidMount = () => {
     this.fetchUser()
   }
@@ -27,12 +25,15 @@ export default class App extends Component {
       .catch(err => this.storeUser(null))
   }
 
-  render = () => {
+  render() {
     return (
-      <>
-        <Navigation loggedUser={this.state.loggedUser} storeUser={this.storeUser} />
-        <Routes storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
-      </>
-    );
+      <div className="App">
+        <header className="App-header">
+          <Navigation loggedUser={this.state.loggedUser} storeUser={this.storeUser} />
+          <Routes storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
+          <Footer />
+        </header>
+      </div>
+    )
   }
 }

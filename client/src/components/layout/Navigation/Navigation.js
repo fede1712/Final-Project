@@ -21,7 +21,7 @@ export default function Navigation(props) {
 
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar><Link to="/" ><img class='logoStyle' src={Logo} alt='logo'></img></Link></Navbar>
+                <Navbar><Link to="/" ><img className='logoStyle' src={Logo} alt='logo'></img></Link></Navbar>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
