@@ -1,0 +1,13 @@
+
+.heroImg{
+    height: 100vh;
+    background-size: 200%;
+    background-position-x: center;
+    background-image: url(./tricycle_hero.jpg);
+}
+
+.heroImg h1{
+    
+    margin-top: 300px;
+    width: 800px;
+}
