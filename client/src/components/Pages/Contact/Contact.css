@@ -1,3 +1,17 @@
-.quepasa{
-    color: black;
+.contact{
+    padding: 0 10% 0 10%;
+}
+
+.map{
+    background-color: brown;
+    height: 400px;
+    width: 624px;
+    padding-top: 300px;
+    padding-right: 10%;
+}
+
+.contact-title{
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 0;
 }

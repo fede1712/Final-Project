@@ -17,12 +17,10 @@ const Routes = ({ storeUser, loggedUser }) => {
             <Route exact path="/" render={() => <Home />} />
             <Route exact path="/registro" render={(props) => <Signup {...props} />} />
             <Route exact path="/iniciar-sesion" render={(props) => <Login storeUser={storeUser} {...props} />} />
-            <Route exact path="/" render={() => <Home />} />
             <Route path="/perfil" render={() => loggedUser ? <UserProfile loggedUser={loggedUser} /> : <Redirect to="/iniciar-sesion" />} />
             <Route exact path='/contacto' render={() => <Contact />} />
-            <Route exact path='/sobre-nosotros' render={() => <AboutUs />} />
+            <Route exact path='/sobre-nosotros' render={(props) => <AboutUs {...props} />} />
 
-            <Route exact path='/admin-panel' render={() => <AdminPage />} />
         </Switch>
     )
 }
