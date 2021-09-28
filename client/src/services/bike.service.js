@@ -7,10 +7,10 @@ class BikeService {
         })
     }
 
-    findOneBike = (data) => this.instance.get('/:id', { data })
+    findOneBike = (id) => this.instance.get(`/${id}`)
     createBike = (data) => this.instance.post('/', { data })
-    editBike = (data) => this.instance.put('/:id', { data })
-    deleteBike = (data) => this.instance.delete('/:id', { data })
+    editBike = (data, id) => this.instance.put(`/${id}`, { data })
+    deleteBike = (id) => this.instance.delete(`/${id}`)
 }
 
 export default BikeService;
