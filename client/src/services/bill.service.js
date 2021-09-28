@@ -8,7 +8,7 @@ class BillService {
     }
 
     findBills = (data) => this.instance.get('/', { data })
-    findOneBill = (data) => this.instance.get('/:id', { data })
+    findOneBill = (data, id) => this.instance.get(`/${id}`, { data })
     createBill = (data) => this.instance.post('/', { data })
 }
 

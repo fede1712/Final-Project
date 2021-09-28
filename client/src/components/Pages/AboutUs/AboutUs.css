@@ -1,0 +1,26 @@
+.about {
+    padding: 150px;
+}
+
+.contact h1 {
+    text-align: center;
+}
+
+.about p {
+    margin-top: 100px;
+}
+
+.about-info{
+    display: flex;
+    justify-content: center;
+}
+
+.year{
+    margin-left: 50px;
+    text-align: center;
+}
+
+.founded {
+    margin-left: 150px;
+    text-align: center;
+}

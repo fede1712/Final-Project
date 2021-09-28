@@ -41,6 +41,7 @@ export default function Navigation(props) {
                         {props.loggedUser ?
                             <>
                                 <Link className="nav-link" to="/perfil">Mi perfil</Link>
+                                <Link className="nav-link" to="/admin-panel">ADMIN</Link>
                                 <span className="nav-link" onClick={logout}>Logout</span>
                             </>
                             :
