@@ -12,7 +12,6 @@ const authService = new AuthService()
 export default function Navigation(props) {
 
     const logout = () => {
-
         authService.logout()
             .then(res => props.storeUser(null))
             .catch(err => console.log(err))
