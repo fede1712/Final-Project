@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose")
 
 const bikeSchema = new Schema({
 
-    bikeName: {
+    name: {
         type: String,
         unique: true,
         required: true,
@@ -23,17 +23,17 @@ const bikeSchema = new Schema({
         minlength: 3,
         maxlength: 100,
     },
-    bikeImageModel: {
+    imageModel: {
         type: String,
         required: true,
         default: ''
     },
-    bikeImageDetail: {
+    imageDetail: {
         type: String,
         required: true,
         default: ''
     },
-    bikeImageHero: {
+    imageHero: {
         type: String,
         required: true,
         default: ''
@@ -42,14 +42,14 @@ const bikeSchema = new Schema({
         type: Number,
         require: true,
     },
-    cuantity: {
+    quantity: {
         type: Number,
         require: true,
     },
     specifications: {
         // color: {
         //     //Hexadecimal!!!????
-        // },
+        // }, toString(16)
         batteryRange: {
             type: Number,
             required: true,

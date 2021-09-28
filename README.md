@@ -14,7 +14,6 @@ Aplicación web de comercio online para la venta de bicicletas de diseño electr
 |             | POST                      | /auth/signup               | User register                                    |
 |             | POST                      | /auth/login                | User login                                       |
 |             | GET                       | /auth/logout               | User logout                                      |
-|             | POST                      | /auth/myprofile/:id        | User profile                                     |
 |             | DELETE                    | /auth/myprofile/:id/delete | Delete user profile                              |
 |             | POST                      | /auth/isloggedin           | Check if user is logged in                       |
 | Bikes

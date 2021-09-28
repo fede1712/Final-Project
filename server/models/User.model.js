@@ -2,7 +2,6 @@ const { Schema, model } = require("mongoose");
 
 const userSchema = new Schema({
   userName: {
-    unique: true,
     type: String,
     required: true,
     default: 'Unknown name',
@@ -28,7 +27,6 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  //PASARELA DE PAGO?????????????
 }, {
   timestamps: true
 })
