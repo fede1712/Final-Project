@@ -7,6 +7,7 @@ import UserProfile from '../Pages/UserProfile/UserProfile.js';
 import Contact from '../Pages/Contact/Contact.js';
 import AboutUs from '../Pages/AboutUs/AboutUs.js';
 import Bike from '../Pages/Bike/Bike';
+import NewBike from '../Pages/Bike/NewBike.js';
 
 
 const Routes = ({ storeUser, loggedUser }) => {
@@ -21,6 +22,8 @@ const Routes = ({ storeUser, loggedUser }) => {
             <Route exact path="/perfil" render={() => loggedUser ? <UserProfile loggedUser={loggedUser} /> : <Redirect to="/iniciar-sesion" />} />
             <Route exact path='/contacto' render={() => <Contact />} />
             <Route exact path='/sobre-nosotros' render={() => <AboutUs />} />
+
+            <Route exact path='/nueva-bici' render={(props) => <NewBike {...props} />} />
             <Route path='/:bike' render={(props) => <Bike {...props} />} />
         </Switch>
     )

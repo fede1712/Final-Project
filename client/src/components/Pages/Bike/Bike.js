@@ -15,12 +15,8 @@ export default class Bike extends Component {
     }
 
     componentDidMount() {
-
-
         this.bikeService.findOneBike(this.props.match.params.bike)
-
             .then(res => {
-
                 this.setState({
                     bike: res.data.bike
                 }, () => console.log(this.state.bike))
@@ -29,36 +25,23 @@ export default class Bike extends Component {
     }
 
     render() {
-
         return (
-
             <div>
                 <section className="heroImg" style={{ backgroundImage: `url(${this.state.bike?.imageHero})` }}>
-
                     <div >
-
                         <Row className="alingItems1">
                             <Col md={{ span: 4, offset: 4 }}>
                                 <div class="h1Css">
                                     <h3>{this.state.bike?.name}</h3>
                                     <h1>{this.state.bike?.subtitle}</h1>
-
                                 </div>
-
                             </Col>
-
                         </Row>
-
-
-
                     </div >
-
                 </section>
-
                 <section>
                     <h5>{this.state.bike?.description}</h5>
                 </section>
-
             </div>
             /* 
                     <Container>
