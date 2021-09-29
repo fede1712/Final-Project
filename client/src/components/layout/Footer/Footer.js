@@ -10,33 +10,33 @@ export default function Footer() {
 
         <section >
 
-            <div class="footerCss">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-6 ">
-                                    <div class="logo-part">
-                                        <img src={Logo} class="w-50 logo-footer logoStyle" />
+            <div className="footerCss">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="row">
+                                <div className="col-md-6 ">
+                                    <div className="logo-part">
+                                        <img src={Logo} className="w-50 logo-footer logoStyle" />
                                         <p>7637 Laurel Dr.King Of Prussia, PA 19406</p>
                                         <p>Use this tool as test data for an automated system or find your next pen</p>
                                     </div>
                                 </div>
 
-                                <div class="col-md-6 px-4">
+                                <div className="col-md-6 px-4">
                                     <h6> About Company</h6>
                                     <p>But horizontal lines can only be a full pixel high.</p>
-                                    <a href="#" class="btn-footer"> More Info </a>
-                                    <a href="#" class="btn-footer"> Contact Us</a>
+                                    <a href="#" className="btn-footer"> More Info </a>
+                                    <a href="#" className="btn-footer"> Contact Us</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-6 px-4">
+                        <div className="col-md-6">
+                            <div className="row">
+                                <div className="col-md-6 px-4">
                                     <h6> Help us</h6>
-                                    <div class="row ">
-                                        <div class="col-md-6">
+                                    <div className="row ">
+                                        <div className="col-md-6">
                                             <ul>
                                                 <li> <a href="#"> Home</a> </li>
                                                 <li> <a href="#"> About</a> </li>
@@ -46,7 +46,7 @@ export default function Footer() {
                                                 <li> <a href="#"> Contact</a> </li>
                                             </ul>
                                         </div>
-                                        <div class="col-md-6 px-4">
+                                        <div className="col-md-6 px-4">
                                             <ul>
                                                 <li> <a href="#"> Cab Faciliy</a> </li>
                                                 <li> <a href="#"> Fax</a> </li>
@@ -58,13 +58,13 @@ export default function Footer() {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 ">
+                                <div className="col-md-6 ">
                                     <h6> Newsletter</h6>
-                                    <div class="social">
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                    <div className="social">
+                                        <a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
                                     </div>
-                                    <form class="form-footer my-3">
+                                    <form className="form-footer my-3">
                                         <input type="text" placeholder="search here...." name="search" />
                                         <input type="button" value="Go" />
                                     </form>

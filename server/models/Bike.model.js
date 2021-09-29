@@ -21,7 +21,7 @@ const bikeSchema = new Schema({
     description: {
         type: String,
         minlength: 3,
-        maxlength: 100,
+        maxlength: 1000,
     },
     imageModel: {
         type: String,
