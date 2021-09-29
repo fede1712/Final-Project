@@ -30,9 +30,11 @@ export default function Navigation(props) {
                 <Navbar.Collapse id="responsive-navbar-nav">
 
                     <Nav className="me-auto">
-                        <Nav.Link href="#features"><span>Tricycle 3</span></Nav.Link>
-                        <Nav.Link href="#features"><span>Tricycle 4</span></Nav.Link>
-                        <Nav.Link href="#features"><span>Tricycle 4 rs</span></Nav.Link>
+                    {/*  */}
+                        <Nav.Link as={Link} to="/614f04dfd96dd8ef1bbb3fc6"><span>Tricycle 3</span></Nav.Link>
+                        {/* <Nav.Link as={Link} to={`/${elem.id}`}><span>{`${elem.name}`}</span></Nav.Link> */}
+                        <Nav.Link as={Link} to="/614f04dfd96dd8ef1bbb3fc6"><span>Tricycle 4</span></Nav.Link>
+                        <Nav.Link as={Link} to="/614f04dfd96dd8ef1bbb3fc6"><span>Tricycle 4 rs</span></Nav.Link>
                     </Nav>
 
                     <Nav>

@@ -6,7 +6,7 @@ import Home from '../Pages/Home/Home.js';
 import UserProfile from '../Pages/UserProfile/UserProfile.js';
 import Contact from '../Pages/Contact/Contact.js';
 import AboutUs from '../Pages/AboutUs/AboutUs.js';
-import AdminPage from '../Pages/AdminPage/AdminPage.js';
+import Bike from '../Pages/Bike/Bike';
 
 
 const Routes = ({ storeUser, loggedUser }) => {
@@ -17,10 +17,11 @@ const Routes = ({ storeUser, loggedUser }) => {
             <Route exact path="/" render={() => <Home />} />
             <Route exact path="/registro" render={(props) => <Signup {...props} />} />
             <Route exact path="/iniciar-sesion" render={(props) => <Login storeUser={storeUser} {...props} />} />
-            <Route path="/perfil" render={() => loggedUser ? <UserProfile loggedUser={loggedUser} /> : <Redirect to="/iniciar-sesion" />} />
+            <Route exact path="/" render={() => <Home />} />
+            <Route exact path="/perfil" render={() => loggedUser ? <UserProfile loggedUser={loggedUser} /> : <Redirect to="/iniciar-sesion" />} />
             <Route exact path='/contacto' render={() => <Contact />} />
-            <Route exact path='/sobre-nosotros' render={(props) => <AboutUs {...props} />} />
-
+            <Route exact path='/sobre-nosotros' render={() => <AboutUs />} />
+            <Route path='/:bike' render={(props) => <Bike {...props} />} />
         </Switch>
     )
 }

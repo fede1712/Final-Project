@@ -3,7 +3,8 @@ import axios from 'axios';
 class BikeService {
     constructor() {
         this.instance = axios.create({
-            baseURL: `${process.env.REACT_APP_API_URL}/bikes`
+            baseURL: `${process.env.REACT_APP_API_URL}/bikes`,
+            withCredentials: true
         })
     }
 
