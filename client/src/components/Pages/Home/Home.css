@@ -1,6 +1,5 @@
 
 .heroImg{
-
     height: 100vh;
     background-size: 200%;
     background-position-x: center;
@@ -106,3 +105,10 @@ cursor: pointer;
     border-color: rgba(182, 182, 182, 0);
 }
 
+.sectionImg2{
+    background-color: #e4e4e4;
+}
+
+.imgSection3 {
+    width: 100%;
+}

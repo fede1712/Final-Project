@@ -27,7 +27,7 @@ const Routes = ({ storeUser, loggedUser }) => {
             <Route exact path='/contacto' render={() => <Contact />} />
             <Route exact path='/sobre-nosotros' render={() => <AboutUs />} />
 
-            <Route exact path='/nueva-bici' render={(props) => <NewBike {...props} />} />
+            <Route exact path='/nueva-bici' render={(props) => <AdminPage><NewBike {...props} /></AdminPage>} />
             <Route exact path='/nueva-tienda' render={(props) => <ShopForm {...props} />} />
             <Route exact path='/editar-tienda/:id' render={(props) => <ShopEdit {...props} />} />
             {/* admin routes */}

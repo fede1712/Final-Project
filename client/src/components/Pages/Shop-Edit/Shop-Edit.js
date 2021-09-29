@@ -69,12 +69,10 @@ export default class ShopEdit extends Component {
             .catch(err => console.error(err))
     }
 
-
-
     render() {
 
         return (
-            
+
             <Form onSubmit={this.handleSubmit}>
                 <Form.Group className="mb-3" controlId="name">
                     <Form.Label>Nombre de la tienda: </Form.Label>

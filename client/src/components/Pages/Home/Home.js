@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import "./Home.css"
 import Carousel from 'react-bootstrap/Carousel'
+import ImageSection3 from './tricycle_hero.jpg'
 
 export default function Home(props) {
 
@@ -38,7 +39,7 @@ export default function Home(props) {
 
                 </div>
 
-            </section >
+            </section>
 
             <section className="heroImg2">
 
@@ -69,9 +70,26 @@ export default function Home(props) {
 
                 </div>
 
-            </section >
+            </section>
 
-        </div >
+            <section className="sectionImg2 fluid">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-xs-6 text-center">
+                            <img src={ImageSection3}>
+
+                            </img></div>
+
+                        <div class="col-xs-6 text-center">Column 3</div>
+                    </div>
+                </div>
+
+
+            </section>
+
+        </div>
 
     )
 }
