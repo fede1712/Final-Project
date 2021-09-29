@@ -42,22 +42,67 @@
     justify-content: center;
 }
 
-.prueba{
-align-items: center;
-    height: 100vh;
-    background-color: chocolate;
-}
-
 .buyNow{
-    border-top: rgba(255, 255, 255, 0.295) 0.5px solid;
+    
+    border-top: rgba(255, 255, 255, 0.548) 0.5px solid;
    display: flex;
    padding: 20px 0px;
-    background-color: rgba(61, 61, 61, 0.048);
-    transition: all .6s ease-in-out;
+    background-color: rgb(94, 94, 94);
+    transition: all .3s ease-in-out;
 }
 
 .buyNow:hover{
-/* opacity: 1; */
-background-color: rgba(34, 34, 34, 0.726);
+
+color: white;
+background-color: rgba(34, 34, 34, 0.877);
 cursor: pointer;
 }
+
+.buyButtomLink{
+    padding-left: 50px;
+    font-size: 1.6em;
+    color: white;
+    text-decoration: none;
+    
+}
+.buyButtomLink:hover{
+    color: white;
+    text-decoration: none;
+    
+}
+.arrow{
+    padding-left: 20px;
+    width: 60px;
+}
+
+.heroImg2{
+
+    height: 100vh;
+    background-size: 200%;
+    background-position-x: center;
+    background-image: url(./Tricycle4-rs.jpg);
+    overflow-x: hidden;
+}
+ 
+.heroImg2 h1{
+    color: rgb(124, 124, 124);
+     text-align: center; 
+     text-transform: lowercase;  
+     text-transform: capitalize;
+     font-size: 5.5em;
+}
+.heroImg2 h3{
+    color: rgb(124, 124, 124);
+     text-align: center; 
+     
+    
+}
+
+.buttonHero2{
+     background-color:rgba(124, 124, 124, 0.671);
+     margin-top: 20px;
+    border-radius: 50px;
+    padding: 15px 40px;
+    border-color: rgba(182, 182, 182, 0);
+}
+
