@@ -1,5 +1,9 @@
-.footerCss{
-    padding: 60px 20px;
-    background-color: rgb(54, 54, 54);
-}
 
+footer {
+  padding: 2rem 0;
+  background-color: #212529;
+   }
+
+   .columCss{
+       border:red 1px solid;
+   }

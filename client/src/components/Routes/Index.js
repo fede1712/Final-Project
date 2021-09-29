@@ -7,6 +7,8 @@ import UserProfile from '../Pages/UserProfile/UserProfile.js';
 import Contact from '../Pages/Contact/Contact.js';
 import AboutUs from '../Pages/AboutUs/AboutUs.js';
 import Bike from '../Pages/Bike/Bike';
+import ShopForm from '../Pages/Shop-Form/Shop-Form.js';
+import ShopEdit from '../Pages/Shop-Edit/Shop-Edit.js';
 
 
 const Routes = ({ storeUser, loggedUser }) => {
@@ -21,9 +23,12 @@ const Routes = ({ storeUser, loggedUser }) => {
             <Route exact path="/perfil" render={() => loggedUser ? <UserProfile loggedUser={loggedUser} /> : <Redirect to="/iniciar-sesion" />} />
             <Route exact path='/contacto' render={() => <Contact />} />
             <Route exact path='/sobre-nosotros' render={() => <AboutUs />} />
+            <Route exact path='/nueva-tienda' render={(props) => <ShopForm {...props} />} />
+            <Route exact path='/editar-tienda/:id' render={(props) => <ShopEdit {...props} />} />
             <Route path='/:bike' render={(props) => <Bike {...props} />} />
         </Switch>
     )
+
 }
 
 export default Routes

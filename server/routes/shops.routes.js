@@ -11,6 +11,13 @@ router.get("/", (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: "Error retrieving shop", err }))
 })
 
+router.get("/:id", (req, res) => {
+
+    Shop.findById(req.params.id)
+        .then(shop => res.status(200).json(shop))
+        .catch(err => res.status(500).json({ code: 500, message: "Error retrieving shop", err }))
+})
+
 router.post("/", (req, res) => {
 
     const shop = req.body;
