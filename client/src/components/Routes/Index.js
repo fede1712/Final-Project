@@ -9,6 +9,9 @@ import AboutUs from '../Pages/AboutUs/AboutUs.js';
 import Bike from '../Pages/Bike/Bike';
 import ShopForm from '../Pages/Shop-Form/Shop-Form.js';
 import ShopEdit from '../Pages/Shop-Edit/Shop-Edit.js';
+import AdminPage from '../Pages/AdminPage/AdminPage.js'
+import NavBarAdmin from '../Pages/AdminPage/NavBarAdmin.js';
+import NewBike from '../Pages/Bike/NewBike.js';
 
 
 const Routes = ({ storeUser, loggedUser }) => {
@@ -25,6 +28,25 @@ const Routes = ({ storeUser, loggedUser }) => {
             <Route exact path='/sobre-nosotros' render={() => <AboutUs />} />
             <Route exact path='/nueva-tienda' render={(props) => <ShopForm {...props} />} />
             <Route exact path='/editar-tienda/:id' render={(props) => <ShopEdit {...props} />} />
+
+            {/* admin routes */}
+            <Route exact path='/admin-panel' render={() => <AdminPage></AdminPage>} />
+
+            {/* <Route exact path='/nueva-bici' render={() => <AdminPage><NewBike /></AdminPage>} /> */}
+
+            {/* 
+            <Route exact path='/nueva-tienda' render={() => <AdminPage> <NewShop /> </AdminPage>} />
+
+
+            
+            
+            
+            <Route path='/editar-bici/:id' render={() => <AdminPage> <EditBike /> </AdminPage>} />
+            <Route path='/editar-tienda/:id' render={() => <AdminPage> <NewShop /> </AdminPage>} /> */}
+
+
+
+            {/* id paths */}
             <Route path='/:bike' render={(props) => <Bike {...props} />} />
         </Switch>
     )

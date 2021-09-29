@@ -39,7 +39,7 @@ export default class Bike extends Component {
 
                         <Row className="alingItems1">
                             <Col md={{ span: 4, offset: 4 }}>
-                                <div class="h1Css">
+                                <div className="h1Css">
                                     <h3>{this.state.bike?.name}</h3>
                                     <h1>{this.state.bike?.subtitle}</h1>
 

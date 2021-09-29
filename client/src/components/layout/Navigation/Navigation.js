@@ -23,7 +23,7 @@ export default function Navigation(props) {
 
             <Container fluid>
 
-                <Navbar><Link to="/" ><img class='logoStyle' src={Logo} alt='logo'></img></Link></Navbar>
+                <Navbar><Link to="/" ><img className='logoStyle' src={Logo} alt='logo'></img></Link></Navbar>
 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
