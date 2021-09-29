@@ -3,6 +3,14 @@ const Bike = require("../models/Bike.model")
 const router = express.Router()
 
 
+router.get("/", (req, res) => {
+
+    Bike
+        .find()
+        .then(bike => res.status(200).json(bike))
+        .catch(err => res.status(500).json({ code: 500, message: "Error retrieving shop", err }))
+})
+
 router.get("/:id", (req, res) => {
 
     const { id } = req.params
