@@ -7,6 +7,10 @@ import UserProfile from '../Pages/UserProfile/UserProfile.js';
 import Contact from '../Pages/Contact/Contact.js';
 import AboutUs from '../Pages/AboutUs/AboutUs.js';
 import Bike from '../Pages/Bike/Bike';
+import ShopForm from '../Pages/Shop-Form/Shop-Form.js';
+import ShopEdit from '../Pages/Shop-Edit/Shop-Edit.js';
+import AdminPage from '../Pages/AdminPage/AdminPage.js'
+import NavBarAdmin from '../Pages/AdminPage/NavBarAdmin.js';
 import NewBike from '../Pages/Bike/NewBike.js';
 
 
@@ -24,9 +28,15 @@ const Routes = ({ storeUser, loggedUser }) => {
             <Route exact path='/sobre-nosotros' render={() => <AboutUs />} />
 
             <Route exact path='/nueva-bici' render={(props) => <NewBike {...props} />} />
+            <Route exact path='/nueva-tienda' render={(props) => <ShopForm {...props} />} />
+            <Route exact path='/editar-tienda/:id' render={(props) => <ShopEdit {...props} />} />
+            {/* admin routes */}
+            <Route exact path='/admin-panel' render={() => <AdminPage></AdminPage>} />
+            {/* id paths */}
             <Route path='/:bike' render={(props) => <Bike {...props} />} />
         </Switch>
     )
+
 }
 
 export default Routes

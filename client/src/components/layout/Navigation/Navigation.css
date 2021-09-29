@@ -22,32 +22,14 @@
    color: #fff; 
 } 
 
-.container {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  width: 1200px;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  padding: 0 20px;
-}
-
-span {
+.navSpan {
   color: rgb(134, 134, 134);
   position: relative;
   display: block;
   cursor: pointer;
 }
 
-span:before, span:after {
+.navSpan:before, span:after {
   content: '';
   position: absolute;
   width: 0%;
@@ -57,22 +39,22 @@ span:before, span:after {
   background: rgb(134, 134, 134);
 }
 
-span:before {
+.navSpann:before {
   left: -2.5px;
 }
-span:after {
+.navSpan:after {
   right: 2.5px;
   background: rgb(134, 134, 134);
   transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-span:hover:before {
+.navSpan:hover:before {
   background: rgb(134, 134, 134);
   width: 100%;
   transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-span:hover:after {
+.navSpan:hover:after {
   background: transparent;
   width: 100%;
   transition: 0s;

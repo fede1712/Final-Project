@@ -8,8 +8,9 @@ class ShopService {
     }
 
     findShops = () => this.instance.get('/')
-    createShop = (data) => this.instance.post('/', { data })
-    editShop = (data, id) => this.instance.put(`/${id}`, { data })
+    findOneShop = (id) => this.instance.get(`/${id}`)
+    createShop = (data) => this.instance.post('/', data)
+    editShop = (data, id) => this.instance.put(`/${id}`, data)
     deleteShop = (id) => this.instance.delete(`/${id}`)
 }
 

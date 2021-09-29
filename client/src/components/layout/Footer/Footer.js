@@ -7,76 +7,104 @@ import './Footer.css'
 
 export default function Footer() {
     return (
-
-        <section >
-
-            <div class="footerCss">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-6 ">
-                                    <div class="logo-part">
-                                        <img src={Logo} class="w-50 logo-footer logoStyle" />
-                                        <p>7637 Laurel Dr.King Of Prussia, PA 19406</p>
-                                        <p>Use this tool as test data for an automated system or find your next pen</p>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6 px-4">
-                                    <h6> About Company</h6>
-                                    <p>But horizontal lines can only be a full pixel high.</p>
-                                    <a href="#" class="btn-footer"> More Info </a>
-                                    <a href="#" class="btn-footer"> Contact Us</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-6 px-4">
-                                    <h6> Help us</h6>
-                                    <div class="row ">
-                                        <div class="col-md-6">
-                                            <ul>
-                                                <li> <a href="#"> Home</a> </li>
-                                                <li> <a href="#"> About</a> </li>
-                                                <li> <a href="#"> Service</a> </li>
-                                                <li> <a href="#"> Team</a> </li>
-                                                <li> <a href="#"> Help</a> </li>
-                                                <li> <a href="#"> Contact</a> </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6 px-4">
-                                            <ul>
-                                                <li> <a href="#"> Cab Faciliy</a> </li>
-                                                <li> <a href="#"> Fax</a> </li>
-                                                <li> <a href="#"> Terms</a> </li>
-                                                <li> <a href="#"> Policy</a> </li>
-                                                <li> <a href="#"> Refunds</a> </li>
-                                                <li> <a href="#"> Paypal</a> </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 ">
-                                    <h6> Newsletter</h6>
-                                    <div class="social">
-                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    </div>
-                                    <form class="form-footer my-3">
-                                        <input type="text" placeholder="search here...." name="search" />
-                                        <input type="button" value="Go" />
-                                    </form>
-                                    <p>That's technology limitation of LCD monitors</p>
-                                </div>
-                            </div>
-                        </div>
+< footer >
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 footer-column columCss">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <span class="footer-title">Product</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Product 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Product 2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Plans & Prices</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Frequently asked questions</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 footer-column columCss">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <span class="footer-title">Company</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Job postings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">News and articles</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 footer-column columCss">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <span class="footer-title">Contact & Support</span>
+                            </li>
+                            <li class="nav-item">
+                                <span class="nav-link"><i class="fas fa-phone"></i>+47 45 80 80 80</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-comments"></i>Live chat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-envelope"></i>Contact us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fas fa-star"></i>Give feedback</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
+                <div class="text-center"><i class="fas fa-ellipsis-h"></i></div>
+
+                <div class="row text-center">
+                    <div class="col-md-4 box">
+                        <span class="copyright quick-links">Copyright &copy; Your Website <script>document.write(new Date().getFullYear())</script>
+                        </span>
+                    </div>
+                    <div class="col-md-4 box">
+                        <ul class="list-inline social-buttons">
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 box">
+                        <ul class="list-inline quick-links">
+                            <li class="list-inline-item">
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#">Terms of Use</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </section >
+        </footer >
 
 
     )

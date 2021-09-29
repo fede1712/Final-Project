@@ -15,11 +15,13 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
 
     const bike = req.body
+
     Bike
         .create(bike)
         .then(bike => res.status(200).json({ bike, message: "Bike created" }))
         .catch(err => res.status(500).json({ code: 500, message: "Error creating bike", err }))
 })
+
 
 router.put("/:id", (req, res) => {
 
