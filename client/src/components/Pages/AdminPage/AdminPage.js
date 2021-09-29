@@ -25,7 +25,7 @@ export default class AdminPage extends Component {
                         <NavBarAdmin />
 
                         {this.props.children ?
-                            <Col xs={8}> {this.props.children} </Col>
+                            <Col xs={10}>{this.props.children}</Col>
                             :
                             <div className='col-8'>
                                 <p>No tengo hijo</p>
