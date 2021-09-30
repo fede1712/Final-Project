@@ -14,7 +14,7 @@ export default class AdminPage extends Component {
     }
 
     componentDidMount = () => {
-        console.log(this.props)
+
     }
 
     render() {

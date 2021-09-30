@@ -8,3 +8,7 @@ width: 90%;
 .add-shop{
     margin-top: 20px;
 }
+
+.delete-btn{
+    cursor: pointer;
+}

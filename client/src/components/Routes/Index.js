@@ -7,7 +7,7 @@ import UserProfile from '../Pages/UserProfile/UserProfile.js';
 import Contact from '../Pages/Contact/Contact.js';
 import AboutUs from '../Pages/AboutUs/AboutUs.js';
 import Bike from '../Pages/Bike/Bike';
-import ShopForm from '../Pages/Shop-Form/Shop-Form.js';
+import NewShop from '../Pages/NewShop/NewShop';
 import ShopEdit from '../Pages/Shop-Edit/Shop-Edit.js';
 import AdminPage from '../Pages/AdminPage/AdminPage.js'
 import NewBike from '../Pages/Bike/NewBike.js';
@@ -33,8 +33,11 @@ const Routes = ({ storeUser, loggedUser }) => {
 
             <Route exact path='/nueva-bici' render={(props) => <AdminPage><NewBike {...props} /></AdminPage>} />
             <Route exact path='/editar-bici/:id' render={(props) => <AdminPage><BikeEdit {...props} /></AdminPage>} />
-            <Route exact path='/nueva-tienda' render={(props) => <AdminPage><ShopForm {...props} /></AdminPage>} />
+            <Route exact path='/nueva-tienda' render={(props) => <AdminPage><NewShop {...props} /></AdminPage>} />
             <Route exact path='/editar-tienda/:id' render={(props) => <AdminPage><ShopEdit {...props} /> </AdminPage>} />
+
+
+
             <Route exact path='/lista-tiendas' render={(props) => <AdminPage><AdminShops {...props} /></AdminPage>} />
             <Route exact path='/lista-bicis' render={(props) => <AdminPage> <AdminBikes {...props} /> </AdminPage>} />
             <Route exact path='/lista-clientes' render={(props) => <AdminPage> <AdminClients {...props} /> </AdminPage>} />
