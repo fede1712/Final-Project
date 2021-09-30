@@ -22,7 +22,7 @@ export default function NavBarAdmin() {
                 <Nav.Link as={Link} to='/stock'><span>Stcok</span></Nav.Link>
             </Container>
             <Container>
-                <Nav.Link as={Link} to='/clientes'><span>Clientes</span></Nav.Link>
+                <Nav.Link as={Link} to={`/lista-clientes`}><span>Clientes</span></Nav.Link>
             </Container>
             <Container>
                 <Nav.Link as={Link} to='/ventas'><span>Ventas</span></Nav.Link>

@@ -1,13 +1,10 @@
-.table-bikes {
+.table-users {
     margin-top: 10%;
     margin-left: 5%;
     margin-right: 5%;
     width: 90%;
 }
 
-.add-bike {
-    margin-top: 20px;
-}
 
 .delete-btn {
     cursor: pointer;

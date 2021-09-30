@@ -3,8 +3,6 @@ import { Button, Form } from 'react-bootstrap'
 import ShopsService from '../../../services/shop.service'
 
 export default class ShopEdit extends Component {
-
-
     constructor(props) {
         super(props)
 
@@ -23,7 +21,6 @@ export default class ShopEdit extends Component {
     componentDidMount = () => {
         this.shopService.findOneShop(this.props.match.params.id)
             .then(res => {
-                console.log(res)
                 const { name, description, address } = res.data
                 this.setState({
                     name,
@@ -38,12 +35,13 @@ export default class ShopEdit extends Component {
 
         const { value, name } = e.target;
 
-        name === 'address' ? this.setState({
-            address: {
-                ...this.state.address,
-                direction: value
-            }
-        })
+        name === 'address' ?
+            this.setState({
+                address: {
+                    ...this.state.address,
+                    direction: value
+                }
+            })
             :
             this.setState({
                 [name]: value
@@ -51,9 +49,8 @@ export default class ShopEdit extends Component {
     }
 
     handleSubmit = (e) => {
-        console.log(this.props.match.params)
-
         e.preventDefault();
+        console.log(this.props.match.params.id)
 
         this.shopService.editShop(this.state, this.props.match.params.id)
 
@@ -64,7 +61,7 @@ export default class ShopEdit extends Component {
                     address: ""
                 })
 
-                this.props.history.push('/')
+                this.props.history.push('/lista-tiendas')
             })
             .catch(err => console.error(err))
     }
@@ -90,9 +87,8 @@ export default class ShopEdit extends Component {
                 </Form.Group>
 
                 <Button variant="primary" type="submit">
-                    Terminar edición
+                    Guardar
                 </Button>
-
             </Form>
         )
 
