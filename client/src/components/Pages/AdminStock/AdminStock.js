@@ -27,12 +27,6 @@ export default class AdminStock extends Component {
             .catch(err => console.log(err))
     }
 
-    deleteBike(id) {
-        this.bikeService.deleteBike(id)
-            .then(() => this.refreshBike())
-            .catch(err => console.log(err))
-    }
-
 
     render() {
         return (

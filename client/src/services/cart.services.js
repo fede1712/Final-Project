@@ -7,10 +7,10 @@ class CartService {
         })
     }
 
-    findCart = (data) => this.instance.get('/:id', { data })
-    createCart = (data) => this.instance.post('/', { data })
-    editCart = (data) => this.instance.put('/:id', { data })
-    deleteCart = (data) => this.instance.delete('/:id', { data })
+    findMyCart = (id) => this.instance.get(`/${id}`)
+    createCart = (data) => this.instance.post('/', data)
+    editCart = (id, data) => this.instance.put(`/${id}`, data)
+    deleteCart = (id) => this.instance.delete(`/${id}`)
 }
 
 export default CartService;
