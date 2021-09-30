@@ -43,7 +43,9 @@ export default class AdminBikes extends Component {
                         <tr>
                             <th>Modelo</th>
                             <th>Precio</th>
-                            <th>Stock</th>
+                            <th>Velocidad</th>
+                            <th>Motor</th>
+                            <th>Batería</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>
@@ -52,7 +54,9 @@ export default class AdminBikes extends Component {
                             <tr key={elm._id}>
                                 <td>{elm.name}</td>
                                 <td>{elm.price}</td>
-                                <td>{elm.quantity}</td>
+                                <td>{elm.specifications.assistSpeed}</td>
+                                <td>{elm.specifications.motor}</td>
+                                <td>{elm.specifications.battery}</td>
                                 <td>
                                     <Link to={`/editar-bici/${elm._id}`}><Badge pill bg="warning"> Editar </Badge></Link>{' '}
                                     <span className='delete-btn' onClick={() => this.deleteBike(elm._id)}><Badge pill bg="danger"> Eliminar </Badge></span>
