@@ -23,7 +23,6 @@ export default class ShopEdit extends Component {
     componentDidMount = () => {
         this.shopService.findOneShop(this.props.match.params.id)
             .then(res => {
-                console.log(res)
                 const { name, description, address } = res.data
                 this.setState({
                     name,

@@ -14,18 +14,15 @@ export default class ShopForm extends Component {
 
     handleChange = (e) => {
         const { value, name } = e.target;
-
         this.setState({
             [name]: value
         })
     }
 
     handleSubmit = (e) => {
-
         e.preventDefault();
 
         this.shopService.createShop(this.state)
-
             .then(() => {
                 this.setState({
                     name: "",

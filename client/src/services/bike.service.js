@@ -11,7 +11,7 @@ class BikeService {
     findBikes = () => this.instance.get('/')
     findOneBike = (id) => this.instance.get(`/${id}`)
     createBike = (data) => this.instance.post('/', data)
-    editBike = (data, id) => this.instance.put(`/${id}`, { data })
+    editBike = (data, id) => this.instance.put(`/${id}`, data)
     deleteBike = (id) => this.instance.delete(`/${id}`)
 }
 

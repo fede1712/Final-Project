@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import { Badge, Button, Nav, Table } from 'react-bootstrap'
 import BikeService from '../../../services/bike.service'
 import { Link } from 'react-router-dom'
-import './AdminBikes.css'
 
-export default class AdminBikes extends Component {
+export default class AdminStock extends Component {
 
     constructor() {
         super()
@@ -42,7 +41,6 @@ export default class AdminBikes extends Component {
                     <thead>
                         <tr>
                             <th>Modelo</th>
-                            <th>Precio</th>
                             <th>Stock</th>
                             <th>Opciones</th>
                         </tr>
@@ -51,11 +49,9 @@ export default class AdminBikes extends Component {
                         {this.state.bike?.map(elm =>
                             <tr key={elm._id}>
                                 <td>{elm.name}</td>
-                                <td>{elm.price}</td>
                                 <td>{elm.quantity}</td>
                                 <td>
                                     <Link to={`/editar-bici/${elm._id}`}><Badge pill bg="warning"> Editar </Badge></Link>{' '}
-                                    <span className='delete-btn' onClick={() => this.deleteBike(elm._id)}><Badge pill bg="danger"> Eliminar </Badge></span>
                                 </td>
                             </tr>
                         )}
@@ -63,7 +59,8 @@ export default class AdminBikes extends Component {
                     <Button className='add-bike' as={Link} variant="primary" to='/nueva-bici' size="lg">Nueva bicileta</Button>
                 </Table>
                 :
-                <p>...Chapassss</p>
+                <p>...Cargando</p>
         )
     }
 }
+
