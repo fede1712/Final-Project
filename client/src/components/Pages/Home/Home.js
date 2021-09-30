@@ -1,10 +1,13 @@
 import React from 'react'
-import { Row, Col, Container } from 'react-bootstrap'
+import { Row, Col, Container, Carousel } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import "./Home.css"
-import Carousel from 'react-bootstrap/Carousel'
-import ImageSection3 from './Tricycle4-rs.jpg'
-import ImageSection4 from './tricycle_hero.jpg'
+import imageCarousel1 from './carousel1.png'
+import imageCarousel2 from './carousel2.png'
+import imageCarousel3 from './carousel3.png'
+import imageCarousel4 from './carousel4.png'
+import imageCarousel5 from './carousel5.png'
+
 
 export default function Home(props) {
 
@@ -26,7 +29,20 @@ export default function Home(props) {
                                 <Link className="btn btn-secondary buttonHero" variant="outline-secondary" to="/">Más información</Link>
                             </div>
 
+                            <div class="mouse_scroll">
+
+                                <div class="mouse">
+                                    <div class="wheel"></div>
+                                </div>
+                                <div>
+                                    <span class="m_scroll_arrows unu"></span>
+                                    <span class="m_scroll_arrows doi"></span>
+                                    <span class="m_scroll_arrows trei"></span>
+                                </div>
+                            </div>
                         </Col>
+
+
                         <Col md={12}>
 
                             <div className="buyNow">
@@ -74,6 +90,50 @@ export default function Home(props) {
             </section>
 
 
+
+            <Carousel>
+                <Carousel.Item class="carousel-text" interval={5000}>
+                    <img
+                        className="d-block w-100"
+                        src={imageCarousel1}
+                        alt="First slide"
+                    />
+                    <Carousel.Caption class="carousel-caption">
+                        <h3>Icono del diseño</h3>
+                        <p>Todos los detalles se suman al aspecto icónico de Tricycle para un nuevo estándar de rendimiento.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item interval={5000}>
+                    <img
+                        className="d-block w-100"
+                        src={imageCarousel2}
+                        alt="Second slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item interval={5000}>
+                    <img
+                        className="d-block w-100"
+                        src={imageCarousel3}
+                        alt="Third slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item interval={5000}>
+                    <img
+                        className="d-block w-100"
+                        src={imageCarousel4}
+                        alt="Third slide"
+                    />
+                </Carousel.Item>
+                <Carousel.Item interval={5000}>
+                    <img
+                        className="d-block w-100"
+                        src={imageCarousel5}
+                        alt="Third slide"
+                    />
+                </Carousel.Item>
+            </Carousel>
+
+
             <div className="container-fluid section3">
 
                 <Row xs="2">
@@ -92,10 +152,6 @@ export default function Home(props) {
                 </Row>
 
             </div>
-
-
-
-
 
 
         </div>
