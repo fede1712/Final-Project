@@ -9,19 +9,29 @@ export default class AdminShops extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            shop: undefined
+            shop: []
         }
         this.shopService = new ShopService()
     }
 
     componentDidMount() {
+        this.refreshShops()
+    }
+
+    refreshShops() {
         this.shopService.findShops()
             .then(shops => {
                 this.setState({
                     shop: shops.data
                 })
             })
+            .catch(err => console.log(err))
+    }
 
+    deleteShops(id) {
+        this.shopService.deleteShop(id)
+            .then(() => this.refreshShops())
+            .catch(err => console.log(err))
     }
 
     render() {
@@ -42,12 +52,15 @@ export default class AdminShops extends Component {
                                     <tr key={elm._id}>
                                         <td>{elm.name}</td>
                                         <td>{elm.address.direction}</td>
-                                        <td><Link>  <Badge pill bg="warning">Editar</Badge></Link>{' '}
-                                            <Link>  <Badge pill bg="danger">Eliminar</Badge></Link>
+                                        <td>
+                                            <Link to={`/editar-tienda/${elm._id}`}><Badge pill bg="warning">Editar</Badge></Link>{' '}
+                                            <span className='delete-btn' onClick={() => this.deleteShops(elm._id)}><Badge pill bg="danger">Eliminar</Badge></span>
                                         </td>
-                                    </tr>)}
+                                    </tr>
+                                )
+                                }
                             </tbody>
-                            <Button className="add-shop" as={Link} variant="primary" size="lg">Nueva tienda</Button>
+                            <Button className="add-shop" as={Link} variant="primary" size="lg" to='/nueva-tienda'>Nueva tienda</Button>
                         </Table>
                     </>
                 )

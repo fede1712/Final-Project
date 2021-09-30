@@ -17,6 +17,7 @@
   border-radius: 50px;
   font-size: 1em;
   filter: invert(50%);
+  cursor: pointer;
 }
 
  .navCss {

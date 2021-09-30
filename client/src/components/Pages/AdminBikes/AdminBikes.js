@@ -43,8 +43,8 @@ export default class AdminBikes extends Component {
                                 <td>{elm.price}</td>
                                 <td>{elm.quantity}</td>
                                 <td>
-                                    <Link><Badge pill bg="danger"> Eliminar </Badge></Link>{' '}
-                                    <Link><Badge pill bg="warning" text="dark"> Editar </Badge></Link>
+                                    <Link><Badge pill bg="warning"> Editar </Badge></Link>{' '}
+                                    <Link><Badge pill bg="danger"> Eliminar </Badge></Link>
                                 </td>
                             </tr>
                         )}
