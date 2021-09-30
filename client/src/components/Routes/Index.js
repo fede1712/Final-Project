@@ -16,6 +16,7 @@ import AdminBikes from '../Pages/AdminBikes/AdminBikes.js';
 import BikeEdit from '../Pages/BikeEdit/BikeEdit.js';
 import AdminClients from '../Pages/AdminClients/AdminClients.js';
 import AdminStock from '../Pages/AdminStock/AdminStock.js';
+import Cart from '../Pages/Cart/Cart.js';
 
 
 const Routes = ({ storeUser, loggedUser }) => {
@@ -30,6 +31,7 @@ const Routes = ({ storeUser, loggedUser }) => {
             <Route exact path="/perfil" render={() => loggedUser ? <UserProfile loggedUser={loggedUser} /> : <Redirect to="/iniciar-sesion" />} />
             <Route exact path='/contacto' render={() => <Contact />} />
             <Route exact path='/sobre-nosotros' render={() => <AboutUs />} />
+            <Route exact path='/carrito' render={(props) => <Cart {...props} />} />
 
             <Route exact path='/nueva-bici' render={(props) => <AdminPage><NewBike {...props} /></AdminPage>} />
             <Route exact path='/editar-bici/:id' render={(props) => <AdminPage><BikeEdit {...props} /></AdminPage>} />

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const User = require('./../models/User.model')
+const Cart = require('./../models/Cart.model')
 const bcrypt = require("bcrypt")
 const bcryptSalt = 10
 
@@ -17,11 +18,11 @@ router.post('/signup', (req, res) => {
                 res.status(400).json({ code: 400, message: 'Email already exixts' })
                 return
             }
-
             const salt = bcrypt.genSaltSync(bcryptSalt)
             const hashPass = bcrypt.hashSync(password, salt)
             User
                 .create({ userName, email, password: hashPass })
+                .then((createdUser) => Cart.create({ userId: createdUser._id, products: [], totalPrice: 0 }))
                 .then(() => res.json({ code: 200, message: 'User created' }))
                 .catch(err => res.status(500).json({ code: 500, message: 'DB error while creating user', err: err.message }))
         })
