@@ -10,6 +10,7 @@ class UserService {
 
     findUser = () => this.instance.get('/')
     findOneUser = (id) => this.instance.get(`/${id}`)
+    editUser = (data, id) => this.instance.put(`/${id}`, data)
     deleteUser = (id) => this.instance.delete(`/${id}`)
 }
 

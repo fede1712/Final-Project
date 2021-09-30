@@ -1,0 +1,4 @@
+body{
+    overscroll-behavior-x: none !important;
+    overscroll-behavior-y: none !important;
+}

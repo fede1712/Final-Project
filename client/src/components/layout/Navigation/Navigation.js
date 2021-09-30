@@ -16,7 +16,6 @@ export default function Navigation(props) {
             .then(res => props.storeUser(null))
             .catch(err => console.log(err))
     }
-    console.log(props.loggedUser?.role);
 
     return (
 

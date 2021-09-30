@@ -29,7 +29,7 @@ export default class App extends Component {
       <div className="App">
         <header className="App-header">
           <Navigation loggedUser={this.state.loggedUser} storeUser={this.storeUser} />
-          <Routes storeUser={this.storeUser} loggedUser={this.state.loggedUser} />
+          <Routes storeUser={this.storeUser} loggedUser={this.state.loggedUser} fetchUser={this.fetchUser} />
           <Footer />
         </header>
       </div>
