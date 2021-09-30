@@ -1,9 +1,10 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col, Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import "./Home.css"
 import Carousel from 'react-bootstrap/Carousel'
-import ImageSection3 from './tricycle_hero.jpg'
+import ImageSection3 from './Tricycle4-rs.jpg'
+import ImageSection4 from './tricycle_hero.jpg'
 
 export default function Home(props) {
 
@@ -72,22 +73,30 @@ export default function Home(props) {
 
             </section>
 
-            <section className="sectionImg2 fluid">
 
-                <div class="container">
-                    <div class="row">
+            <div className="container-fluid section3">
 
-                        <div class="col-xs-6 text-center">
-                            <img src={ImageSection3}>
+                <Row xs="2">
+                    <Col class="colSection3">
+                        <div className="section3Img"></div>
+                    </Col>
+                    <Col className="colRightSection3 align-self-center">
+                        <h1>Tricycle 3</h1>
+                        <h3>La conducción más rápida de la ciudad obtiene una alta puntuación por su chasis deportivo y ágil.</h3>
+                        <div className="d-flex justify-content-center">
+                            <Link className="btn btn-secondary buttonSection3" variant="outline-secondary" to="/">Más información</Link>
+                        </div>
+                        <p>6 pagos sin comisiones o 1.990 €.<br /> Plazo de entrega 10 días.</p>
+                    </Col>
 
-                            </img></div>
+                </Row>
 
-                        <div class="col-xs-6 text-center">Column 3</div>
-                    </div>
-                </div>
+            </div>
 
 
-            </section>
+
+
+
 
         </div>
 

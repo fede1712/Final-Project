@@ -8,6 +8,16 @@
     margin-right: 40px;
     margin-left: 15px;
 }
+.iconCss{
+  text-transform:lowercase;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+  align-items: center;
+  padding: 10px 60px;
+  border-radius: 50px;
+  font-size: 1em;
+  filter: invert(50%);
+}
 
  .navCss {
   display: table;

@@ -1,7 +1,6 @@
 
 .heroImg{
     height: 100vh;
-    background-size: 200%;
     background-position-x: center;
     background-image: url(./tricycle_hero.jpg);
     overflow-x: hidden;
@@ -14,7 +13,7 @@
      text-transform: capitalize;
      font-size: 5.5em;
 }
-.heroImg h3{
+.heroImg h4{
     color: rgb(182, 182, 182);
      text-align: center; 
      
@@ -105,10 +104,57 @@ cursor: pointer;
     border-color: rgba(182, 182, 182, 0);
 }
 
-.sectionImg2{
-    background-color: #e4e4e4;
+.section3{
+background-color: #e4e4e4;
+height: 100vh;
+width: 100vw;
+padding: 0px;
+
 }
 
-.imgSection3 {
-    width: 100%;
+.section3 h1{
+ color: rgb(182, 182, 182);
+     text-align: center; 
+     text-transform: lowercase;  
+     text-transform: capitalize;
+     font-size: 5.5em;   
+}
+
+.section3 h3{
+ color: rgb(124, 124, 124);
+     text-align: center; 
+    font-size: 1.1em;
+}
+
+.buttonSection3{
+     background-color:rgb(167, 167, 167);
+     margin-top: 20px;
+    border-radius: 50px;
+    padding: 15px 40px;
+    border-color: rgba(182, 182, 182, 0);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.colRightSection3{
+    justify-content: center;
+    /* padding-left: 6%; */
+    padding-right: 6%;
+}
+
+.colRightSection3 p{
+    text-align: center;
+    padding-bottom: 0px;
+    padding-top: 10px;
+}
+
+.section3Img{
+    
+    align-items: center;
+    height: 100vh;
+    background-size: 140%;
+    background-position-x: center;
+    background-image: url(./Iron-3-blanca-perspective.png); 
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    
 }

@@ -10,7 +10,6 @@ import Bike from '../Pages/Bike/Bike';
 import ShopForm from '../Pages/Shop-Form/Shop-Form.js';
 import ShopEdit from '../Pages/Shop-Edit/Shop-Edit.js';
 import AdminPage from '../Pages/AdminPage/AdminPage.js'
-import NavBarAdmin from '../Pages/AdminPage/NavBarAdmin.js';
 import NewBike from '../Pages/Bike/NewBike.js';
 import AdminShops from '../Pages/AdminShops/AdminShops'
 import AdminBikes from '../Pages/AdminBikes/AdminBikes.js';
