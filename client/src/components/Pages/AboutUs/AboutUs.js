@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Row } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import './AboutUs.css'
 
 export default function AboutUs() {
@@ -9,6 +9,7 @@ export default function AboutUs() {
 
 
         <Row className="justify-content">
+
             <div className="about">
                 <h1>TriCycle is the first connected bike that gives <tr /> people the freedom to Take The Streets.</h1>
                 <p>
@@ -16,6 +17,7 @@ export default function AboutUs() {
                     Founded in 2021 and headquartered in Brussels, Belgium, Tricycle is designed and engineered by a team of curious individuals challenging the status quo of the e-bike category and the everyday commute. By creating an elegant and affordable bike and connecting with each rider's journey through the app, a new generation of mobility has arrived.
                 </p>
             </div>
+
             <div className="about-info">
                 <div className='year'>
                     <h3>Founded</h3>
@@ -27,9 +29,6 @@ export default function AboutUs() {
                     <h1>Ironhack</h1>
                 </div>
             </div>
-            <div>
-
-            </div>
-        </Row >
+        </Row>
     )
 }

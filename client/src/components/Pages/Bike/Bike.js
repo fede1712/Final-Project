@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import BikeService from '../../../services/bike.service'
-import { Col, Container, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import { Col, Row } from 'react-bootstrap';
 import "./Bike.css"
 
 export default class Bike extends Component {

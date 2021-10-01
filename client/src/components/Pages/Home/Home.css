@@ -1,179 +1,164 @@
 
 .heroImg{
-    height: 100vh;
-    background-position-x: center;
-    background-image: url(./tricycle_hero.jpg);
-    overflow-x: hidden;
+  height: 100vh;
+  background-position-x: center;
+  background-image: url(./tricycle_hero.jpg);
+  overflow-x: hidden;
 }
  
 .heroImg h1{
-    color: rgb(182, 182, 182);
-     text-align: center; 
-     text-transform: lowercase;  
-     text-transform: capitalize;
-     font-size: 5.5em;
+  color: rgb(182, 182, 182);
+  text-align: center; 
+  text-transform: lowercase;  
+  text-transform: capitalize;
+  font-size: 5.5em;
 }
+
 .heroImg h4{
-    color: rgb(182, 182, 182);
-     text-align: center; 
-     
-    
+  color: rgb(182, 182, 182);
+  text-align: center;    
 }
 
 .alingItems{
-    height: 100vh;
-    align-items: flex-end;
-    
-    
-
+  height: 100vh;
+  align-items: flex-end;
 }
 
- .buttonHero{
-     background-color:rgba(255, 255, 255, 0.24);
-     margin-top: 20px;
-    border-radius: 50px;
-    padding: 15px 40px;
-    border-color: rgba(182, 182, 182, 0);
+.buttonHero{
+  background-color:rgba(255, 255, 255, 0.24);
+  margin-top: 20px;
+  border-radius: 50px;
+  padding: 15px 40px;
+  border-color: rgba(182, 182, 182, 0);
 }
 
 .buttomHeroAling{
-    justify-content: center;
+  justify-content: center;
 }
 
 .buyNow{
-    
-    border-top: rgba(255, 255, 255, 0.548) 0.5px solid;
-   display: flex;
-   padding: 20px 0px;
-    background-color: rgba(94, 94, 94, 0.637);
-    transition: all .3s ease-in-out;
+  border-top: rgba(255, 255, 255, 0.548) 0.5px solid;
+  display: flex;
+  padding: 20px 0px;
+  background-color: rgba(94, 94, 94, 0.637);
+  transition: all .3s ease-in-out;
 }
 
 .buyNow:hover{
-
-color: white;
-background-color: rgba(34, 34, 34, 0.877);
-cursor: pointer;
+  color: white;
+  background-color: rgba(34, 34, 34, 0.877);
+  cursor: pointer;
 }
 
 .buyNow2{
-    
-    border-top: rgba(255, 255, 255, 0.548) 0.5px solid;
-   display: flex;
-   padding: 20px 0px;
-    background-color: rgba(94, 94, 94, 0.432);
-    transition: all .3s ease-in-out;
+  border-top: rgba(255, 255, 255, 0.548) 0.5px solid;
+  display: flex;
+  padding: 20px 0px;
+  background-color: rgba(94, 94, 94, 0.432);
+  transition: all .3s ease-in-out;
 }
 
 .buyNow2:hover{
-
-color: white;
-background-color: rgba(34, 34, 34, 0.877);
-cursor: pointer;
+  color: white;
+  background-color: rgba(34, 34, 34, 0.877);
+  cursor: pointer;
 }
 
 .buyButtomLink{
-    padding-left: 50px;
-    font-size: 1.6em;
-    color: white;
-    text-decoration: none;
-    
+  padding-left: 50px;
+  font-size: 1.6em;
+  color: white;
+  text-decoration: none;    
 }
+
 .buyButtomLink:hover{
-    color: white;
-    text-decoration: none;
-    
+  color: white;
+  text-decoration: none;    
 }
+
 .arrow{
-    padding-left: 20px;
-    width: 60px;
+  padding-left: 20px;
+  width: 60px;
 }
 
 .heroImg2{
-
-    height: 100vh;
-    background-size: 200%;
-    background-position-x: center;
-    background-image: url(./Tricycle4-rs.jpg);
-    overflow-x: hidden;
+  height: 100vh;
+  background-size: 200%;
+  background-position-x: center;
+  background-image: url(./Tricycle4-rs.jpg);
+  overflow-x: hidden;
 }
  
 .heroImg2 h1{
-    color: rgb(124, 124, 124);
-     text-align: center; 
-     text-transform: lowercase;  
-     text-transform: capitalize;
-     font-size: 5.5em;
+  color: rgb(124, 124, 124);
+  text-align: center; 
+  text-transform: lowercase;  
+  text-transform: capitalize;
+  font-size: 5.5em;
 }
+
 .heroImg2 h3{
-    color: rgb(124, 124, 124);
-     text-align: center; 
-     
-    
+  color: rgb(124, 124, 124);
+  text-align: center;   
 }
 
 .buttonHero2{
-     background-color:rgba(124, 124, 124, 0.671);
-     margin-top: 20px;
-    border-radius: 50px;
-    padding: 15px 40px;
-    border-color: rgba(182, 182, 182, 0);
+  background-color:rgba(124, 124, 124, 0.671);
+  margin-top: 20px;
+  border-radius: 50px;
+  padding: 15px 40px;
+  border-color: rgba(182, 182, 182, 0);
 }
 
 .section3{
-background-color: #e4e4e4;
-height: 100vh;
-width: 100vw;
-padding: 0px;
-
+  background-color: #e4e4e4;
+  height: 100vh;
+  width: 100vw;
+  padding: 0px;
 }
 
 .section3 h1{
- color: rgb(182, 182, 182);
-     text-align: center; 
-     text-transform: lowercase;  
-     text-transform: capitalize;
-     font-size: 5.5em;   
+  color: rgb(182, 182, 182);
+  text-align: center; 
+  text-transform: lowercase;  
+  text-transform: capitalize;
+  font-size: 5.5em;   
 }
 
 .section3 h3{
- color: rgb(124, 124, 124);
-     text-align: center; 
-    font-size: 1.1em;
+  color: rgb(124, 124, 124);
+  text-align: center; 
+  font-size: 1.1em;
 }
 
 .buttonSection3{
-     background-color:rgb(167, 167, 167);
-     margin-top: 20px;
-    border-radius: 50px;
-    padding: 15px 40px;
-    border-color: rgba(182, 182, 182, 0);
-    padding-left: 20px;
-    padding-right: 20px;
+  background-color:rgb(167, 167, 167);
+  margin-top: 20px;
+  border-radius: 50px;
+  padding: 15px 40px;
+  border-color: rgba(182, 182, 182, 0);
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .colRightSection3{
-    justify-content: center;
-    /* padding-left: 6%; */
-    padding-right: 6%;
-    
+  justify-content: center;
+  padding-right: 6%;   
 }
 
 .colRightSection3 p{
-    text-align: center;
-    padding-bottom: 0px;
-    padding-top: 10px;
+  text-align: center;
+  padding-bottom: 0px;
+  padding-top: 10px;
 }
 
-.section3Img{
-    
-    align-items: center;
-    height: 100vh;
-    background-size: 140%;
-    background-position-x: center;
-    background-image: url(./Iron-3-blanca-perspective.png); 
-    overflow-x: hidden;
-    background-repeat: no-repeat;
-    
+.section3Img{  
+  align-items: center;
+  height: 100vh;
+  background-size: 140%;
+  background-position-x: center;
+  background-image: url(./Iron-3-blanca-perspective.png); 
+  overflow-x: hidden;
+  background-repeat: no-repeat;    
 }
 
 .paddingSection{
@@ -181,83 +166,53 @@ padding: 0px;
   background-color: #eeefee;
 }
 
-.section4{
-  
-  margin-top: 80px;
-align-items: center;
-width: 100vw;
-  height: 200vh;
-}
-
-.section4h1{
-   margin-top: 50px;
-   color: rgb(124, 124, 124);
-     text-align: center; 
-     font-size: 6.2vw;
-}
-
-.section4h3{
-    color: rgb(124, 124, 124);
-     text-align: center; 
-     font-size: 1.2em;
-     
-    
-}
-
 .corouselCss{
-    /* align-items: center; */
-    height: 100vh;
-    background-color: tomato;
+  height: 100vh;
+  background-color: tomato;
 }
 
 .carousel-inner {
-    height: 100%;
+  height: 100%;
 }
 
 div.carousel-item {
-    height: 100vh !important;
-    /* display: block; */
+  height: 100vh !important;
 }
 
 .carousel-text {
-     text-align: center;
-      align-items: center;
+  text-align: center;
+  align-items: center;
 }
 
 .carousel-caption {
-align-items: flex-start;
-text-align: center;
+  align-items: flex-start;
+  text-align: center;
 }
 
-
 .sr-only {
-    display: none;
+  display: none;
 }
 
 .carousel-caption h3{
-    font-size: 5em;
-    
+  font-size: 5em;    
 }
+
 div.carousel-caption{
-    margin-bottom: 30vh;
+  margin-bottom: 30vh;
 }
 
 .carousel {
-    background-color:#181814;
-
+  background-color:#1818
 }
 
 a.carousel-control-next{
-       width: 10%;
-       opacity: .4;
+  width: 10%;
+  opacity: .4;
 }
-
-
 
 *, *:before, *:after {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
- }
-
+}
 
 .mouse_scroll {
 	display: block;
@@ -266,7 +221,6 @@ a.carousel-control-next{
 	height:50px;
 	margin-top: 50px;
 }
-
 
 .m_scroll_arrows
 {
@@ -285,7 +239,6 @@ a.carousel-control-next{
   height: 16px;
 }
 
-
 .unu
 {
   margin-top: 1px;
@@ -293,9 +246,9 @@ a.carousel-control-next{
 
 .unu, .doi, .trei
 {
-    -webkit-animation: mouse-scroll 1s infinite;
-    -moz-animation: mouse-scroll 1s infinite;
-    animation: mouse-scroll 1s infinite;
+  -webkit-animation: mouse-scroll 1s infinite;
+  -moz-animation: mouse-scroll 1s infinite;
+  animation: mouse-scroll 1s infinite;
   
 }
 
@@ -350,12 +303,11 @@ a.carousel-control-next{
   margin: 5px auto;
   background: rgba(255, 255, 255, 0.692);
   position: relative;
-  
   height: 4px;
   width: 4px;
   border: 2px solid rgba(255, 255, 255, 0.692);
   -webkit-border-radius: 8px;
-          border-radius: 8px;
+  border-radius: 8px;
 }
 
 .wheel {
@@ -388,7 +340,7 @@ a.carousel-control-next{
 }
 @-o-keyframes mouse-wheel {
 
-   0% { top: 1px; }
+  0% { top: 1px; }
   25% { top: 2px; }
   50% { top: 3px;}
   75% { top: 2px;}
@@ -396,7 +348,7 @@ a.carousel-control-next{
 }
 @keyframes mouse-wheel {
 
-   0% { top: 1px; }
+  0% { top: 1px; }
   25% { top: 2px; }
   50% { top: 3px;}
   75% { top: 2px;}
@@ -428,3 +380,22 @@ a.carousel-control-next{
   100% { opacity: 1; }
 }
 
+.section4{
+  margin-top: 80px;
+  align-items: center;
+  width: 100vw;
+  height: 200vh;
+}
+
+.section4h1{
+  margin-top: 50px;
+  color: rgb(124, 124, 124);
+  text-align: center;  
+  font-size: 6.2vw;
+}
+
+.section4h3{
+  color: rgb(124, 124, 124);
+  text-align: center; 
+  font-size: 1.2em;  
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Badge, Button, Nav, Table } from 'react-bootstrap'
+import { Badge, Button, Table } from 'react-bootstrap'
 import BikeService from '../../../services/bike.service'
 import { Link } from 'react-router-dom'
 import './AdminBikes.css'

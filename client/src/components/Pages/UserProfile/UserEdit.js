@@ -22,14 +22,12 @@ export default class UserEdit extends Component {
     componentDidMount = () => {
 
         this.userService.findOneUser(this.props.match.params.id)
-
             .then(res => {
-                const { userName, email, password } = res.data.user
+                const { userName, email } = res.data.user
 
                 this.setState({
                     userName,
-                    email,
-                    password: "●●●●●●●●"
+                    email
                 })
             })
             .catch(err => console.log(err))
@@ -53,12 +51,13 @@ export default class UserEdit extends Component {
 
             .then(() => {
                 this.props.fetchUser()
-                // this.setState({
 
-                //     userName: "",
-                //     email: "",
-                //     password: ""
-                // })
+                this.setState({
+
+                    //     userName: "",
+                    //     email: "",
+                    password: ""
+                })
 
                 this.props.history.push('/perfil')
             })
@@ -71,11 +70,11 @@ export default class UserEdit extends Component {
         return (
 
             <Container>
-                <hr />
-                <hr />
-                <hr />
-                <hr />
-                <hr />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
 
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicName">
@@ -89,8 +88,8 @@ export default class UserEdit extends Component {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control onChange={(e) => this.handleChange(e)} name="password" value={this.state.password} type="password" />
+                        <Form.Label>New Password</Form.Label>
+                        <Form.Control onChange={(e) => this.handleChange(e)} name="password" value={this.state.password} type="password" placeholder='●●●●●●●●' />
                     </Form.Group>
 
                     <Button variant="primary" type="submit">

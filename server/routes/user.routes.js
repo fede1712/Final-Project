@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require("bcrypt")
+const bcryptSalt = 10
 
 const User = require('./../models/User.model')
 
@@ -22,17 +24,43 @@ router.get("/:id", (req, res) => {
 
 router.put("/:id", (req, res) => {
     const { userName, email, password } = req.body
-
-    console.log(req.body)
-
     const { id } = req.params;
+
+    console.log(id, req.body)
+
+    const query = {}
+
+    userName && userName.length > 0 && (query.userName = userName)
+    email && email.length > 0 && (query.email = email)
+    password && password.trim().length > 0 && (query.password = password)
+
+    console.log(id, query)
+
     User
-        .findByIdAndUpdate(id, { userName, email, password }, { new: true })
+        .findOne({ email })
         .then(user => {
-            req.session.currentUser = user
-            res.status(200).json({ user, message: "User edited" })
+
+            if (!user._id.equals(id)) {
+                res.status(400).json({ code: 400, message: 'Email already exixts' })
+                return
+            }
+
+            if (query.password) {
+                const salt = bcrypt.genSaltSync(bcryptSalt)
+                const hashPass = bcrypt.hashSync(query.password, salt)
+                query.password = hashPass
+            }
+            console.log(query)
+
+            User
+                .findByIdAndUpdate(id, query, { new: true })
+                .then(user => {
+                    req.session.currentUser = user
+                    res.status(200).json({ user, message: "User edited" })
+                })
+                .catch(err => res.status(500).json({ code: 500, message: "Error editing", err }))
         })
-        .catch(err => res.status(500).json({ code: 500, message: "Error editing", err }))
+        .catch(err => res.status(500).json({ code: 500, message: "Error editing total", err }))
 })
 
 router.delete("/:id", (req, res) => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Container, Carousel } from 'react-bootstrap'
+import { Row, Col, Carousel } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import "./Home.css"
 import imageCarousel1 from './carousel1.png'
@@ -29,15 +29,15 @@ export default function Home(props) {
                                 <Link className="btn btn-secondary buttonHero" variant="outline-secondary" to="/">Más información</Link>
                             </div>
 
-                            <div class="mouse_scroll">
+                            <div className="mouse_scroll">
 
-                                <div class="mouse">
-                                    <div class="wheel"></div>
+                                <div className="mouse">
+                                    <div className="wheel"></div>
                                 </div>
                                 <div>
-                                    <span class="m_scroll_arrows unu"></span>
-                                    <span class="m_scroll_arrows doi"></span>
-                                    <span class="m_scroll_arrows trei"></span>
+                                    <span className="m_scroll_arrows unu"></span>
+                                    <span className="m_scroll_arrows doi"></span>
+                                    <span className="m_scroll_arrows trei"></span>
                                 </div>
                             </div>
                         </Col>
@@ -92,13 +92,13 @@ export default function Home(props) {
 
 
             <Carousel>
-                <Carousel.Item class="carousel-text" interval={5000}>
+                <Carousel.Item className="carousel-text" interval={5000}>
                     <img
                         className="d-block w-100"
                         src={imageCarousel1}
                         alt="First slide"
                     />
-                    <Carousel.Caption class="carousel-caption">
+                    <Carousel.Caption className="carousel-caption">
                         <h3>Icono del diseño</h3>
                         <p>Todos los detalles se suman al aspecto icónico de Tricycle para un nuevo estándar de rendimiento.</p>
                     </Carousel.Caption>
@@ -137,7 +137,7 @@ export default function Home(props) {
             <div className="container-fluid section3">
 
                 <Row xs="2">
-                    <Col class="colSection3">
+                    <Col className="colSection3">
                         <div className="section3Img"></div>
                     </Col>
                     <Col className="colRightSection3 align-self-center">

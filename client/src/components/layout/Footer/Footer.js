@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Nav, Navbar, Row, Col, NavDropdown } from 'react-bootstrap'
 import Logo from './logo_tricycle.svg'
 import './Footer.css'
 
@@ -20,13 +19,13 @@ export default function Footer() {
                             </li>
                             <hr />
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Tricycle 3</a>
+                                <a className="nav-link" href="#" alt="cycle3">Tricycle 3</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Tricycle 4</a>
+                                <a className="nav-link" href="#" alt="cycle3">Tricycle 4</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Tricycle 4 RS</a>
+                                <a className="nav-link" href="#" alt="cycle3">Tricycle 4 RS</a>
                             </li>
                         </ul>
                     </div>

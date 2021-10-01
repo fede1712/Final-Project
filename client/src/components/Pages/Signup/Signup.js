@@ -30,6 +30,10 @@ class Signup extends Component {
     render() {
         return (
             <Container>
+                <br />
+                <br />
+                <br />
+                <br />
                 <Form onSubmit={this.handleFormSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Name</Form.Label>
