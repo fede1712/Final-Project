@@ -3,14 +3,15 @@ import axios from 'axios';
 class CartService {
     constructor() {
         this.instance = axios.create({
-            baseURL: `${process.env.REACT_APP_API_URL}/cart`
+            baseURL: `${process.env.REACT_APP_API_URL}/cart`,
+            withCredentials: true
         })
     }
 
-    findMyCart = (id) => this.instance.get(`/${id}`)
-    createCart = (data) => this.instance.post('/', data)
-    editCart = (id, data) => this.instance.put(`/${id}`, data)
-    deleteCart = (id) => this.instance.delete(`/${id}`)
+    findCart = () => this.instance.get('/')
+    pushCart = (productId) => this.instance.put('/push', { productId })
+    pullCart = (productId) => this.instance.put('/pull', { productId })
+    emptyCart = () => this.instance.put('/empty-cart')
 }
 
 export default CartService;

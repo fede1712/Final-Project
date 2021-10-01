@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
     //     .then(res => bikeId = res.map(elm => elm._id))
 
     Cart
-        .find({ userId: req.session.currentUser })
+        .find({ userId: req.session.currentUser._id })
         .populate('products')
         .then(cart => res.status(200).json({ cart, message: "Cart getted" }))
         .catch(err => res.status(500).json({ code: 500, message: "Error retrieving a cart", err }))
@@ -22,38 +22,33 @@ router.get("/", (req, res) => {
 
 router.put("/push", (req, res) => {
 
+    console.log(req.body)
+    const { productId } = req.body
+    console.log(req.session.currentUser._id, productId)
+
 
     Cart
-        .updateOne({ userId: req.session.currentUser }, { $push: { products: req.body.productId } }, { new: true })
-        .then(cart => res.status(200).json({ cart, message: "Cart edited" }))
-        .catch(err => res.status(500).json({ code: 500, message: "Error editing", err }))
+        .updateOne({ userId: req.session.currentUser._id }, { $push: { products: productId } }, { new: true })
+        .then(cart => res.status(200).json({ cart, message: "Add product to cart" }))
+        .catch(err => res.status(500).json({ code: 500, message: "Error adding product to cart", err }))
 })
 
 router.put('/pull', (req, res) => {
+    const { productId } = req.body
 
     Cart
-        .updateOne({ userId: req.session.currentUser }, { $pull: { products: req.body.productId } }, { new: true })
-        .then(cart => res.status(200).json({ cart, message: "Cart edited" }))
-        .catch(err => res.status(500).json({ code: 500, message: "Error editing", err }))
+        .updateOne({ userId: req.session.currentUser._id }, { $pull: { products: productId } }, { new: true })
+        .then(cart => res.status(200).json({ cart, message: "Remove one product from cart" }))
+        .catch(err => res.status(500).json({ code: 500, message: "Error remove one product from cart", err }))
 })
 
-router.put('/destroy-cart', (req, res) => {
+router.put('/empty-cart', (req, res) => {
 
     Cart
-        .updateMany({ new: true })
-        .then(cart => res.status(200).json({ cart, message: "Cart edited" }))
-        .catch(err => res.status(500).json({ code: 500, message: "Error editing", err }))
+        .updateOne({ userId: req.session.currentUser._id }, { $set: { products: [] } }, { new: true })
+        .then(cart => res.status(200).json({ cart, message: "Empty cart" }))
+        .catch(err => res.status(500).json({ code: 500, message: "Error empty cart", err }))
 })
 
-
-
-router.delete("/:id", (req, res) => {
-
-    const { id } = req.params
-    Cart
-        .findByIdAndRemove(id)
-        .then(() => res.status(200).json({ message: `Cart ${id} deleted` }))
-        .catch(err => res.status(500).json({ code: 500, message: "Error deleting cart", err }))
-})
 
 module.exports = router

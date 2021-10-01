@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import BikeService from '../../../services/bike.service'
+<<<<<<< HEAD
 import { Col, Row } from 'react-bootstrap';
+=======
+import CartService from '../../../services/cart.services';
+import { Col, Row } from 'react-bootstrap';
+import { Link, Button } from 'react-router-dom'
+>>>>>>> 03910afb5ef5650f7b1874aa6b9670f5717198f9
 import "./Bike.css"
 
 export default class Bike extends Component {
@@ -11,6 +17,18 @@ export default class Bike extends Component {
             bike: null
         }
         this.bikeService = new BikeService()
+        this.cartService = new CartService()
+    }
+
+    addBike(id) {
+        this.cartService.pushCart(id)
+            .then(res => {
+                this.setState({
+                    ...this.state,
+                    products: [res.data]
+                })
+            })
+            .catch(err => console.error(err))
     }
 
     componentDidMount() {
@@ -18,7 +36,7 @@ export default class Bike extends Component {
             .then(res => {
                 this.setState({
                     bike: res.data.bike
-                }, () => console.log(this.state.bike))
+                })
             })
             .catch(err => console.error(err))
     }
@@ -41,6 +59,7 @@ export default class Bike extends Component {
                 <section>
                     <h5>{this.state.bike?.description}</h5>
                 </section>
+                <button onClick={() => this.addBike(this.state.bike?._id)}>Añadir</button>
             </div>
             /* 
                     <Container>

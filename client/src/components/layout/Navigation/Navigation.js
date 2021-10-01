@@ -56,7 +56,7 @@ export default function Navigation(props) {
 
                     <Nav className="me-auto">
                         {/*  */}
-                        <Nav.Link as={Link} to="/614f04dfd96dd8ef1bbb3fc6"><span className="navSpan">Tricycle 3</span></Nav.Link>
+                        <Nav.Link as={Link} to="/61547d68a1b6776152378f8c"><span class="navSpan">Tricycle 3</span></Nav.Link>
                         {/* <Nav.Link as={Link} to={`/${elem.id}`}><span>{`${elem.name}`}</span></Nav.Link> */}
                         <Nav.Link as={Link} to="/614f04dfd96dd8ef1bbb3fc6"><span className="navSpan">Tricycle 4</span></Nav.Link>
                         <Nav.Link as={Link} to="/614f04dfd96dd8ef1bbb3fc6"><span className="navSpan">Tricycle 4 rs</span></Nav.Link>
