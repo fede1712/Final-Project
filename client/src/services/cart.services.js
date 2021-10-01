@@ -12,6 +12,7 @@ class CartService {
     pushCart = (productId) => this.instance.put('/push', { productId })
     pullCart = (productId) => this.instance.put('/pull', { productId })
     emptyCart = () => this.instance.put('/empty-cart')
+    buycart = () => this.instance.put('/buy')
 }
 
 export default CartService;

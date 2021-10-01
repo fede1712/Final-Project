@@ -20,24 +20,38 @@ export default class Cart extends Component {
 
 
     componentDidMount() {
+        this.refreshCart()
+    }
+
+    refreshCart() {
         this.cartService.findCart()
             .then(res => {
                 console.log(res.data.cart[0].products)
                 this.setState({
                     products: res.data.cart[0].products
                 })
+                this.totalCount()
             })
             .catch(err => console.error(err))
     }
 
-    totalCount = () => {
-        // let total = this.state.products.reduce((previousValue, currentValue) => {
-        //     console.log(currentValue.price)
-        //     return previousValue + currentValue.price
-        // })
-        // return total
+    totalCount() {
+        let total = this.state.products.reduce((previousValue, currentValue) => {
+            return previousValue + currentValue.price
+        }, 0)
+        this.setState({
+            totalPrice: total
+        })
+        return total
     }
 
+    pullOneProduct(id) {
+        this.cartService.pullCart(id)
+            .then(() => {
+                this.refreshCart()
+            })
+            .catch(err => console.error(err))
+    }
 
 
     render() {
@@ -46,10 +60,11 @@ export default class Cart extends Component {
                 {this.state.products ?
                     (
                         <div>
-                            {this.state.products?.map(elm =>
-                                <Card>
+                            {this.state.products?.map((elm, idx) =>
+                                <Card key={elm._id + idx}>
                                     <Card.Body>{elm.name}  </Card.Body>
                                     <p>{elm.price} €</p>
+                                    <button onClick={() => this.pullOneProduct(elm._id)}>Eliminar</button>
                                 </Card>
                             )}
                         </div >
@@ -57,7 +72,7 @@ export default class Cart extends Component {
                     :
                     <p>...Cargando</p>
                 }
-                <p>Total: {this.totalCount()}</p>
+                <p>Total: {this.state.totalPrice}</p>
             </div>
         )
     }
