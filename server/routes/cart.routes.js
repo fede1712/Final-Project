@@ -22,10 +22,8 @@ router.get("/", (req, res) => {
 
 router.put("/push", (req, res) => {
 
-    console.log(req.body)
-    const { productId } = req.body
-    console.log(req.session.currentUser._id, productId)
 
+    const { productId } = req.body
 
     Cart
         .updateOne({ userId: req.session.currentUser._id }, { $push: { products: productId } }, { new: true })
