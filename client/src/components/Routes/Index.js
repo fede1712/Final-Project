@@ -16,11 +16,12 @@ import AdminBikes from '../Pages/AdminBikes/AdminBikes.js';
 import BikeEdit from '../Pages/BikeEdit/BikeEdit.js';
 import AdminClients from '../Pages/AdminClients/AdminClients.js';
 import AdminStock from '../Pages/AdminStock/AdminStock.js';
+import UserEdit from '../Pages/UserProfile/UserEdit.js';
 import Cart from '../Pages/Cart/Cart.js';
 import AdminSales from '../Pages/AdminSales/AdminSales.js';
 
 
-const Routes = ({ storeUser, loggedUser }) => {
+const Routes = ({ storeUser, loggedUser, fetchUser }) => {
 
     return (
 
@@ -29,9 +30,10 @@ const Routes = ({ storeUser, loggedUser }) => {
             <Route exact path="/registro" render={(props) => <Signup {...props} />} />
             <Route exact path="/iniciar-sesion" render={(props) => <Login storeUser={storeUser} {...props} />} />
             <Route exact path="/" render={() => <Home />} />
-            <Route exact path="/perfil" render={() => loggedUser ? <UserProfile loggedUser={loggedUser} /> : <Redirect to="/iniciar-sesion" />} />
+            <Route exact path="/perfil" render={() => loggedUser ? <UserProfile fetchUser={fetchUser} loggedUser={loggedUser} /> : <Redirect to="/iniciar-sesion" />} />
             <Route exact path='/contacto' render={() => <Contact />} />
             <Route exact path='/sobre-nosotros' render={() => <AboutUs />} />
+            <Route exact path='/editar-perfil/:id' render={(props) => <UserEdit storeUser={storeUser} fetchUser={fetchUser} {...props} />} />
             <Route exact path='/carrito' render={(props) => <Cart {...props} />} />
 
             <Route exact path='/nueva-bici' render={(props) => <AdminPage><NewBike {...props} /></AdminPage>} />

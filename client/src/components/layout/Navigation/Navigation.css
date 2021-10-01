@@ -77,6 +77,22 @@
     text-transform: lowercase;
 }
 
+.navigation {
+    
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 9999;
+    transition: all .3s;
+}
+
+.navigation.sticky {
+    padding: 0;
+    background: rgb(41, 41, 41);
+}
 
 
 
