@@ -53,16 +53,16 @@ export default class UserEdit extends Component {
 
             .then(() => {
                 this.props.fetchUser()
-                this.setState({
+                // this.setState({
 
-                    userName: "",
-                    email: "",
-                    password: ""
-                })
+                //     userName: "",
+                //     email: "",
+                //     password: ""
+                // })
 
                 this.props.history.push('/perfil')
             })
-            .catch(err => console.error(err))
+            .catch(err => console.error(err, "error de fetchUser!"))
     }
 
 

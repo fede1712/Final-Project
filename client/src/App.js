@@ -19,6 +19,7 @@ export default class App extends Component {
 
   storeUser = (user) => this.setState({ loggedUser: user })
   fetchUser = () => {
+    console.log("pido el nuevo")
     this.authService.isloggedin()
       .then(res => this.storeUser(res.data))
       .catch(err => this.storeUser(null))

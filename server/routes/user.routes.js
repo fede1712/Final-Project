@@ -24,11 +24,14 @@ router.put("/:id", (req, res) => {
     const { userName, email, password } = req.body
 
     console.log(req.body)
-    
+
     const { id } = req.params;
     User
         .findByIdAndUpdate(id, { userName, email, password }, { new: true })
-        .then(user => res.status(200).json({ user, message: "User edited" }))
+        .then(user => {
+            req.session.currentUser = user
+            res.status(200).json({ user, message: "User edited" })
+        })
         .catch(err => res.status(500).json({ code: 500, message: "Error editing", err }))
 })
 
