@@ -1,31 +1,30 @@
 const express = require("express")
+const { find } = require("../models/Bill.model")
 const Bill = require("../models/Bill.model")
 const router = express.Router()
 
-
-router.get("/", (req, res) => {
+router.get("/all-bills", (req, res) => {
 
     Bill
         .find()
-        .then(() => res.status(200).json({ message: "Bill getted" }))
-        .catch(err => res.status(500).json({ code: 500, message: "Error retrieving a bill", err }))
+        .then(bills => res.status(200).json({ bills, message: "All bills getted" }))
+        .catch(error => res.status(500).json({ code: 500, message: "Error getting all bills", error }))
+
 })
 
-router.get("/:id", (req, res) => {
-    const { id } = req.params
-    Bill
-        .findById(id)
-        .then(bill => res.status(200).json({ bill, message: "Bill getted" }))
-        .catch(err => res.status(500).json({ code: 500, message: "Error retrieving a bill", err }))
-})
 
-router.post("/", (req, res) => {
+router.get("/:cartId", (req, res) => {
 
-    const bill = req.body
+    const { cartId } = req.params
+
     Bill
-        .create(bill)
-        .then(bill => res.status(200).json({ bill, message: "Bill created" }))
-        .catch(err => res.status(500).json({ code: 500, message: "Error creating bill", err }))
+        .find({ cartId: cartId })
+        .populate("cartId shopId")
+        .then(bill => {
+            res.status(200).json({ bill, message: "Bill getted" })
+        })
+        .catch(error => res.status(500).json({ code: 500, message: "Error getting Bill", error: error.message }))
+
 })
 
 module.exports = router

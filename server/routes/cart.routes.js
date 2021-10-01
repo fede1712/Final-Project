@@ -2,8 +2,7 @@ const express = require("express")
 const Cart = require("../models/Cart.model")
 const router = express.Router()
 const Bike = require('../models/Bike.model')
-
-
+const Bill = require("../models/Bill.model")
 
 
 router.get("/", (req, res) => {
@@ -22,10 +21,7 @@ router.get("/", (req, res) => {
 
 router.put("/push", (req, res) => {
 
-    console.log(req.body)
     const { productId } = req.body
-    console.log(req.session.currentUser._id, productId)
-
 
     Cart
         .updateOne({ userId: req.session.currentUser._id }, { $push: { products: productId } }, { new: true })
@@ -34,6 +30,7 @@ router.put("/push", (req, res) => {
 })
 
 router.put('/pull', (req, res) => {
+
     const { productId } = req.body
 
     Cart
@@ -47,6 +44,18 @@ router.put('/empty-cart', (req, res) => {
     Cart
         .updateOne({ userId: req.session.currentUser._id }, { $set: { products: [] } }, { new: true })
         .then(cart => res.status(200).json({ cart, message: "Empty cart" }))
+        .catch(err => res.status(500).json({ code: 500, message: "Error empty cart", err }))
+})
+
+router.put('/buy', (req, res) => {
+
+    const { shopId } = req.body
+
+    Cart
+        .find({ userId: req.session.currentUser._id })
+        .then(cart => Bill.create({ cartId: cart[0]._id, shopId }))
+        .then(() => Cart.updateOne({ userId: req.session.currentUser._id }, { $set: { products: [] } }, { new: true }))
+        .then((cart) => res.status(200).json({ cart, message: "Empty cart" }))
         .catch(err => res.status(500).json({ code: 500, message: "Error empty cart", err }))
 })
 

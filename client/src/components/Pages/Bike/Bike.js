@@ -1,12 +1,7 @@
 import React, { Component } from 'react'
 import BikeService from '../../../services/bike.service'
-<<<<<<< HEAD
-import { Col, Row } from 'react-bootstrap';
-=======
 import CartService from '../../../services/cart.services';
 import { Col, Row } from 'react-bootstrap';
-import { Link, Button } from 'react-router-dom'
->>>>>>> 03910afb5ef5650f7b1874aa6b9670f5717198f9
 import "./Bike.css"
 
 export default class Bike extends Component {
