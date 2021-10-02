@@ -161,14 +161,9 @@
   background-repeat: no-repeat;    
 }
 
-.paddingSection{
-  padding: 0px;
-  background-color: #eeefee;
-}
-
 .corouselCss{
   height: 100vh;
-  background-color: tomato;
+  background-color: rgb(29, 29, 29);
 }
 
 .carousel-inner {
@@ -202,7 +197,7 @@ div.carousel-caption{
 }
 
 .carousel {
-  background-color:#1818
+  background-color:rgba(39, 39, 39, 0.986)
 }
 
 a.carousel-control-next{
@@ -380,10 +375,26 @@ a.carousel-control-next{
   100% { opacity: 1; }
 }
 
+.imgApp{
+  width: 15vw;
+  margin-top: 1pc;
+}
+.imgAppMobile{
+  width: 25vw;
+}
+
+.appBox{
+  padding-top: 8pc;
+}
+
 .section4{
   margin-top: 80px;
   align-items: center;
-  width: 100vw;
+}
+
+.paddingSection{
+  padding: 0px;
+  background-color: #eeefee;
   height: 200vh;
 }
 
@@ -397,5 +408,119 @@ a.carousel-control-next{
 .section4h3{
   color: rgb(124, 124, 124);
   text-align: center; 
-  font-size: 1.2em;  
+  font-size: 1.2em; 
 }
+
+.buttonSection4{
+  background-color:rgb(114, 114, 114);
+  margin-top: 40px;
+  border-radius: 50px;
+  padding: 15px 40px;
+  border-color: rgba(182, 182, 182, 0);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.padding1Sec{
+  padding-top: 13.33333333vw;
+}
+
+.padding2Sec{
+  padding-top: 5.694444444vw;
+}
+
+.padding3Sec{
+  padding-top: 7.986111111vw;
+}
+
+.padding4Sec{
+  padding-top: 12.08333333vw;
+}
+
+.padding5Sec{
+  padding-top: 6.180555556vw;
+}
+
+.padding5Sec{
+  padding-top: 8vw;
+}
+
+
+/* PARALLAX */
+
+.reveal.fadeInUp {
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 1s;
+    transform: translateY(20px);
+}
+
+.reveal.fadeInUp.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal.fadeInRight {
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 1s;
+    transform: translateX(20px);
+}
+
+.reveal.fadeInRight.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.reveal.fadeInLeft {
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 1s;
+    transform: translateX(-20px);
+}
+
+.reveal.fadeInLeft.visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.reveal.fadeIn {
+    transition-property: opacity;
+    transition-duration: 1s;
+    opacity: 0;
+}
+
+.reveal.fadeIn.visible {
+    opacity: 1;
+}
+
+[data-delay='300ms'] {
+    transition-delay: 300ms;
+}
+
+[data-delay='400ms'] {
+    transition-delay: 400ms;
+}
+
+[data-delay='500ms'] {
+    transition-delay: 500ms;
+}
+
+[data-delay='600ms'] {
+    transition-delay: 600ms;
+}
+
+
+[data-delay='700ms'] {
+    transition-delay: 700ms;
+}
+
+
+[data-delay='800ms'] {
+    transition-delay: 800ms;
+}
+
+[data-delay='900ms'] {
+    transition-delay: 900ms;
+}
+
