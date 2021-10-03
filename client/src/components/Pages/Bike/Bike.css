@@ -54,7 +54,7 @@ object-fit: cover;
   background-image: url(./tricycle_banner_general.png);
   overflow-x: hidden;
   object-fit: cover;
-  filter:brightness(0.7);
+  filter:brightness(0.6);
 }
 
 .bikeSection4 {
@@ -245,7 +245,7 @@ input {
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding: 1em;
   font-weight: bold;
   cursor: pointer;
@@ -299,4 +299,104 @@ input:checked ~ .tab-content {
 
 .colorBackAccordion{
 background-color: #1e1e1e;
+}
+
+.continueBtn img{
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+background: #515151;
+background: -webkit-radial-gradient(center, #515151, #181818);
+background: -moz-radial-gradient(center, #515151, #181818);
+background: radial-gradient(ellipse at center, #515151, #181818);
+}
+
+/* .buyBotton{
+  width: 100%;
+  height: 15vh;
+  background-color: rgb(95, 95, 95);
+}
+
+.AppBack{
+  width: auto;
+  height: 50vh;
+  object-fit: cover;
+
+} */
+
+
+
+
+.colorBikesChange {
+  align-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(211, 211, 211);
+  margin-bottom:100px;
+}
+
+.colorBikesChange img{
+  width: auto;
+  height: 40%;
+}
+
+.colorBikesChange h1{
+  padding-top: 50px;
+  color: #1e1e1e;
+  text-align: center; 
+  font-size: 5.5em;
+}
+#totalcolors{
+  align-content: center;
+  justify-content: center;
+}
+.boton1{
+  width:30px;
+  height:30px;
+  background-color:#000000;
+  margin: 5px;
+  padding:10px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  font-size:11px;
+  line-height:32px;
+  text-transform: uppercase;
+  float:left;
+}
+.boton1:hover{
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  filter:alpha (opacity=50);
+}
+
+.boton2{
+  width:30px;
+  height:30px;
+  background-color: rgb(156, 156, 156);
+  margin: 5px;
+  padding:10px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  font-size:11px;
+  line-height:32px;
+  text-transform: uppercase;
+  float:left;
+}
+.boton2:hover{
+  opacity: 0.50;
+  -moz-opacity: .50;
+  filter:alpha (opacity=50);
+}
+.boton2 a{
+  color:rgb(156, 156, 156);
+  text-decoration:none;
+  padding:5px 5px 5px 0;
+}
+.backBoton{
+  background-color: rgb(228, 228, 228);
+  padding: 20px, 10px;
+  border-radius: 30px;
+  justify-content: space-around;
 }

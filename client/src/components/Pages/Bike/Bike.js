@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import BikeService from '../../../services/bike.service'
 import CartService from '../../../services/cart.services';
-import { Accordion, Col, Row } from 'react-bootstrap';
-import { Link, Button } from 'react-router-dom'
+import { Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 import "./Bike.css"
 import Brake from "./freno-Tricycle.png"
-import Pedal from "./pedal-Tricycle.png"
+// import App1 from "./AppManillar-1.png"
+// import Pedal from "./pedal-Tricycle.png"
+import BikeColor1 from "./bikes_tricycle_1.png"
+import BikeColor2 from "./bikes_tricycle_2.png"
+
 import Find1 from "./busca-bici1.png"
 import Find2 from "./busca-bici2.png"
 import Detection1 from "./deteccion-1.jpg"
@@ -76,6 +80,22 @@ export default class Bike extends Component {
 
     }
 
+    changeImageColor(e) {
+
+        e.stopPropagation()
+
+        let id = !e.target.id ? e.target.parentNode.id : e.target.id
+
+        let contentColor1 = document.getElementById("totalcolors").firstChild
+
+        if (id === "bikeColor1") {
+            contentColor1.src = BikeColor1
+        } else if (id === "bikeColor2") {
+            contentColor1.src = BikeColor2
+        }
+
+    }
+
 
     render() {
 
@@ -111,7 +131,7 @@ export default class Bike extends Component {
                             <Col md={12}>
 
                                 <div className="buyNow">
-                                    <Link className="buyButtomLink" to="/">Compra ya tu Tricycle 4</Link>
+                                    <Link className="buyButtomLink" to="/">Compra ya tu {this.state.bike?.name}</Link>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="white" className="bi bi-arrow-right arrow" viewBox="0 0 16 16" >
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                                     </svg>
@@ -153,7 +173,7 @@ export default class Bike extends Component {
                         <div className="col-3">
                             <h3>Batería extraíble</h3>
                             <div className="gradient"></div>
-                            <p>Deja que la batería sea lo único que lleves dentro para cargarla. Recargada y lista para encajar en su sitio.</p>
+                            <p>Deja que la batería sea lo único que lleves dentro para cargarla.Recargada y lista para encajar en su sitio.</p>
                         </div>
                         <div className="col-3">
                             <h3>Carga inalambrica</h3>
@@ -163,7 +183,7 @@ export default class Bike extends Component {
 
                         <Row >
                             <div className="col-5">
-                                <img className="imgBikeSection4details" src={Pedal} alt="Pedal" />
+                                <img className="imgBikeSection4details" src={this.state.bike?.imageDetail} alt="Pedal" />
                             </div>
 
                             <div className="col-7">
@@ -173,15 +193,18 @@ export default class Bike extends Component {
 
                         <div className="col-8">
                             <h2 className="fontSec4Bike">
-                                Acopla tu teléfono, cárgalo y la aplicación se sintoniza con la carretera como el único compañero que necesitas para mostrarte el camino. Llega rápido si tienes que hacerlo, o recorre más lejos si lo deseas. Tu batería no es la única con autonomía en este viaje. Tu mente también ha ganado su libertad.
+                                Acopla tu teléfono, cárgalo y la aplicación se sintoniza con la carretera como el único compañero que necesitas para mostrarte el camino.Llega rápido si tienes que hacerlo, o recorre más lejos si lo deseas.Tu batería no es la única con autonomía en este viaje.Tu mente también ha ganado su libertad.
                             </h2>
                         </div>
                         <div className="col-12 marginSection4">
-                            <h1 className="h1Size">Ride Awake</h1>
-                        </div>
-                    </Row>
 
+                            <h1 className="h1Size">Ride Awake</h1>
+
+                        </div>
+
+                    </Row>
                 </section>
+
 
                 <section>
                     <div className="sectionSecurity">
@@ -303,7 +326,7 @@ export default class Bike extends Component {
                                     <div class="col-md-11" for="chck1">
                                         <div class="row">
                                             <div class="col-md-6"><p>Precio</p></div>
-                                            <div class="col-md-6"><p>{this.state.bike?.price}</p></div>
+                                            <div class="col-md-6"><p>{this.state.bike?.price} €</p></div>
                                         </div>
                                         <hr />
                                         <div class="row">
@@ -439,7 +462,47 @@ export default class Bike extends Component {
 
                 </section>
 
-            </div>
+
+                <section className="colorBikesChange">
+                    <div>
+                        <h1>Elige el color de tu Trycicle</h1>
+
+                        <Row className="justify-content-center">
+
+                            <div className="row mb-10">
+                                <div className="backBoton col-1">
+
+
+                                    <div onClick={this.changeImageColor} id="bikeColor1" className="col-4 boton1"><a></a></div>
+
+                                    <div onClick={this.changeImageColor} id="bikeColor2" className="col-4 boton2"><a></a></div>
+                                </div>
+                                <div id="totalcolors">
+                                    <img className="imgBikeSection4details" src={BikeColor1} alt={BikeColor1} />
+                                </div>
+                            </div>
+
+
+
+
+
+
+                        </Row>
+
+                    </div>
+                </section >
+
+
+                <Col md={12}>
+
+                    <div className="buyNow">
+                        <Link className="buyButtomLink" to="/">Compra ya tu {this.state.bike?.name}</Link>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="white" className="bi bi-arrow-right arrow" viewBox="0 0 16 16" >
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                        </svg>
+                    </div>
+                </Col>
+            </div >
 
 
         )
