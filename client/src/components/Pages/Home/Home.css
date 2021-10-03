@@ -13,6 +13,10 @@
   text-transform: capitalize;
   font-size: 5.5em;
 }
+.heroImghH3{
+      text-align: center;
+      color: #b6b6b6;
+}
 
 .heroImg h4{
   color: rgb(182, 182, 182);
@@ -123,6 +127,10 @@
   text-transform: lowercase;  
   text-transform: capitalize;
   font-size: 5.5em;   
+}
+
+.section3 p{
+  color: rgb(63, 63, 63);
 }
 
 .section3 h3{

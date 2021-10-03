@@ -3,7 +3,7 @@
 .logoStyle {
   width: 170px;
   height: 100%;
-  filter: invert(50%);
+  color: white;
   margin-right: 40px;
   margin-left: 15px;
 }
@@ -34,7 +34,7 @@
 } 
 
 .navSpan {
-  color: rgb(134, 134, 134);
+  color: rgb(255, 255, 255);
   position: relative;
   display: block;
   cursor: pointer;
@@ -55,12 +55,12 @@
 }
 .navSpan:after {
   right: 2.5px;
-  background: rgb(134, 134, 134);
+  background: rgb(255, 255, 255);
   transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .navSpan:hover:before {
-  background: rgb(134, 134, 134);
+  background: rgb(255, 255, 255);
   width: 100%;
   transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
@@ -91,6 +91,9 @@
 .navigation.sticky {
   padding: 0;
   background: rgb(41, 41, 41);
+}
+.navbar-nav{
+  color: #fff;
 }
 
 

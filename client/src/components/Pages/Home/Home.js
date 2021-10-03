@@ -87,7 +87,7 @@ export default function Home(props) {
                         <Col md={{ span: 4, offset: 4 }}>
                             <div className="h1Css">
                                 <h1>Tricycle 4</h1>
-                                <h3>Un viaje suave y ágil.</h3>
+                                <h3 className="heroImghH3">Un viaje suave y ágil.</h3>
 
                             </div>
                             <div className="d-flex justify-content-center">
@@ -159,7 +159,7 @@ export default function Home(props) {
             <Carousel>
                 <Carousel.Item className="carousel-text" interval={5000}>
                     <img
-                        className="d-block w-100"
+                        className="d-block vw-100"
                         src={imageCarousel1}
                         alt="First slide"
                     />
@@ -170,14 +170,14 @@ export default function Home(props) {
                 </Carousel.Item>
                 <Carousel.Item interval={5000}>
                     <img
-                        className="d-block w-100"
+                        className="d-block vw-100"
                         src={imageCarousel2}
                         alt="Second slide"
                     />
                 </Carousel.Item>
                 <Carousel.Item interval={5000}>
                     <img
-                        className="d-block w-100"
+                        className="d-block vw-100"
                         src={imageCarousel3}
                         alt="Third slide"
                     />
