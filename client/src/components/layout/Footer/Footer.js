@@ -1,16 +1,39 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Logo from './logo_tricycle.svg'
+import Logo from './basic_bolt.svg'
 import './Footer.css'
+import ReactVivus from 'react-vivus'
 
 
 export default function Footer() {
+
+    const MyComponent = () => (
+        <ReactVivus
+
+            id="bolt"
+            option={{
+                file: Logo,
+                animTimingFunction: 'EASE',
+                type: 'oneByOne',
+            }}
+            style={{
+                height: '140px', width: '140px', display: "block",
+                margin: "auto", stroke: "currentColor", fill: "none"
+            }}
+            callback={console.log}
+        />
+    );
+
+
     return (
         < footer className="footerPadding">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-3 footer-column columCss alingLogo">
-                        <Link to="/" ><img className='logoStyle' src={Logo} alt='logo'></img></Link>
+                    <div className="col-md-3 footer-column columCss">
+                        {/* <Link to="/" ><img className='logoStyle' src={Logo} alt='logo'></img></Link> */}
+                        <div className="colorWhite alignLogo">
+                            < MyComponent />
+                        </div>
                     </div>
                     <div className="col-md-3 footer-column columCss">
                         <ul className="nav flex-column">
@@ -78,7 +101,6 @@ export default function Footer() {
                     </div>
                     <div className="col-md-12 footer-column columCss">
                         <ul className="nav flex-column hrSize">
-                            {/* <hr /> */}
                             <li className="copy">
                                 <p>Proyecto final de Fede, Sergio y Miguel. Ironhack © 2021 Tricycle</p>
                             </li>
@@ -87,7 +109,6 @@ export default function Footer() {
                 </div>
 
                 <div className="text-center"><i className="fas fa-ellipsis-h"></i></div>
-
             </div>
         </footer >
 

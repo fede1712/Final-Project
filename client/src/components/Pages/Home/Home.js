@@ -7,9 +7,74 @@ import imageCarousel2 from './carousel2.png'
 import imageCarousel3 from './carousel3.png'
 import imageCarousel4 from './carousel4.png'
 import imageCarousel5 from './carousel5.png'
+import imageApp1B from './imgApp/app-card-leaderboard_768x@2x.png'
+import imageApp2B from './imgApp/app-card-theft_768x@2x.png'
+import imageApp3B from './imgApp/app-card-analysis_768x@2x.png'
+import imageAppC from './imgApp/app--preview-homescreen_768x@2x.png'
+import imageApp1D from './imgApp/app-card-summary_768x@2x.png'
+import imageApp2D from './imgApp/app-card-weather_768x@2x.png'
+import imageApp1E from './imgApp/app-card-nav_768x@2x.png'
+import imageApp2E from './imgApp/app-card-battery_768x@2x.png'
+import imageApp1F from './imgApp/app-card-air-quality_768x@2x.png'
+import imageApp2F from './imgApp/app-card-calendar_768x@2x.png'
+import imageApp3F from './imgApp/app-card-analysis-chart_768x@2x.png'
 
 
 export default function Home(props) {
+
+    let mobilescreens = document.querySelectorAll('.mouse-inertia'), speedVertical = 0, speedHorizontal = 0, spaceLeft;
+
+    const applyScrollEffects = () => {
+
+
+        document.querySelectorAll('.parallax').forEach(elm => {
+
+            spaceLeft = elm.getBoundingClientRect().top
+
+            elm.dataset.axis === 'vertical' ? speedVertical = elm.dataset.speed * spaceLeft : speedVertical = 0
+            elm.dataset.axis === 'horizontal' ? speedHorizontal = elm.dataset.speed * spaceLeft : speedHorizontal = 0
+
+            elm.style.transform = `translate(${speedHorizontal}px, ${speedVertical}px)`
+        })
+
+        // Reveal effects
+        document.querySelectorAll('.reveal').forEach(elm => {
+            isInViewport(elm) ? elm.classList.add('visible') : elm.classList.remove('visible')
+        })
+
+
+        // Dynamic background generator
+        document.querySelectorAll('.change-background').forEach(elm => {
+            if (isInViewport(elm)) {
+                document.querySelector('.fake-bg').style.backgroundColor = elm.dataset.color
+                document.querySelector('.fake-bg').classList.add('on')
+            } else {
+                document.querySelector('.fake-bg').classList.remove('on')
+            }
+        })
+    }
+
+    document.addEventListener('scroll', applyScrollEffects)
+
+    // Scroll navigation links
+    const scrollButtons = document.querySelectorAll('.scrollto');
+    scrollButtons.forEach(elm => {
+        elm.onclick = e => {
+            e.preventDefault()
+            const href = elm.getAttribute('href')
+            document.querySelector(href).scrollIntoView({ behavior: 'smooth' })
+        }
+    })
+
+    // Object viewport detection
+    const isInViewport = el => {
+        const rect = el.getBoundingClientRect()
+        const vertInView = (rect.top <= window.innerHeight) && ((rect.top + rect.height) >= 0)
+        const horInView = (rect.left <= window.innerWidth) && ((rect.left + rect.width) >= 0)
+        return (vertInView && horInView)
+    }
+
+
 
     return (
 
@@ -137,16 +202,18 @@ export default function Home(props) {
             <div className="container-fluid section3">
 
                 <Row xs="2">
-                    <Col className="colSection3">
+                    <Col className="colSection3 reveal fadeInUp" data-delay="300s">
                         <div className="section3Img"></div>
                     </Col>
-                    <Col className="colRightSection3 align-self-center">
+                    <Col className="colRightSection3 align-self-center reveal fadeInUp" data-delay="700s">
                         <h1>Tricycle 3</h1>
                         <h3>La conducción más rápida de la ciudad obtiene una alta puntuación por su chasis deportivo y ágil.</h3>
-                        <div className="d-flex justify-content-center">
+                        <div className="d-flex justify-content-center reveal fadeInUp" data-delay="600s">
                             <Link className="btn btn-secondary buttonSection3" variant="outline-secondary" to="/">Más información</Link>
                         </div>
-                        <p>6 pagos sin comisiones o 1.990 €.<br /> Plazo de entrega 10 días.</p>
+                        <div className="reveal fadeInUp" data-delay="900s">
+                            <p>6 pagos sin comisiones o 1.990 €.<br /> Plazo de entrega 10 días.</p>
+                        </div>
                     </Col>
 
                 </Row>
@@ -157,31 +224,100 @@ export default function Home(props) {
 
                 <Row>
 
-                    <Col className="col-md-7 section4">
-                        <div>
-                            <h1 className="section4h1"> Es un gran día para pasear.</h1>
-                        </div>
+                    <Col >
+                        <Col >
+                            <div className="reveal fadeInUp" data-delay="400s">
+                                <h1 className="section4h1"> Es un gran día para pasear.</h1>
+                            </div>
 
-                        <div >
-                            <h3 className="section4h3">En el corazón de una Tricycle, está tu compañero de ruta. Conectado contigo y con cualquier camino que tomes.</h3>
-                        </div>
+                            <div className="reveal fadeInUp" data-delay="600s">
+                                <h3 className="section4h3">En el corazón de una Tricycle, está tu compañero de ruta. Conectado contigo y con cualquier camino que tomes.</h3>
+                            </div>
+
+                            <div className="d-flex justify-content-center reveal fadeInUp" data-delay="800s">
+                                <Link className="btn btn-secondary buttonSection4" variant="outline-secondary" to="/">Descubre nuestra App</Link>
+                            </div>
+
+                        </Col>
+
+
+
+                        <section className="">
+
+                            <div class="appBox">
+
+                                <Row className="d-flex justify-content-around">
+
+                                    <Col className="col-md-auto padding2Sec parallax" data-axis="vertical" data-speed=".3">
+                                        <div>
+                                            <img className="imgApp" src={imageApp1B} alt="App img 3" />
+                                        </div>
+                                        <div>
+                                            <img className="imgApp" src={imageApp2B} alt="App img 4" />
+                                        </div>
+                                        <div>
+                                            <img className="imgApp" src={imageApp3B} alt="App img 3" />
+                                        </div>
+
+
+                                    </Col>
+
+                                    <Col className="col-md-auto padding3Sec parallax" data-axis="vertical" data-speed=".2">
+                                        <div>
+                                            <img className="imgApp" src={imageApp1D} alt="App img 5" />
+                                        </div>
+                                        <div>
+                                            <img className="imgApp" src={imageApp2D} alt="App img 6" />
+                                        </div>
+
+                                    </Col>
+
+                                    <Col className="col-md-auto">
+                                        <div>
+                                            <img className="imgAppMobile" src={imageAppC} alt="App img Mobile" />
+                                        </div>
+
+                                    </Col>
+
+
+                                    <Col className="col-md-auto padding4Sec parallax" data-axis="vertical" data-speed=".2">
+                                        <div>
+                                            <img className="imgApp" src={imageApp1E} alt="App img 7" />
+                                        </div>
+                                        <div>
+                                            <img className="imgApp" src={imageApp2E} alt="App img 8" />
+                                        </div>
+
+                                    </Col>
+
+                                    <Col className="col-md-auto padding5Sec parallax" data-axis="vertical" data-speed=".3">
+                                        <div>
+                                            <img className="imgApp" src={imageApp1F} alt="App img 9" />
+                                        </div>
+                                        <div>
+                                            <img className="imgApp" src={imageApp2F} alt="App img 10" />
+                                        </div>
+                                        <div>
+                                            <img className="imgApp" src={imageApp3F} alt="App img 11" />
+                                        </div>
+
+                                    </Col>
+
+                                </Row>
+                            </div>
+                        </section>
                     </Col>
 
+
+
+
                 </Row>
 
-                <Row>
-                    <Col></Col>
-                    <Col></Col>
-                    <Col></Col>
-                    <Col></Col>
-                    <Col></Col>
-                    <Col></Col>
-                    <Col></Col>
-                </Row>
+
 
             </section>
 
-        </div>
+        </div >
 
 
     )

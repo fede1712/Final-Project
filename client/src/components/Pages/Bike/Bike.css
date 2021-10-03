@@ -1,59 +1,103 @@
-
-.heroImg{
-
-    height: 100vh;
-    background-size: 200%;
-    background-position-x: center;
-    overflow-x: hidden;
+.heroImgModel{
+  height: 100vh;
+  background-position-x: center;
+  overflow-x: hidden;
 }
- 
-.heroImg h1{
-    color: rgb(182, 182, 182);
-     text-align: center; 
-     text-transform: lowercase;  
-     text-transform: capitalize;
-     font-size: 5.5em;
+
+.heroImgModel h1{
+  color: rgb(255, 255, 255);
+  text-align: center; 
+  text-transform: lowercase;  
+  text-transform: capitalize;
+  font-size: 5.5em;
 }
-.heroImg h3{
-    color: rgb(182, 182, 182);
-     text-align: center; 
-     
+
+.heroImgModel h4{
+  color: rgb(255, 255, 255);
+  text-align: center;    
+}
+
+.bikeSection2{
+    align-items: flex-start;
+    width: 100%;
+    /* height: 150vh; */
     
 }
-
-.alingItems1{
-    height: 100vh;
-    align-items: center;
+.bikeSection2 h2{
+    margin-top: 80px;
+    margin-left: 50px;
+    margin-bottom: 80px;
+    font-size: 2.8vw;
+    line-height: 36px;
 }
 
- .buttonHero{
-     background-color:rgba(255, 255, 255, 0.24);
-     margin-top: 20px;
-    border-radius: 50px;
-    padding: 15px 40px;
-    border-color: rgba(182, 182, 182, 0);
+.bikeSection2 img{
+width: 100%;
+height: 80vh;
+object-fit: cover;
 }
 
-.buttomHeroAling{
-    justify-content: center;
+.bikeSection3 h2{
+    color: white;
+    margin-top: 80px;
+    margin-left: 50px;   
+    font-size: 1em;
 }
 
-.prueba{
-align-items: center;
-    height: 100vh;
-    background-color: chocolate;
+.bikeSection3{
+
+  align-items: flex-end;
+  background-color: rgb(255, 255, 255);
+  font-size: 2.8vw;
+  height: 100vh;
+  background-position-x: center;
+  background-image: url(./tricycle_banner_general.png);
+  overflow-x: hidden;
+  object-fit: cover;
+  filter:brightness(0.7);
 }
 
-.buyNow{
-    border-top: rgba(255, 255, 255, 0.295) 0.5px solid;
-   display: flex;
-   padding: 20px 0px;
-    background-color: rgba(61, 61, 61, 0.048);
-    transition: all .6s ease-in-out;
+.bikeSection4 {
+  background-color: #f6f6f6;
+  padding-top: 10vh;
+  width: 100%;
 }
 
-.buyNow:hover{
-/* opacity: 1; */
-background-color: rgba(34, 34, 34, 0.726);
-cursor: pointer;
+.h1Size {
+    margin-bottom: 60px;
+ font-size: 8vw;
+}
+
+.marginSection4{
+    margin-top: 50px;
+    margin-left: 30px;
+}
+
+.hrCss{
+    height: 2px;
+    width: 100%;
+}
+.colPadding4{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.gradient{
+  margin-top:10px;
+  margin-bottom:10px;
+  width:85%;
+  height:1px;
+  background-image:linear-gradient(to right, rgb(41, 41, 41), rgba(0,0,0,0));
+}
+.imgBikeSection4details {
+ width: 100%;
+ height: 70vh;
+ object-fit: cover;
+ padding-bottom: 50px;
+ margin-top: 50px;
+}
+
+.fontSec4Bike{
+    margin-top: 10vh;
+    margin-left: 50px;
 }

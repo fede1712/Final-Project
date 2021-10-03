@@ -40,11 +40,9 @@ footer {
      font-size: 14px;
 
    }
-   .alingLogo{
-     justify-content: left;
-     padding-left: 0px;
-     height: 0%;
-  
+   .alignLogo{
+     display: block;
+     margin: auto;
    }
 
    .columCss p {
@@ -66,4 +64,8 @@ footer {
   }
   .rrss a {
     padding-left: 10px;
+  }
+
+  .colorWhite{
+    color: white !important;
   }
