@@ -5,6 +5,7 @@ const authRouter = require('./auth.routes')
 const cartRouter = require('./cart.routes')
 const billRouter = require('./bill.routes')
 const userRouter = require('./user.routes')
+const uploadsRouter = require('./uploads.routes')
 
 
 router.use("/bikes", bikesRouter)
@@ -13,5 +14,6 @@ router.use("/auth", authRouter)
 router.use("/cart", cartRouter)
 router.use("/bill", billRouter)
 router.use("/user", userRouter)
+router.use("/uploads", uploadsRouter)
 
 module.exports = router;

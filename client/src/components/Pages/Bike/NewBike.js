@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Button, Form, Row, Col } from 'react-bootstrap'
+import { Button, Form, Col } from 'react-bootstrap'
 import BikeService from '../../../services/bike.service'
 import './NewBike.css'
+import UploadsService from '../../../services/uploads.service'
 
 export default class NewBike extends Component {
 
@@ -24,6 +25,29 @@ export default class NewBike extends Component {
             }
         }
         this.bikeService = new BikeService()
+    }
+
+    uploadService = new UploadsService()
+
+    handleFile = (e) => {
+        this.setState({
+            ...this.state,
+            isLoading: true
+        })
+
+        const uploadData = new FormData()
+        // uploadData.append('imageData', e.target.files[0])
+        uploadData.append('imageData', e.target.array("imgFile"))
+        this.uploadService.uploadImg(uploadData)
+            .then(res => {
+                console.log(res.data)
+                this.setState({
+                    imageModel: res.data.cloudinary_url,
+                    imageDetail: res.data.cloudinary_url,
+                    imageHero: res.data.cloudinary_url
+                })
+            })
+            .catch(err => alert("Fallo en la subida de imagenes", (err)))
     }
 
 
@@ -95,23 +119,40 @@ export default class NewBike extends Component {
 
                     <Form.Group className="mb-3" controlId="quantity">
                         <Form.Label>Stock: </Form.Label>
-                        <Form.Control onChange={(e) => this.handleChange(e)} name="quantity" value={this.state.quantity} type="number" placeholder="Introduce stock" />
+                        <Form.Control onChange={(e) => this.handleChange(e)} name="quantity" type="number" placeholder="Introduce stock" />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="imageModel">
+
+                    {/* <Form.Group className="mb-3" controlId="imageModel">
                         <Form.Label>Imagen modelo: </Form.Label>
                         <Form.Control onChange={(e) => this.handleChange(e)} name="imageModel" value={this.state.imageModel} type="text" placeholder="Introduce imagen modelo" />
+                    </Form.Group> */}
+
+                    <Form.Group className="mb-3" controlId="imageModel">
+                        <Form.Label>Imagen modelo: </Form.Label>
+                        <Form.Control onChange={(e) => this.handleFile(e)} name="imgFile" type="file" placeholder="Introduce imagen modelo" />
                     </Form.Group>
+
                 </Col>
                 <Col xs={6}>
 
-                    <Form.Group className="mb-3" controlId="imageDetail">
+                    {/* <Form.Group className="mb-3" controlId="imageDetail">
                         <Form.Label>Imagen detalles: </Form.Label>
                         <Form.Control onChange={(e) => this.handleChange(e)} name="imageDetail" value={this.state.imageDetail} type="text" placeholder="Introduce imagen de detalles" />
+                    </Form.Group> */}
+
+                    <Form.Group className="mb-3" controlId="imageDetail">
+                        <Form.Label>Imagen detalles: </Form.Label>
+                        <Form.Control onChange={(e) => this.handleFile(e)} name="imgFile" type="file" placeholder="Introduce imagen de detalles" />
                     </Form.Group>
+
+                    {/* <Form.Group className="mb-3" controlId="imageHero">
+                        <Form.Label>Imagen hero: </Form.Label>
+                        <Form.Control onChange={(e) => this.handleChange(e)} name="imageHero" value={this.state.imageHero} type="text" placeholder="Introduce imagen hero" />
+                    </Form.Group> */}
 
                     <Form.Group className="mb-3" controlId="imageHero">
                         <Form.Label>Imagen hero: </Form.Label>
-                        <Form.Control onChange={(e) => this.handleChange(e)} name="imageHero" value={this.state.imageHero} type="text" placeholder="Introduce imagen hero" />
+                        <Form.Control onChange={(e) => this.handleFile(e)} name="imgFile" value={this.state.imageHero} type="file" placeholder="Introduce imagen hero" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="batteryRange">

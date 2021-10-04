@@ -5,8 +5,6 @@ import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import "./Bike.css"
 import Brake from "./freno-Tricycle.png"
-// import App1 from "./AppManillar-1.png"
-// import Pedal from "./pedal-Tricycle.png"
 import BikeColor1 from "./bikes_tricycle_1.png"
 import BikeColor2 from "./bikes_tricycle_2.png"
 import BikeColor3 from "./bikes_tricycle_3.png"
@@ -22,6 +20,7 @@ import Details3 from "./details-3.png"
 import Details4 from "./details-4.png"
 import Details5 from "./details-5.png"
 import Details6 from "./details-6.png"
+
 
 
 export default class Bike extends Component {
@@ -328,14 +327,14 @@ export default class Bike extends Component {
                     <div className="col-11">
 
                         <div class="tab colorBackAccordion">
-                            <input type="checkbox" id="chck1" />
+                            <input className="input-acordion" type="checkbox" id="chck1" />
 
                             <label className="tab-label" for="chck1"><h4>Especificaciones generales</h4></label>
                             <hr />
                             <div class="container tab-content">
 
                                 <div class="row tab">
-                                    <input type="checkbox" id="chck1" />
+                                    <input className="input-acordion" type="checkbox" id="chck1" />
                                     <div class="col-md-11" for="chck1">
                                         <div class="row">
                                             <div class="col-md-6"><p>Precio</p></div>
@@ -387,14 +386,14 @@ export default class Bike extends Component {
                         </div>
 
                         <div class="tab">
-                            <input type="checkbox" id="chck2" />
+                            <input className="input-acordion" type="checkbox" id="chck2" />
 
                             <label className="tab-label" for="chck2"><h4>Bicicleta </h4></label>
                             <hr />
                             <div class="container tab-content">
 
                                 <div class="row tab colorBackAccordion">
-                                    <input type="checkbox" id="chck2" />
+                                    <input className="input-acordion" type="checkbox" id="chck2" />
                                     <div class="col-md-11" for="chck2">
                                         <div class="row">
                                             <div class="col-md-6"><p>Cuadro</p></div>
@@ -436,14 +435,14 @@ export default class Bike extends Component {
                         </div>
 
                         <div class="tab">
-                            <input type="checkbox" id="chck3" />
+                            <input className="input-acordion" type="checkbox" id="chck3" />
 
                             <label className="tab-label" for="chck3"><h4>Electrónica</h4></label>
                             <hr />
                             <div class="container tab-content">
 
                                 <div class="row tab colorBackAccordion">
-                                    <input type="checkbox" id="chck3" />
+                                    <input className="input-acordion" type="checkbox" id="chck3" />
                                     <div class="col-md-11" for="chck3">
                                         <div class="row">
                                             <div class="col-md-6"><p>Motor</p></div>
