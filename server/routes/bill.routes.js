@@ -1,5 +1,4 @@
 const express = require("express")
-const { find } = require("../models/Bill.model")
 const Bill = require("../models/Bill.model")
 const router = express.Router()
 

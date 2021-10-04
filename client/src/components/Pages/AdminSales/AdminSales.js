@@ -37,7 +37,7 @@ export default class AdminSales extends Component {
                             <thead>
                                 <tr>
                                     <th>Cliente</th>
-                                    <th>Dirección</th>
+                                    <th>Tienda</th>
                                     <th>Fecha</th>
                                     <th>Opciones</th>
                                 </tr>
@@ -49,8 +49,7 @@ export default class AdminSales extends Component {
                                         <td>{elm.shopId}</td>
                                         <td>{elm.date}</td>
                                         <td>
-                                            <Link to={`/editar-tienda/${elm._id}`}><Badge pill bg="warning">Editar</Badge></Link>{' '}
-                                            <span className='delete-btn' onClick={() => this.deleteShops(elm._id)}><Badge pill bg="danger">Eliminar</Badge></span>
+                                            <Link to={``}><Badge pill bg="primary">Ver factura</Badge></Link>{' '}
                                         </td>
                                     </tr>
                                 )}

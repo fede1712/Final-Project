@@ -26,8 +26,6 @@ router.put("/:id", (req, res) => {
     const { userName, email, password } = req.body
     const { id } = req.params;
 
-    console.log(id, req.body)
-
     const query = {}
 
     userName && userName.length > 0 && (query.userName = userName)
@@ -50,7 +48,6 @@ router.put("/:id", (req, res) => {
                 const hashPass = bcrypt.hashSync(query.password, salt)
                 query.password = hashPass
             }
-            console.log(query)
 
             User
                 .findByIdAndUpdate(id, query, { new: true })

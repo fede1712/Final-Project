@@ -11,7 +11,8 @@ export default class CompletePurchase extends Component {
         super(props)
         this.state = {
             bill: undefined,
-            shops: []
+            shops: [],
+            shop: ''
         }
 
         this.shopService = new ShopService()
@@ -31,19 +32,20 @@ export default class CompletePurchase extends Component {
                     shops: res.data
                 })
             })
+            .catch(err => console.log(err))
     }
+
     handleChange(e) {
+        console.log(e.target.name, e.target.value)
         const { value, name } = e.target
         this.setState({
-            ...this.state,
             [name]: value
         })
     }
 
     handleSubmit(e) {
         e.preventDefault()
-
-        this.cartService.buycart()
+        this.cartService.buycart(this.state.shop)
             .then(res => {
                 this.setState({
                     bill: res.data,
@@ -75,19 +77,15 @@ export default class CompletePurchase extends Component {
                 <br />
                 <br />
                 <br />
-
                 <h1>Pasarela de pago</h1>
-                <Form.Select onSubmit={this.handleSubmit} aria-label="Default select example">
-
-                    {this.state.shops?.map((elm) =>
-                        <option onChange={(e) => this.handleChange(e)} name="shop" value={elm.name}>{elm.name}</option>
-                    )}
-                </Form.Select>
-                <Button variant="primary" type='submit' onClick={(e) => this.handleSubmit(e)}>Finalizar Compra</Button>
-
-
-
-
+                <Form onSubmit={this.handleSubmit} >
+                    <Form.Select name="shop" onChange={(e) => this.handleChange(e)} aria-label="Default select example">
+                        {this.state.shops?.map((elm) =>
+                            <option defaultValue={elm._id[0]} value={elm._id}>{elm.name}</option>
+                        )}
+                    </Form.Select>
+                    <Button variant="primary" type='submit' onClick={(e) => this.handleSubmit(e)}>Finalizar Compra</Button>
+                </Form>
             </div >
         )
     }
