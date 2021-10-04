@@ -19,12 +19,12 @@ router.get("/all-bills", (req, res) => {
 })
 
 
-router.get("/:cartId", (req, res) => {
+router.get("/:billId", (req, res) => {
 
-    const { cartId } = req.params
+    const { billId } = req.params
 
     Bill
-        .find({ cartId: cartId })
+        .findById(billId)
         .populate({
             path: "cartId",
             populate: {

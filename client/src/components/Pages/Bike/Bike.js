@@ -328,14 +328,14 @@ export default class Bike extends Component {
                     <div className="col-11">
 
                         <div class="tab colorBackAccordion">
-                            <input type="checkbox" id="chck1" />
+                            <input className='input-acordion' type="checkbox" id="chck1" />
 
                             <label className="tab-label" for="chck1"><h4>Especificaciones generales</h4></label>
                             <hr />
                             <div class="container tab-content">
 
                                 <div class="row tab">
-                                    <input type="checkbox" id="chck1" />
+                                    <input className='input-acordion' type="checkbox" id="chck1" />
                                     <div class="col-md-11" for="chck1">
                                         <div class="row">
                                             <div class="col-md-6"><p>Precio</p></div>
@@ -387,14 +387,14 @@ export default class Bike extends Component {
                         </div>
 
                         <div class="tab">
-                            <input type="checkbox" id="chck2" />
+                            <input className='input-acordion' type="checkbox" id="chck2" />
 
                             <label className="tab-label" for="chck2"><h4>Bicicleta </h4></label>
                             <hr />
                             <div class="container tab-content">
 
                                 <div class="row tab colorBackAccordion">
-                                    <input type="checkbox" id="chck2" />
+                                    <input className='input-acordion' type="checkbox" id="chck2" />
                                     <div class="col-md-11" for="chck2">
                                         <div class="row">
                                             <div class="col-md-6"><p>Cuadro</p></div>
@@ -436,14 +436,14 @@ export default class Bike extends Component {
                         </div>
 
                         <div class="tab">
-                            <input type="checkbox" id="chck3" />
+                            <input className='input-acordion' type="checkbox" id="chck3" />
 
                             <label className="tab-label" for="chck3"><h4>Electrónica</h4></label>
                             <hr />
                             <div class="container tab-content">
 
                                 <div class="row tab colorBackAccordion">
-                                    <input type="checkbox" id="chck3" />
+                                    <input className='input-acordion' type="checkbox" id="chck3" />
                                     <div class="col-md-11" for="chck3">
                                         <div class="row">
                                             <div class="col-md-6"><p>Motor</p></div>

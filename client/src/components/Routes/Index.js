@@ -20,6 +20,7 @@ import UserEdit from '../Pages/UserProfile/UserEdit.js';
 import Cart from '../Pages/Cart/Cart.js';
 import AdminSales from '../Pages/AdminSales/AdminSales.js';
 import CompletePurchase from '../Pages/CompletePurchase/CompletePurchase'
+import SalesDetails from '../Pages/SalesDetails/SalesDetails.js';
 
 
 const Routes = ({ storeUser, loggedUser, fetchUser }) => {
@@ -50,6 +51,7 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
             <Route exact path='/lista-clientes' render={(props) => <AdminPage> <AdminClients {...props} /> </AdminPage>} />
             <Route exact path='/stock' render={(props) => <AdminPage> <AdminStock {...props} /> </AdminPage>} />
             <Route exact path='/ventas' render={(props) => <AdminPage> <AdminSales {...props} /> </AdminPage>} />
+            <Route exact path='/detalles-ventas/:id' render={(props) => <AdminPage> <SalesDetails {...props} /> </AdminPage>} />
 
 
             {/* admin routes */}
