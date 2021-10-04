@@ -124,10 +124,12 @@ background-color: #1e1e1e;
 .securityColums hr{
   width: 100%;
 }
-.securityColums h4, p {
+.securityColums h4 {
   color: white;
 }
-
+.securityColums p {
+  color: white;
+}
 .oculto {
   display:none;
 }
@@ -211,7 +213,7 @@ div.linkopacityDetails:hover img  {
     line-height: 36px;
 }
 
-input {
+.input-acordion {
   position: absolute;
   opacity: 0;
   z-index: -1;

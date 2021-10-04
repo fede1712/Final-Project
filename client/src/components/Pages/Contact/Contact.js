@@ -1,7 +1,10 @@
 import { Col, Row } from 'react-bootstrap'
 import './Contact.css'
 import ShopService from '../../../services/shop.service'
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 import React, { Component } from 'react'
+import Map from './Map'
+import Markers from './Marker'
 
 export default class Contact extends Component {
     constructor(props) {
@@ -15,13 +18,13 @@ export default class Contact extends Component {
     componentDidMount() {
         this.shopService.findShops()
             .then(shops => {
-                console.log(shops);
                 this.setState({
                     shop: shops.data
                 })
             })
 
     }
+
 
     render() {
         return (
@@ -41,7 +44,15 @@ export default class Contact extends Component {
                                 )}</ul>
                             </Col>
                             <Col>
-                                <div className='map' />
+                                <div className='map'>
+                                    <Map googleMapURL={process.env.REACT_APP_API_MAPS}
+                                        containerElement={<div style={{ height: '400px' }} />}
+                                        mapElement={<div style={{ height: '100%' }} />}
+                                        loadingElement={<p>Cargando</p>}
+                                        {...this.state}
+                                    />
+
+                                </div>
                             </Col>
                         </Row>
                     </>
