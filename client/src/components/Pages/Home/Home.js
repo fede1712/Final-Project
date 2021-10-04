@@ -56,15 +56,15 @@ export default function Home(props) {
 
     document.addEventListener('scroll', applyScrollEffects)
 
-    // Scroll navigation links
-    const scrollButtons = document.querySelectorAll('.scrollto');
-    scrollButtons.forEach(elm => {
-        elm.onclick = e => {
-            e.preventDefault()
-            const href = elm.getAttribute('href')
-            document.querySelector(href).scrollIntoView({ behavior: 'smooth' })
-        }
-    })
+    // // Scroll navigation links
+    // const scrollButtons = document.querySelectorAll('.scrollto');
+    // scrollButtons.forEach(elm => {
+    //     elm.onclick = e => {
+    //         e.preventDefault()
+    //         const href = elm.getAttribute('href')
+    //         document.querySelector(href).scrollIntoView({ behavior: 'smooth' })
+    //     }
+    // })
 
     // Object viewport detection
     const isInViewport = el => {
