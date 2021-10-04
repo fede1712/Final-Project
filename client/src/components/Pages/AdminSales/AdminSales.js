@@ -2,7 +2,7 @@ import { Badge, Table, Button } from 'react-bootstrap'
 import BillService from '../../../services/bill.service'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-
+import '../AdminClients/AdminClients.css'
 
 export default class AdminSales extends Component {
     constructor(props) {
@@ -32,10 +32,10 @@ export default class AdminSales extends Component {
         return (
             this.state.bill ?
                 (
-                    <>
-                        <Table striped bordered hover className="shop-table">
+                    <div className='table-wrap'>
+                        <Table striped bordered hover className="table-users" variant="dark">
                             <thead>
-                                <tr>
+                                <tr className='table-title'>
                                     <th>Cliente</th>
                                     <th>Tienda</th>
                                     <th>Fecha</th>
@@ -55,7 +55,7 @@ export default class AdminSales extends Component {
                                 )}
                             </tbody>
                         </Table>
-                    </>
+                    </div>
                 )
                 :
                 <p>...Cargando</p>

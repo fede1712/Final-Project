@@ -1,11 +1,21 @@
-.table-users {
+
+.table-wrap {
+    overflow-y: auto;	
     margin-top: 10%;
     margin-left: 5%;
     margin-right: 5%;
-    width: 90%;
+    height: 80vh;
 }
 
+.table-user{
+        border-collapse: collapse;
+        width: 100%;
+}
+.table-title{
+        position: sticky; 
+        top: 0; 
 
+}
 .delete-btn {
     cursor: pointer;
 }
