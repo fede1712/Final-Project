@@ -12,3 +12,9 @@
 .delete-btn {
     cursor: pointer;
 }
+
+.add-bike-btn{
+    margin-left: 5%;
+    padding: 20px;
+    text-decoration: none;
+}

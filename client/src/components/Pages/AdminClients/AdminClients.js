@@ -38,24 +38,27 @@ export default class AdminClients extends Component {
     render() {
         return (
             this.state.user ?
-                <Table striped bordered hover className='table-users'>
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.user?.map(elm =>
-                            <tr key={elm._id}>
-                                <td>{elm.userName}</td>
-                                <td>
-                                    <span className='delete-btn' onClick={() => this.deleteUser(elm._id)}><Badge pill bg="danger"> Eliminar </Badge></span>
-                                </td>
+                <div className='table-wrap'>
+
+                    <Table striped bordered hover className='table-users' variant="dark">
+                        <thead>
+                            <tr className='table-title'>
+                                <th>Nombre</th>
+                                <th>Opciones</th>
                             </tr>
-                        )}
-                    </tbody>
-                </Table>
+                        </thead>
+                        <tbody>
+                            {this.state.user?.map(elm =>
+                                <tr key={elm._id}>
+                                    <td>{elm.userName}</td>
+                                    <td>
+                                        <span className='delete-btn' onClick={() => this.deleteUser(elm._id)}><Badge pill bg="danger"> Eliminar </Badge></span>
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </Table>
+                </div>
                 :
                 <p>...Cargando</p>
         )

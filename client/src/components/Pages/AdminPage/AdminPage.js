@@ -3,7 +3,7 @@ import NavBarAdmin from './NavBarAdmin.js'
 import 'react-bootstrap'
 import 'bootstrap'
 import { Col, Container, Row } from 'react-bootstrap'
-
+import './NavBarAdmin.css'
 
 export default class AdminPage extends Component {
 
@@ -22,7 +22,7 @@ export default class AdminPage extends Component {
             <div>
                 <Container fluid>
                     <Row>
-                        <Col xs={2}>
+                        <Col xs={2} className='admin-navbar'>
                             <NavBarAdmin />
                         </Col>
 
