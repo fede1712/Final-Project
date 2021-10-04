@@ -29,7 +29,7 @@ export default class Bike extends Component {
             .catch(err => console.error(err))
     }
 
-    componentDidMount() {
+    refreshBike() {
         this.bikeService.findOneBike(this.props.match.params.bike)
             .then(res => {
                 this.setState({
@@ -37,6 +37,16 @@ export default class Bike extends Component {
                 })
             })
             .catch(err => console.error(err))
+    }
+
+    componentDidMount() {
+        this.refreshBike()
+    }
+
+    componentDidUpdate(preProps) {
+        if (preProps.match.params.bike === this.props.match.params.bike) {
+            this.refreshBike()
+        }
     }
 
     render() {

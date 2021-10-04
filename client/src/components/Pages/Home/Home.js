@@ -244,7 +244,7 @@ export default function Home(props) {
 
                         <section className="">
 
-                            <div class="appBox">
+                            <div className="appBox">
 
                                 <Row className="d-flex justify-content-around">
 
