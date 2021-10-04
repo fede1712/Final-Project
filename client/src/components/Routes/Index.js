@@ -1,7 +1,7 @@
 import React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Signup from '../Pages/Signup/Signup.js';
-import Login from '../Pages/Login/Login'
+import Login from '../Pages/Login/Login.js'
 import Home from '../Pages/Home/Home.js';
 import UserProfile from '../Pages/UserProfile/UserProfile.js';
 import Contact from '../Pages/Contact/Contact.js';
@@ -19,6 +19,7 @@ import AdminStock from '../Pages/AdminStock/AdminStock.js';
 import UserEdit from '../Pages/UserProfile/UserEdit.js';
 import Cart from '../Pages/Cart/Cart.js';
 import AdminSales from '../Pages/AdminSales/AdminSales.js';
+import CompletePurchase from '../Pages/CompletePurchase/CompletePurchase'
 
 
 const Routes = ({ storeUser, loggedUser, fetchUser }) => {
@@ -34,7 +35,8 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
             <Route exact path='/contacto' render={() => <Contact />} />
             <Route exact path='/sobre-nosotros' render={() => <AboutUs />} />
             <Route exact path='/editar-perfil/:id' render={(props) => <UserEdit storeUser={storeUser} fetchUser={fetchUser} {...props} />} />
-            <Route exact path='/carrito' render={(props) => <Cart {...props} />} />
+            <Route exact path='/carrito' render={(props) => loggedUser ? <Cart {...props} /> : <Redirect to='/' />} />
+            <Route exat path='/comprar' render={() => <CompletePurchase />} />
 
             <Route exact path='/nueva-bici' render={(props) => <AdminPage><NewBike {...props} /></AdminPage>} />
             <Route exact path='/editar-bici/:id' render={(props) => <AdminPage><BikeEdit {...props} /></AdminPage>} />
@@ -51,7 +53,7 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
 
 
             {/* admin routes */}
-            <Route exact path='/admin-panel' render={() => <AdminPage></AdminPage>} />
+            <Route exact path='/admin-panel' render={() => loggedUser ? <AdminPage></AdminPage> : <Redirect to='/' />} />
             {/* id paths */}
             <Route path='/:bike' render={(props) => <Bike {...props} />} />
         </Switch >

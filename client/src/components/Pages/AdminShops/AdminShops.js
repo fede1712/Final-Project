@@ -39,7 +39,7 @@ export default class AdminShops extends Component {
             this.state.shop ?
                 (
                     <>
-                        <Table striped bordered hover className="shop-table">
+                        <Table striped bordered hover className="shop-table" variant="dark">
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
@@ -60,8 +60,10 @@ export default class AdminShops extends Component {
                                 )
                                 }
                             </tbody>
-                            <Button className="add-shop" as={Link} variant="primary" size="lg" to='/nueva-tienda'>Nueva tienda</Button>
                         </Table>
+                        <Badge pill as={Link} to='/nueva-tienda' bg="primary" className='add-bike-btn'>
+                            Nueva tienda
+                        </Badge>
                     </>
                 )
                 :

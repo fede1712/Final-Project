@@ -46,7 +46,7 @@ export default class Bike extends Component {
             .catch(err => console.error(err))
     }
 
-    componentDidMount() {
+    refreshBike() {
         this.bikeService.findOneBike(this.props.match.params.bike)
             .then(res => {
                 this.setState({
@@ -99,6 +99,16 @@ export default class Bike extends Component {
     }
 
 
+    componentDidMount() {
+        this.refreshBike()
+    }
+
+    componentDidUpdate(preProps) {
+        if (preProps.match.params.bike === this.props.match.params.bike) {
+            this.refreshBike()
+        }
+    }
+
     render() {
 
         return (
@@ -135,7 +145,7 @@ export default class Bike extends Component {
                             <Col md={12}>
 
                                 <div className="buyNow">
-                                    <Link className="buyButtomLink" to="/">Compra ya tu {this.state.bike?.name}</Link>
+                                    <span as={Link} className="buyButtomLink" onClick={() => this.addBike(this.state.bike?._id)}>Compra ya tu Tricycle 4</span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="white" className="bi bi-arrow-right arrow" viewBox="0 0 16 16" >
                                         <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                                     </svg>
@@ -494,7 +504,7 @@ export default class Bike extends Component {
                         </Row>
 
                     </div>
-                </section >
+                </section>
 
                 <Col md={12}>
 

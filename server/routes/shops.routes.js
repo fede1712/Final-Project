@@ -11,12 +11,14 @@ router.get("/", (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: "Error retrieving shop", err }))
 })
 
+
 router.get("/:id", (req, res) => {
 
     Shop.findById(req.params.id)
         .then(shop => res.status(200).json(shop))
         .catch(err => res.status(500).json({ code: 500, message: "Error retrieving shop", err }))
 })
+
 
 router.post("/", (req, res) => {
 
@@ -27,6 +29,7 @@ router.post("/", (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: "Error creating shop", err }))
 })
 
+
 router.put("/:id", (req, res) => {
 
     const { id } = req.params;
@@ -34,6 +37,7 @@ router.put("/:id", (req, res) => {
         .then(shop => res.status(200).json({ shop, message: "Shop edited" }))
         .catch(err => res.status(500).json({ code: 500, message: "Error editing", err }))
 })
+
 
 router.delete("/:id", (req, res) => {
 

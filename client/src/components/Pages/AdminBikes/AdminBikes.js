@@ -38,36 +38,40 @@ export default class AdminBikes extends Component {
     render() {
         return (
             this.state.bike ?
-                <Table striped bordered hover className='table-bikes'>
-                    <thead>
-                        <tr>
-                            <th>Modelo</th>
-                            <th>Precio</th>
-                            <th>Velocidad</th>
-                            <th>Motor</th>
-                            <th>Batería</th>
-                            <th>Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.bike?.map(elm =>
-                            <tr key={elm._id}>
-                                <td>{elm.name}</td>
-                                <td>{elm.price}</td>
-                                <td>{elm.specifications.assistSpeed}</td>
-                                <td>{elm.specifications.motor}</td>
-                                <td>{elm.specifications.battery}</td>
-                                <td>
-                                    <Link to={`/editar-bici/${elm._id}`}><Badge pill bg="warning"> Editar </Badge></Link>{' '}
-                                    <span className='delete-btn' onClick={() => this.deleteBike(elm._id)}><Badge pill bg="danger"> Eliminar </Badge></span>
-                                </td>
+                <div>
+                    <Table striped bordered hover className='table-bikes' variant="dark">
+                        <thead>
+                            <tr>
+                                <th>Modelo</th>
+                                <th>Precio</th>
+                                <th>Velocidad</th>
+                                <th>Motor</th>
+                                <th>Batería</th>
+                                <th>Opciones</th>
                             </tr>
-                        )}
-                    </tbody>
-                    <Button className='add-bike' as={Link} variant="primary" to='/nueva-bici' size="lg">Nueva bicileta</Button>
-                </Table>
+                        </thead>
+                        <tbody>
+                            {this.state.bike?.map(elm =>
+                                <tr key={elm._id}>
+                                    <td>{elm.name}</td>
+                                    <td>{elm.price}</td>
+                                    <td>{elm.specifications.assistSpeed}</td>
+                                    <td>{elm.specifications.motor.substring(0, 23)}</td>
+                                    <td>{elm.specifications.battery}</td>
+                                    <td>
+                                        <Link to={`/editar-bici/${elm._id}`}><Badge pill bg="warning"> Editar </Badge></Link>{' '}
+                                        <span className='delete-btn' onClick={() => this.deleteBike(elm._id)}><Badge pill bg="danger"> Eliminar </Badge></span>
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </Table>
+                    <Badge pill as={Link} to='/nueva-bici' bg="primary" className='add-bike-btn'>
+                        Nueva bicicleta
+                    </Badge>
+                </div>
                 :
-                <p>...Chapassss</p>
+                <p>...Cargando</p>
         )
     }
 }

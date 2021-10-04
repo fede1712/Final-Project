@@ -1,3 +1,13 @@
 .admin-navbar{
     height: 100vh;
+    background-color: #2c3034;
+}
+.admin-link{
+    margin: 30%  3px 0 3px;
+}
+
+.admin-brand{
+    color: white;
+    text-decoration: none;
+    text-align: center;
 }

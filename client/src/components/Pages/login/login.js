@@ -1,8 +1,9 @@
 import { Container, Form, Button } from 'react-bootstrap'
 import 'bootstrap'
 import AuthService from '../../../services/auth.service'
-
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import './Login.css'
 
 export default class Login extends Component {
     constructor(props) {
@@ -32,25 +33,26 @@ export default class Login extends Component {
 
     render() {
         return (
-            <>
-                <Container>
-                    <Form onSubmit={this.handleFormSubmit}>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control name="email" value={this.state.email} onChange={this.handleInput} type="text" placeholder="Email" />
-                        </Form.Group>
+            <div className='login'>
+                <Form onSubmit={this.handleFormSubmit}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control name="email" value={this.state.email} onChange={this.handleInput} type="text" placeholder="Email" />
+                    </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Contraseña</Form.Label>
-                            <Form.Control name="pwd" value={this.state.pwd} onChange={this.handleInput} type="password" placeholder="Contraseña" />
-                        </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Contraseña</Form.Label>
+                        <Form.Control name="pwd" value={this.state.pwd} onChange={this.handleInput} type="password" placeholder="Contraseña" />
+                    </Form.Group>
 
-                        <Button variant="primary" type="submit">
-                            Entrar
-                        </Button>
-                    </Form>
-                </Container>
-            </>
+                    <p>¿No estas registrad@? <Link to='/registro'>Registrate</Link></p>
+
+                    <Button variant="primary" type="submit">
+                        Entrar
+                    </Button>
+                </Form>
+
+            </div>
         )
     }
 }

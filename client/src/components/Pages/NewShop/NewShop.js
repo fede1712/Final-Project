@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import ShopsService from '../../../services/shop.service'
+import './NewShop.css'
 
 export default class NewShop extends Component {
 
@@ -48,7 +49,7 @@ export default class NewShop extends Component {
 
     render() {
         return (
-            <Form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit} className='new-shop row'>
                 <Form.Group className="mb-3" controlId="name">
                     <Form.Label>Nombre de la tienda: </Form.Label>
                     <Form.Control onChange={(e) => this.handleChange(e)} name="name" value={this.state.name} type="text" placeholder="Introduce título" />
