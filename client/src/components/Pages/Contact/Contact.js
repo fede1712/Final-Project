@@ -29,13 +29,15 @@ export default class Contact extends Component {
                 (
                     <>
                         <div className='contact-title'>
-                            <h2><strong> Contacto</strong></h2>
+                            <h2><strong>Nuestras tiendas</strong></h2>
                         </div>
                         <Row className='contact'>
                             <Col>
-                                <h3>Nuestras tiendas</h3>
-                                <ul>{this.state.shop?.map(elm =>
-                                    <li>{elm.name}</li>
+                                <ul className='shop-list'>{this.state.shop?.map(elm =>
+                                    <li>{elm.name}{' '}--{' '}
+                                        <strong>{elm.address.direction}</strong>
+                                    </li>
+
                                 )}</ul>
                             </Col>
                             <Col>

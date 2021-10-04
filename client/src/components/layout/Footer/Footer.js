@@ -55,7 +55,7 @@ export default function Footer() {
                     <div className="col-md-3 footer-column columCss">
                         <ul className="nav flex-column">
                             <li className="nav-item">
-                                <span className="footer-title">Compania</span>
+                                <span className="footer-title">Compañia</span>
                             </li>
                             <hr />
                             <li className="nav-item">

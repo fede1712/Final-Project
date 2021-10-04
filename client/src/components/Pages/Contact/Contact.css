@@ -1,5 +1,6 @@
 .contact{
     padding: 0 10% 0 10%;
+    margin-bottom: 50px;
 }
 
 .map{
@@ -13,5 +14,14 @@
 .contact-title{
     text-align: center;
     margin-top: 10%;
-    margin-bottom: 0;
+    margin-bottom: 50px;
+}
+
+.shop-list{
+    list-style: none;
+    text-align: end;
+}
+
+.shop-list li{
+    margin-top: 20px;
 }
