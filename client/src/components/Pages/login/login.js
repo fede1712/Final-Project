@@ -35,12 +35,12 @@ export default class Login extends Component {
         return (
             <div className='login'>
                 <Form onSubmit={this.handleFormSubmit}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
                         <Form.Control name="email" value={this.state.email} onChange={this.handleInput} type="text" placeholder="Email" />
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Group controlId="formBasicPassword">
                         <Form.Label>Contraseña</Form.Label>
                         <Form.Control name="pwd" value={this.state.pwd} onChange={this.handleInput} type="password" placeholder="Contraseña" />
                     </Form.Group>
