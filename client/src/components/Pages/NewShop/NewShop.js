@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import ShopsService from '../../../services/shop.service'
+import Geocode from 'react-geocode'
 import './NewShop.css'
 
 export default class NewShop extends Component {
@@ -39,7 +40,7 @@ export default class NewShop extends Component {
                 this.setState({
                     name: "",
                     description: "",
-                    address: ""
+                    address: []
                 })
                 console.log(this.props)
                 this.props.history.push('/lista-tiendas')
@@ -47,6 +48,28 @@ export default class NewShop extends Component {
             .catch(err => console.error(err))
     }
 
+    googleApi() {
+        Geocode.setApiKey(process.env.REACT_APP_API_KEY_MAPS)
+        Geocode.setLanguage('es')
+        Geocode.setRegion('es')
+        Geocode.setLocationType("ROOFTOP")
+    }
+
+    getLatAndLnd() {
+        this.googleApi()
+        Geocode.fromAddress(this.state.address.direction)
+            .then(res => {
+                const { lat, lng } = res.results[0].geometry.location;
+                console.log(lat, lng)
+                this.setState({
+                    address: {
+                        ...this.state.address,
+                        coordinates: [lat, lng]
+                    }
+                })
+            })
+            .catch(err => console.error(err))
+    }
     render() {
         return (
             <Form onSubmit={this.handleSubmit} className='new-shop row'>
@@ -62,7 +85,7 @@ export default class NewShop extends Component {
 
                 <Form.Group className="mb-3" controlId="address">
                     <Form.Label>Dirección: </Form.Label>
-                    <Form.Control onChange={(e) => this.handleChange(e)} name="address" value={this.state.address.direction} type="text" placeholder="Introduce dirección" />
+                    <Form.Control onChange={(e) => (this.handleChange(e), this.getLatAndLnd())} name="address" value={this.state.address.direction} type="text" placeholder="Introduce dirección" />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">

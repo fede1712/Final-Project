@@ -19,6 +19,9 @@ module.exports = (app) => {
   // Services like heroku use something called a proxy and you need to add this to your server
   app.set("trust proxy", 1);
 
+  // controls a very specific header to pass headers from the frontend
+
+
   // In development environment the app logs
   app.use(logger("dev"));
 
