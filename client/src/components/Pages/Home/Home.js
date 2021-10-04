@@ -74,8 +74,6 @@ export default function Home(props) {
         return (vertInView && horInView)
     }
 
-
-
     return (
 
         <div>
@@ -154,8 +152,6 @@ export default function Home(props) {
 
             </section>
 
-
-
             <Carousel>
                 <Carousel.Item className="carousel-text" interval={5000}>
                     <img
@@ -197,7 +193,6 @@ export default function Home(props) {
                     />
                 </Carousel.Item>
             </Carousel>
-
 
             <div className="container-fluid section3">
 
@@ -317,8 +312,7 @@ export default function Home(props) {
 
             </section>
 
-        </div >
-
+        </div>
 
     )
 }

@@ -9,7 +9,7 @@ import Brake from "./freno-Tricycle.png"
 // import Pedal from "./pedal-Tricycle.png"
 import BikeColor1 from "./bikes_tricycle_1.png"
 import BikeColor2 from "./bikes_tricycle_2.png"
-
+import BikeColor3 from "./bikes_tricycle_3.png"
 import Find1 from "./busca-bici1.png"
 import Find2 from "./busca-bici2.png"
 import Detection1 from "./deteccion-1.jpg"
@@ -92,6 +92,8 @@ export default class Bike extends Component {
             contentColor1.src = BikeColor1
         } else if (id === "bikeColor2") {
             contentColor1.src = BikeColor2
+        } else if (id === "bikeColor3") {
+            contentColor1.src = BikeColor3
         }
 
     }
@@ -100,7 +102,9 @@ export default class Bike extends Component {
     render() {
 
         return (
+
             <div>
+
                 <section className="heroImgModel">
 
                     <div style={{ backgroundImage: `url(${this.state.bike?.imageHero})` }}>
@@ -204,7 +208,6 @@ export default class Bike extends Component {
 
                     </Row>
                 </section>
-
 
                 <section>
                     <div className="sectionSecurity">
@@ -462,20 +465,21 @@ export default class Bike extends Component {
 
                 </section>
 
-
                 <section className="colorBikesChange">
                     <div>
                         <h1>Elige el color de tu Trycicle</h1>
 
                         <Row className="justify-content-center">
 
-                            <div className="row mb-10">
-                                <div className="backBoton col-1">
+                            <div className="row">
+                                <div className="backBoton col-12">
+                                    <div clasName="Col-1 justify-content-center">
+                                        <div onClick={this.changeImageColor} id="bikeColor1" className="col-4 boton1"><a></a></div>
 
+                                        <div onClick={this.changeImageColor} id="bikeColor2" className="col-4 boton2"><a></a></div>
+                                        <div onClick={this.changeImageColor} id="bikeColor3" className="col-4 boton3"><a></a></div>
 
-                                    <div onClick={this.changeImageColor} id="bikeColor1" className="col-4 boton1"><a></a></div>
-
-                                    <div onClick={this.changeImageColor} id="bikeColor2" className="col-4 boton2"><a></a></div>
+                                    </div>
                                 </div>
                                 <div id="totalcolors">
                                     <img className="imgBikeSection4details" src={BikeColor1} alt={BikeColor1} />
@@ -492,7 +496,6 @@ export default class Bike extends Component {
                     </div>
                 </section >
 
-
                 <Col md={12}>
 
                     <div className="buyNow">
@@ -502,7 +505,8 @@ export default class Bike extends Component {
                         </svg>
                     </div>
                 </Col>
-            </div >
+
+            </div>
 
 
         )
