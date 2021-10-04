@@ -22,7 +22,9 @@ export default class AdminPage extends Component {
             <div>
                 <Container fluid>
                     <Row>
-                        <NavBarAdmin />
+                        <Col xs={2}>
+                            <NavBarAdmin />
+                        </Col>
 
                         {this.props.children ?
                             <Col xs={10}>{this.props.children}</Col>
