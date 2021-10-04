@@ -3,7 +3,7 @@ import 'bootstrap'
 import AuthService from '../../../services/auth.service'
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import './login.css'
+import './Login.css'
 
 export default class Login extends Component {
     constructor(props) {

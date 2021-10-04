@@ -8,7 +8,7 @@ export default class AdminSales extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            bill: undefined
+            bill: []
         }
         this.billService = new BillService()
     }
@@ -45,9 +45,9 @@ export default class AdminSales extends Component {
                             <tbody>
                                 {this.state.bill?.map(elm =>
                                     <tr key={elm._id}>
-                                        <td>{elm.cartId}</td>
-                                        <td>{elm.shopId}</td>
-                                        <td>{elm.date}</td>
+                                        <td>{elm.cartId.userId.userName}</td>
+                                        <td>{elm.shopId.name}</td>
+                                        <td>{elm.date.toString().substring(0, 10)}</td>
                                         <td>
                                             <Link to={``}><Badge pill bg="primary">Ver factura</Badge></Link>{' '}
                                         </td>
