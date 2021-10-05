@@ -27,6 +27,9 @@ const billSchema = new Schema({
         type: Date,
         required: true,
         default: Date.now
+    },
+    totalPrice: {
+        type: Number
     }
 
 }, {

@@ -68,7 +68,7 @@ router.put('/buy', (req, res) => {
 
     Cart
         .findOne({ userId: req.session.currentUser._id })
-        .then(cart => Bill.create({ userId: cart.userId, products: [...cart.products], shopId, cartId: cart._id }))
+        .then(cart => Bill.create({ userId: cart.userId, products: [...cart.products], shopId, totalPrice: cart.totalPrice, }))
         .then(() => Cart.updateOne({ userId: req.session.currentUser._id }, { $set: { products: [] } }, { new: true }))
         .then(cart => res.status(200).json({ cart, message: "Bill created" }))
         .catch(err => res.status(500).json({ code: 500, message: "Error empty cart", err }))
