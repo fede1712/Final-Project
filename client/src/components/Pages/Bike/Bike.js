@@ -480,25 +480,24 @@ export default class Bike extends Component {
 
                         <Row className="justify-content-center">
 
-                            <div className="row">
-                                <div className="backBoton col-12">
-                                    <div clasName="Col-1 justify-content-center">
+                            <Col xs={2} className="backBoton">
+
+                                <Row className="justify-content-center">
+                                    <Col xs={12} className='row justify-content-center'>
+
                                         <div onClick={this.changeImageColor} id="bikeColor1" className="col-4 boton1"><a></a></div>
 
                                         <div onClick={this.changeImageColor} id="bikeColor2" className="col-4 boton2"><a></a></div>
+
                                         <div onClick={this.changeImageColor} id="bikeColor3" className="col-4 boton3"><a></a></div>
 
-                                    </div>
-                                </div>
-                                <div id="totalcolors">
-                                    <img className="imgBikeSection4details" src={BikeColor1} alt={BikeColor1} />
-                                </div>
-                            </div>
+                                    </Col>
+                                </Row>
+                            </Col>
 
-
-
-
-
+                            <Col xs={12} id="totalcolors" className='row justify-content-center align-center'>
+                                <img className="imgBikeSection4details" src={BikeColor1} alt={BikeColor1} />
+                            </Col>
 
                         </Row>
 

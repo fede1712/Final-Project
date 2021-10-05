@@ -323,17 +323,19 @@ background: radial-gradient(ellipse at center, #515151, #181818);
 }
 
 .colorBikesChange img{
-  width: auto;
-  height: 40%;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
   margin-left: auto; 
   margin-right:auto;
 }
 
 .colorBikesChange h1{
   padding-top: 50px;
+  padding-bottom: 30px;
   color: #1e1e1e;
   text-align: center; 
-  font-size: 5.5em;
+  font-size: 4.5 em;
 }
 
 .boton1{
@@ -407,10 +409,15 @@ background: radial-gradient(ellipse at center, #515151, #181818);
 }
 
 .backBoton{
-  background-color: rgb(228, 228, 228);
-  padding: 20px, 10px;
+  background-color: rgba(228, 228, 228, 0.397);
+  
   border-radius: 30px;
   justify-content: space-around;
   display:inline-block;
   text-align:center;
+}
+
+#bolt svg path {
+  stroke: white;
+  stroke-width: 1px;
 }
