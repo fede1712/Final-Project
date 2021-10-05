@@ -18,6 +18,7 @@ export default class App extends Component {
   }
 
   storeUser = (user) => this.setState({ loggedUser: user })
+
   fetchUser = () => {
     this.authService.isloggedin()
       .then(res => this.storeUser(res.data))
@@ -28,9 +29,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <Navigation loggedUser={this.state.loggedUser} storeUser={this.storeUser} />
-          <Routes storeUser={this.storeUser} loggedUser={this.state.loggedUser} fetchUser={this.fetchUser} />
-          <Footer />
+          <Routes storeUser={this.storeUser} loggedUser={this.state.loggedUser} fetchUser={this.fetchUser} onAdminPanel={this.adminPanel} />
         </header>
       </div>
     )

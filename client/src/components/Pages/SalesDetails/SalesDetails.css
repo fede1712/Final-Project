@@ -1,8 +1,9 @@
 .bills {
     border: 2px solid grey;
-    width: 800px;
+    width: 650px;
+    height: 80vh;
     height: auto;
-    margin: 10% 15% 2% 15%;
+    margin: 5% 15% 2% 15%;
     padding-bottom: 150px;
 } 
 

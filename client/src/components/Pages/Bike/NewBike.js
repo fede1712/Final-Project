@@ -176,7 +176,7 @@ export default class NewBike extends Component {
                     </Form.Group>
                 </Col>
 
-                <Button variant="primary" type="submit">
+                <Button variant="secondary" type="submit">
                     Crear
                 </Button>
             </Form>

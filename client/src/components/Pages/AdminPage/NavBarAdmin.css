@@ -2,12 +2,41 @@
     height: 100vh;
     background-color: #2c3034;
 }
+
 .admin-link{
-    margin: 30%  3px 0 3px;
+    margin: 20%  3px 0 3px;
+}
+
+.admin-nav-list{
+    list-style: none;
 }
 
 .admin-brand{
     color: white;
     text-decoration: none;
     text-align: center;
+    padding-top: 10%;
+}
+
+.admin-brand:hover{
+    color: rgb(129, 129, 129);
+}
+
+.admin-link-setup{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    margin-top: 20px;
+}
+
+.admin-link-setup:hover{
+    color: rgb(129, 129, 129);
+    border-color: rgb(129, 129, 129);
+}
+
+.logo-admin{
 }

@@ -13,10 +13,6 @@ export default class AdminPage extends Component {
         this.state = {}
     }
 
-    componentDidMount = () => {
-
-    }
-
     render() {
         return (
             <div>
@@ -25,12 +21,11 @@ export default class AdminPage extends Component {
                         <Col xs={2} className='admin-navbar'>
                             <NavBarAdmin />
                         </Col>
-
                         {this.props.children ?
                             <Col xs={10}>{this.props.children}</Col>
                             :
                             <div className='col-8'>
-                                <p>No tengo hijo</p>
+                                <p>Quiero un hijo y no se cual hijo quiero</p>
                             </div>
                         }
                     </Row>

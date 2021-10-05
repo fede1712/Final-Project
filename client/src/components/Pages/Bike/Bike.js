@@ -20,6 +20,7 @@ import Details3 from "./details-3.png"
 import Details4 from "./details-4.png"
 import Details5 from "./details-5.png"
 import Details6 from "./details-6.png"
+import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
 
 
@@ -103,7 +104,7 @@ export default class Bike extends Component {
     }
 
     componentDidUpdate(preProps) {
-        if (preProps.match.params.bike === this.props.match.params.bike) {
+        if (preProps.match.params.bike !== this.props.match.params.bike) {
             this.refreshBike()
         }
     }
@@ -494,11 +495,6 @@ export default class Bike extends Component {
                                     <img className="imgBikeSection4details" src={BikeColor1} alt={BikeColor1} />
                                 </div>
                             </div>
-
-
-
-
-
 
                         </Row>
 
