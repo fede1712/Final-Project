@@ -39,3 +39,16 @@
 .cond {
     border-top: solid 2px #000;
 }
+
+.intro-bill {
+    padding: 25px;
+}
+
+.app {
+    margin: 0 25px 0 25px;
+}
+
+.logo-bill {
+    display: flex;
+    width: 100px;
+}

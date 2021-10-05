@@ -21,6 +21,7 @@ import Cart from '../Pages/Cart/Cart.js';
 import AdminSales from '../Pages/AdminSales/AdminSales.js';
 import CompletePurchase from '../Pages/CompletePurchase/CompletePurchase'
 import SalesDetails from '../Pages/SalesDetails/SalesDetails.js';
+import StockEdit from '../Pages/StockEdit/StockEdit.js';
 
 
 const Routes = ({ storeUser, loggedUser, fetchUser }) => {
@@ -39,19 +40,20 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
             <Route exact path='/carrito' render={(props) => loggedUser ? <Cart {...props} /> : <Redirect to='/' />} />
             <Route exat path='/comprar' render={() => <CompletePurchase />} />
 
-            <Route exact path='/nueva-bici' render={(props) => <AdminPage><NewBike {...props} /></AdminPage>} />
-            <Route exact path='/editar-bici/:id' render={(props) => <AdminPage><BikeEdit {...props} /></AdminPage>} />
-            <Route exact path='/nueva-tienda' render={(props) => <AdminPage><NewShop {...props} /></AdminPage>} />
-            <Route exact path='/editar-tienda/:id' render={(props) => <AdminPage><ShopEdit {...props} /> </AdminPage>} />
+            <Route exact path='/nueva-bici' render={(props) => loggedUser ? <AdminPage><NewBike {...props} /></AdminPage> : <Redirect to='/' />} />
+            <Route exact path='/editar-bici/:id' render={(props) => loggedUser ? <AdminPage><BikeEdit {...props} /></AdminPage> : <Redirect to='/' />} />
+            <Route exact path='/nueva-tienda' render={(props) => loggedUser ? <AdminPage><NewShop {...props} /></AdminPage> : <Redirect to='/' />} />
+            <Route exact path='/editar-tienda/:id' render={(props) => loggedUser ? <AdminPage><ShopEdit {...props} /> </AdminPage> : <Redirect to='/' />} />
+            <Route exact path='/editar-stock/:id' render={(props) => loggedUser ? <AdminPage> <StockEdit {...props} /> </AdminPage> : <Redirect to='/' />} />
 
 
 
-            <Route exact path='/lista-tiendas' render={(props) => <AdminPage><AdminShops {...props} /></AdminPage>} />
-            <Route exact path='/lista-bicis' render={(props) => <AdminPage> <AdminBikes {...props} /> </AdminPage>} />
-            <Route exact path='/lista-clientes' render={(props) => <AdminPage> <AdminClients {...props} /> </AdminPage>} />
-            <Route exact path='/stock' render={(props) => <AdminPage> <AdminStock {...props} /> </AdminPage>} />
-            <Route exact path='/ventas' render={(props) => <AdminPage> <AdminSales {...props} /> </AdminPage>} />
-            <Route exact path='/detalles-ventas/:id' render={(props) => <AdminPage> <SalesDetails {...props} /> </AdminPage>} />
+            <Route exact path='/lista-tiendas' render={(props) => loggedUser ? <AdminPage><AdminShops {...props} /></AdminPage> : <Redirect to='/' />} />
+            <Route exact path='/lista-bicis' render={(props) => loggedUser ? <AdminPage> <AdminBikes {...props} /> </AdminPage> : <Redirect to='/' />} />
+            <Route exact path='/lista-clientes' render={(props) => loggedUser ? <AdminPage> <AdminClients {...props} /> </AdminPage> : <Redirect to='/' />} />
+            <Route exact path='/stock' render={(props) => loggedUser ? <AdminPage> <AdminStock {...props} /> </AdminPage> : <Redirect to='/' />} />
+            <Route exact path='/ventas' render={(props) => loggedUser ? <AdminPage> <AdminSales {...props} /> </AdminPage> : <Redirect to='/' />} />
+            <Route exact path='/detalles-ventas/:id' render={(props) => loggedUser ? <AdminPage> <SalesDetails {...props} /> </AdminPage> : <Redirect to='/' />} />
 
 
             {/* admin routes */}
