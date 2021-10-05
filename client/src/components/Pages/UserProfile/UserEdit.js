@@ -2,6 +2,8 @@ import { Container, Button, Form } from 'react-bootstrap'
 import './UserEdit.css'
 import React, { Component } from 'react'
 import UserService from '../../../services/user.services'
+import ImgSignUp from "./edit-profile.png"
+
 
 
 
@@ -65,40 +67,80 @@ export default class UserEdit extends Component {
     }
 
 
+
+
     render() {
 
         return (
 
-            <Container>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
+            <div className="back-dark">
+                <div className='registro login-card justify-content-center'>
+                    <div className="card reset-margin">
+                        <div className="row no-gutters">
+                            <div className="col-md-4">
+                                <img src={ImgSignUp} className="card-img" alt={ImgSignUp} />
+                            </div>
+                            <div className="col-md-8 backColorForm">
 
-                <Form onSubmit={this.handleSubmit}>
-                    <Form.Group className="mb-3" controlId="formBasicName">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control onChange={(e) => this.handleChange(e)} name="userName" value={this.state.userName} type="text" placeholder={this.state.userName} />
-                    </Form.Group>
+                                <div className="col-10">
+                                    <Form onSubmit={this.handleSubmit}>
+                                        <Form.Group className="mb-3" controlId="formBasicName">
+                                            <Form.Label>Nombre</Form.Label>
+                                            <Form.Control onChange={(e) => this.handleChange(e)} name="userName" value={this.state.userName} type="text" placeholder={this.state.userName} />
+                                        </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control onChange={(e) => this.handleChange(e)} name="email" value={this.state.email} type="text" placeholder={this.state.email} />
-                    </Form.Group>
+                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                                            <Form.Label>Email</Form.Label>
+                                            <Form.Control onChange={(e) => this.handleChange(e)} name="email" value={this.state.email} type="text" placeholder={this.state.email} />
+                                        </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>New Password</Form.Label>
-                        <Form.Control onChange={(e) => this.handleChange(e)} name="password" value={this.state.password} type="password" placeholder='●●●●●●●●' />
-                    </Form.Group>
+                                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                                            <Form.Label>Nueva contraseña</Form.Label>
+                                            <Form.Control onChange={(e) => this.handleChange(e)} name="password" value={this.state.password} type="password" placeholder='********' />
+                                        </Form.Group>
+                                        <Button variant=" btn btn-secondary button-logIn" type="submit">
+                                            Guardar
+                                        </Button>
+                                    </Form>
+                                </div>
 
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            </Container>
+
+                {/* 
+                <Container>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+
+                    <Form onSubmit={this.handleSubmit}>
+                        <Form.Group className="mb-3" controlId="formBasicName">
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control onChange={(e) => this.handleChange(e)} name="userName" value={this.state.userName} type="text" placeholder={this.state.userName} />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control onChange={(e) => this.handleChange(e)} name="email" value={this.state.email} type="text" placeholder={this.state.email} />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>New Password</Form.Label>
+                            <Form.Control onChange={(e) => this.handleChange(e)} name="password" value={this.state.password} type="password" placeholder='********' />
+                        </Form.Group>
+
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+                    </Form>
+
+                </Container> */}
+            </div>
         )
-
     }
 }

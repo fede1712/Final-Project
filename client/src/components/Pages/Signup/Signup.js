@@ -3,7 +3,7 @@ import { Container, Form, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import AuthService from '../../../services/auth.service'
 import './Signup.css'
-import ImgSignUp from "./try-contacto.png"
+import ImgSignUp from "./login.png"
 
 
 class Signup extends Component {
@@ -32,88 +32,47 @@ class Signup extends Component {
     }
 
 
-    //  <div className="row mb-12">
-
-    //     <div className="col-5 signImg">
-    //         {/* <img src={ImgSignUp} alt={ImgSignUp} /> */}
-    //     </div>
-
-    //     <div className="col-7">
-    //         <Form onSubmit={this.handleFormSubmit}>
-    //             <Form.Group className="mb-3" controlId="formBasicName">
-    //                 <Form.Label>Name</Form.Label>
-    //                 <Form.Control name="userName" value={this.state.userName} onChange={this.handleInput} type="text" placeholder="Enter name" />
-    //             </Form.Group>
-
-    //             <Form.Group className="mb-3" controlId="formBasicEmail">
-    //                 <Form.Label>Email</Form.Label>
-    //                 <Form.Control name="email" value={this.state.email} onChange={this.handleInput} type="text" placeholder="Enter email" />
-    //             </Form.Group>
-
-    //             <Form.Group className="mb-3" controlId="formBasicPassword">
-    //                 <Form.Label>Password</Form.Label>
-    //                 <Form.Control name="pwd" value={this.state.password} onChange={this.handleInput} type="password" placeholder="Password" />
-    //             </Form.Group>
-
-    //             <p>¿Estas ya registrad@? <Link to='/iniciar-sesion'>Inicia sesión</Link></p>
-
-    //             <Button variant="primary" type="submit">
-    //                 Submit
-    //             </Button>
-    //         </Form>
-    //     </div>
-    // </div>
-
     render() {
         return (
-            <div className='registro login-card'>
-                <div className="card mb-3">
-                    <div className="row no-gutters">
-                        <div className="col-md-4">
-                            <div className="card-img"></div>
-                            {/* <img src={ImgSignUp} className="card-img" alt={ImgSignUp} /> */}
-                        </div>
-                        <div className="col-md-8 backColorForm">
-
-                            <div className="col-7">
-                                <Form onSubmit={this.handleFormSubmit}>
-                                    <Form.Group className="mb-3" controlId="formBasicName">
-                                        <Form.Label>Name</Form.Label>
-                                        <Form.Control name="userName" value={this.state.userName} onChange={this.handleInput} type="text" placeholder="Enter name" />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3" controlId="formBasicName">
-                                        <Form.Label>Name</Form.Label>
-                                        <Form.Control name="userName" value={this.state.userName} onChange={this.handleInput} type="text" placeholder="Enter name" />
-                                    </Form.Group>
-
-                                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                                        <Form.Label>Email</Form.Label>
-                                        <Form.Control name="email" value={this.state.email} onChange={this.handleInput} type="text" placeholder="Enter email" />
-                                    </Form.Group>
-
-                                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                                        <Form.Label>Password</Form.Label>
-                                        <Form.Control name="pwd" value={this.state.password} onChange={this.handleInput} type="password" placeholder="Password" />
-                                    </Form.Group>
-
-                                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                                        <Form.Label>Password</Form.Label>
-                                        <Form.Control name="pwd" value={this.state.password} onChange={this.handleInput} type="password" placeholder="Password" />
-                                    </Form.Group>
-
-                                    <p>¿Estas ya registrad@? <Link to='/iniciar-sesion'>Inicia sesión</Link></p>
-
-                                    <Button variant="primary" type="submit">
-                                        Submit
-                                    </Button>
-                                </Form>
+            <div className="back-dark">
+                <div className='registro login-card justify-content-center'>
+                    <div className="card reset-margin">
+                        <div className="row no-gutters">
+                            <div className="col-md-4">
+                                <img src={ImgSignUp} className="card-img" alt={ImgSignUp} />
                             </div>
+                            <div className="col-md-8 backColorForm">
 
+                                <div className="col-10">
+                                    <Form onSubmit={this.handleFormSubmit}>
+                                        <Form.Group className="mb-3" controlId="formBasicName">
+                                            <Form.Label>Nombre</Form.Label>
+                                            <Form.Control name="userName" value={this.state.userName} onChange={this.handleInput} type="text" placeholder="Enter name" />
+                                        </Form.Group>
+
+                                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                                            <Form.Label>Email</Form.Label>
+                                            <Form.Control name="email" value={this.state.email} onChange={this.handleInput} type="text" placeholder="Enter email" />
+                                        </Form.Group>
+
+                                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                                            <Form.Label>Contraseña</Form.Label>
+                                            <Form.Control name="pwd" value={this.state.password} onChange={this.handleInput} type="password" placeholder="Password" />
+                                        </Form.Group>
+
+                                        <p>¿Estas ya registrad@? <Link to='/iniciar-sesion'>Inicia sesión</Link></p>
+
+                                        <Button variant=" btn btn-secondary button-logIn" type="submit">
+                                            Aceptar
+                                        </Button>
+                                    </Form>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         )
     }
 }

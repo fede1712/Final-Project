@@ -25,7 +25,7 @@
 
 .alingItems{
   height: 100vh;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .buttonHero{

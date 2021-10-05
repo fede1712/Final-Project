@@ -1,7 +1,5 @@
  .registro {
-    background-color: rgb(41, 41, 41);
-    margin: 10% 30% 10% 30%;
-    
+    margin: 10% auto;    
 } 
 
 .card {
@@ -10,40 +8,30 @@
 
 .card-img{
   object-fit: cover;
+  width: 100%;
+  height: 100%;
   background-image: "./try-contacto.png";
 }
 
 .login-card {
-  width: 60vw;
-  height: auto;
+  width: 50vw;
+  
   border: 0;
   border-radius: 27.5px;
   box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
   overflow: hidden; }
 
   .backColorForm{
-    background-color: rgb(41, 41, 41);
+    padding: 15px 0;
+    padding-left: 5%;
   }
 
-.form-control {
-  
-  background-color: transparent !important;
-  border: 0px solid !important;
-  border-radius: 0 !important;
-  background-image: none !important;
-  border-bottom-color: rgb(255, 255, 255) !important;
-  border-bottom-style: solid !important;
-  border-bottom-width: 1px !important;
-  box-shadow: none !important;
-  display: block !important;
-  font-size: 15px !important;
-  height: 45px !important;
-  line-height: 1!important;
-  padding: 5px 20px 20px 14px;
-  width: 100%;
-  color: white;
-}
+  .reset-margin{
+    padding: 0px;
+  }
 
-.form-label{
-  color: white;
-}
+  .button-logIn{
+    background-color: rgb(133, 133, 133);
+    border-radius: 50px;
+    padding: 10px 40px;
+  }
