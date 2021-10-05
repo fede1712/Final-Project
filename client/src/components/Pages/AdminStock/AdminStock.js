@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Badge, Button, Table } from 'react-bootstrap'
 import BikeService from '../../../services/bike.service'
 import { Link } from 'react-router-dom'
+import './AdminStock.css'
 
 export default class AdminStock extends Component {
 
@@ -32,8 +33,9 @@ export default class AdminStock extends Component {
         return (
             this.state.bike ?
                 <div>
+                    <h2 className='admin-title'>Stock</h2>
 
-                    <Table striped bordered hover className='table-bikes' variant="dark">
+                    <Table striped bordered hover className='stock-table' variant="dark">
                         <thead>
                             <tr>
                                 <th>Modelo</th>
@@ -47,15 +49,13 @@ export default class AdminStock extends Component {
                                     <td>{elm.name}</td>
                                     <td>{elm.quantity}</td>
                                     <td>
-                                        <Link to={`/editar-bici/${elm._id}`}><Badge pill bg="warning"> Editar </Badge></Link>{' '}
+                                        <Link to={`/editar-stock/${elm._id}`}><Badge pill bg="warning"> Editar </Badge></Link>{' '}
                                     </td>
                                 </tr>
                             )}
                         </tbody>
                     </Table>
-                    <Badge pill as={Link} to='/nueva-bici' bg="primary" className='add-bike-btn'>
-                        Nueva bicileta
-                    </Badge>
+                    <Button as={Link} to='/nueva-bici' bg="secondary" className='add-bike-btn' variant="secondary">Nueva bicileta</Button>
                 </div>
                 :
                 <p>...Cargando</p>

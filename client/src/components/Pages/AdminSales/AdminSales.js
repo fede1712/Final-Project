@@ -8,7 +8,7 @@ export default class AdminSales extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            bill: []
+            bill: [],
         }
         this.billService = new BillService()
     }
@@ -20,7 +20,7 @@ export default class AdminSales extends Component {
     refreshBills() {
         this.billService.findBills()
             .then(bills => {
-                console.log(bills.data)
+                console.log(bills.data.bills)
                 this.setState({
                     bill: bills.data.bills
                 })
@@ -39,17 +39,21 @@ export default class AdminSales extends Component {
                                     <th>Cliente</th>
                                     <th>Productos</th>
                                     <th>Tienda</th>
+                                    <th>Dirección</th>
                                     <th>Fecha</th>
+                                    {/* <th>Total factura</th> */}
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {this.state.bill?.map(elm =>
                                     <tr key={elm._id}>
-                                        <td>{elm.cartId.userId.userName}</td>
-                                        <td><ul>{elm.cartId.products.map(elm => <li>{elm.name}</li>)}</ul></td>
+                                        <td>{elm.userId.userName}</td>
+                                        <td><ul>{elm.products.map(elm => <p>- {elm.name}</p>)}</ul></td>
                                         <td>{elm.shopId.name}</td>
+                                        <td>{elm.shopId.address.direction}</td>
                                         <td>{elm.date.toString().substring(0, 10)}</td>
+                                        {/* <td>{this.totalCount()}</td> */}
                                         <td>
                                             <Link to={`/detalles-ventas/${elm._id}`}><Badge pill bg="primary">Ver factura</Badge></Link>
                                         </td>
@@ -58,6 +62,7 @@ export default class AdminSales extends Component {
                             </tbody>
                         </Table>
                     </div>
+
                 )
                 :
                 <p>...Cargando</p>

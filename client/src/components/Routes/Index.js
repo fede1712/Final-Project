@@ -21,6 +21,9 @@ import Cart from '../Pages/Cart/Cart.js';
 import AdminSales from '../Pages/AdminSales/AdminSales.js';
 import CompletePurchase from '../Pages/CompletePurchase/CompletePurchase'
 import SalesDetails from '../Pages/SalesDetails/SalesDetails.js';
+import Navigation from '../layout/Navigation/Navigation.js';
+import Footer from '../layout/Footer/Footer.js';
+import StockEdit from '../Pages/StockEdit/StockEdit.js';
 
 
 const Routes = ({ storeUser, loggedUser, fetchUser }) => {
@@ -28,23 +31,46 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
     return (
 
         <Switch>
-            <Route exact path="/" render={() => <Home />} />
-            <Route exact path="/registro" render={(props) => <Signup {...props} />} />
-            <Route exact path="/iniciar-sesion" render={(props) => <Login storeUser={storeUser} {...props} />} />
-            <Route exact path="/" render={() => <Home />} />
-            <Route exact path="/perfil" render={() => loggedUser ? <UserProfile fetchUser={fetchUser} loggedUser={loggedUser} /> : <Redirect to="/iniciar-sesion" />} />
-            <Route exact path='/contacto' render={() => <Contact />} />
-            <Route exact path='/sobre-nosotros' render={() => <AboutUs />} />
-            <Route exact path='/editar-perfil/:id' render={(props) => <UserEdit storeUser={storeUser} fetchUser={fetchUser} {...props} />} />
-            <Route exact path='/carrito' render={(props) => loggedUser ? <Cart {...props} /> : <Redirect to='/' />} />
-            <Route exat path='/comprar' render={() => <CompletePurchase />} />
+            <Route exact path="/" render={() => {
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><Home /><Footer /></>)
+            }} />
 
+            <Route exact path="/registro" render={(props) => {
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><Signup {...props} /><Footer /></>)
+            }} />
+
+            <Route exact path="/iniciar-sesion" render={(props) => {
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><Login storeUser={storeUser} {...props} /><Footer /></>)
+            }} />
+
+            <Route exact path="/perfil" render={() => {
+                return (loggedUser ? <><Navigation loggedUser={loggedUser} storeUser={storeUser} /><UserProfile fetchUser={fetchUser} loggedUser={loggedUser} /><Footer /></> : <Redirect to="/iniciar-sesion" />)
+            }} />
+
+            <Route exact path='/contacto' render={() => {
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><Contact /><Footer /></>)
+            }} />
+
+            <Route exact path='/sobre-nosotros' render={() => {
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><AboutUs /><Footer /></>)
+            }} />
+
+            <Route exact path='/editar-perfil/:id' render={(props) => {
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><UserEdit storeUser={storeUser} fetchUser={fetchUser} {...props} /><Footer /></>)
+            }} />
+            <Route exact path='/carrito' render={(props) => {
+                return (loggedUser ? <><Navigation loggedUser={loggedUser} storeUser={storeUser} /><Cart {...props} /><Footer /></> : <Redirect to='/' />)
+            }} />
+            <Route exat path='/comprar' render={() => {
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><CompletePurchase /><Footer /></>)
+            }} />
+
+            {/* admin routes */}
             <Route exact path='/nueva-bici' render={(props) => <AdminPage><NewBike {...props} /></AdminPage>} />
             <Route exact path='/editar-bici/:id' render={(props) => <AdminPage><BikeEdit {...props} /></AdminPage>} />
             <Route exact path='/nueva-tienda' render={(props) => <AdminPage><NewShop {...props} /></AdminPage>} />
             <Route exact path='/editar-tienda/:id' render={(props) => <AdminPage><ShopEdit {...props} /> </AdminPage>} />
-
-
+            <Route exact path='/editar-stock/:id' render={(props) => loggedUser ? <AdminPage> <StockEdit {...props} /> </AdminPage> : <Redirect to='/' />} />
 
             <Route exact path='/lista-tiendas' render={(props) => <AdminPage><AdminShops {...props} /></AdminPage>} />
             <Route exact path='/lista-bicis' render={(props) => <AdminPage> <AdminBikes {...props} /> </AdminPage>} />
@@ -52,12 +78,12 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
             <Route exact path='/stock' render={(props) => <AdminPage> <AdminStock {...props} /> </AdminPage>} />
             <Route exact path='/ventas' render={(props) => <AdminPage> <AdminSales {...props} /> </AdminPage>} />
             <Route exact path='/detalles-ventas/:id' render={(props) => <AdminPage> <SalesDetails {...props} /> </AdminPage>} />
-
-
-            {/* admin routes */}
             <Route exact path='/admin-panel' render={() => loggedUser ? <AdminPage></AdminPage> : <Redirect to='/' />} />
             {/* id paths */}
-            <Route path='/:bike' render={(props) => <Bike {...props} />} />
+
+            <Route path='/:bike' render={(props) => {
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><Bike {...props} /><Footer /></>)
+            }} />
         </Switch >
     )
 

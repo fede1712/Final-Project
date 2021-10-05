@@ -3,7 +3,19 @@
 }
 
 .total-price {
-    background-color: tomato;
+    border: 2px solid grey;
+    margin: 60px;
+    padding-top: 110px;
+    
+}
+
+.total-price p {
+    font-size: 30px;
+    text-align: center;
+}
+
+.total-price Button {
+    margin: 20px;
 }
 
 .cart-product {
@@ -11,7 +23,7 @@
     border: 2px solid gray;
 }
 
-.image-cart {
+.cart-img {
     width: 300px;
 }
 
@@ -21,4 +33,9 @@
     border: none;
     background-color: white;
     padding: 0 0 0 100px;
+}
+
+.btn-delete{
+    border: none;
+    background-color: white;
 }

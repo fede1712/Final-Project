@@ -1,5 +1,4 @@
 .shop-table{
-margin-top: 10%;
 margin-left: 5%;
 margin-right: 5%;
 width: 90%;
@@ -11,4 +10,13 @@ width: 90%;
 
 .delete-btn{
     cursor: pointer;
+}
+.admin-title{
+    padding-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    color: #2c3034;
+    border-bottom: 1px solid #2c3034 ;
+    padding-bottom: 15px;
 }

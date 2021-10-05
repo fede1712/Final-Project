@@ -88,7 +88,7 @@ export default class NewShop extends Component {
                     <Form.Control onChange={(e) => (this.handleChange(e), this.getLatAndLnd())} name="address" value={this.state.address.direction} type="text" placeholder="Introduce dirección" />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="secondary" type="submit">
                     Crear
                 </Button>
             </Form>
