@@ -6,6 +6,19 @@ const billSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Cart'
     },
+
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+
+    products: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Bike'
+        }
+    ],
+
     shopId: {
         type: Schema.Types.ObjectId,
         ref: 'Shop'

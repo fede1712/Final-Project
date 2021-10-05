@@ -49,7 +49,7 @@ export default class AdminStock extends Component {
                                     <td>{elm.name}</td>
                                     <td>{elm.quantity}</td>
                                     <td>
-                                        <Link to={`/editar-bici/${elm._id}`}><Badge pill bg="warning"> Editar </Badge></Link>{' '}
+                                        <Link to={`/editar-stock/${elm._id}`}><Badge pill bg="warning"> Editar </Badge></Link>{' '}
                                     </td>
                                 </tr>
                             )}

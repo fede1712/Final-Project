@@ -23,6 +23,7 @@ import CompletePurchase from '../Pages/CompletePurchase/CompletePurchase'
 import SalesDetails from '../Pages/SalesDetails/SalesDetails.js';
 import Navigation from '../layout/Navigation/Navigation.js';
 import Footer from '../layout/Footer/Footer.js';
+import StockEdit from '../Pages/StockEdit/StockEdit.js';
 
 
 const Routes = ({ storeUser, loggedUser, fetchUser }) => {
@@ -69,6 +70,7 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
             <Route exact path='/editar-bici/:id' render={(props) => <AdminPage><BikeEdit {...props} /></AdminPage>} />
             <Route exact path='/nueva-tienda' render={(props) => <AdminPage><NewShop {...props} /></AdminPage>} />
             <Route exact path='/editar-tienda/:id' render={(props) => <AdminPage><ShopEdit {...props} /> </AdminPage>} />
+            <Route exact path='/editar-stock/:id' render={(props) => loggedUser ? <AdminPage> <StockEdit {...props} /> </AdminPage> : <Redirect to='/' />} />
 
             <Route exact path='/lista-tiendas' render={(props) => <AdminPage><AdminShops {...props} /></AdminPage>} />
             <Route exact path='/lista-bicis' render={(props) => <AdminPage> <AdminBikes {...props} /> </AdminPage>} />

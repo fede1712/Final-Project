@@ -12,7 +12,7 @@ export default class CompletePurchase extends Component {
         this.state = {
             bill: undefined,
             shops: [],
-            shop: ''
+            shop: '615b420264fdd9104af8dd0e'
         }
 
         this.shopService = new ShopService()
@@ -36,7 +36,6 @@ export default class CompletePurchase extends Component {
     }
 
     handleChange(e) {
-        console.log(e.target.name, e.target.value)
         const { value, name } = e.target
         this.setState({
             [name]: value
@@ -47,6 +46,7 @@ export default class CompletePurchase extends Component {
         e.preventDefault()
         this.cartService.buycart(this.state.shop)
             .then(res => {
+                console.log(res)
                 this.setState({
                     bill: res.data,
                     shops: []
@@ -55,18 +55,6 @@ export default class CompletePurchase extends Component {
             })
             .catch(err => console.error(err))
     }
-
-
-    // payment() {
-    //     this.cartService.buycart()
-    //         .then(res => {
-    //             this.setState({
-    //                 bill: res.data,
-    //                 shop: ''
-    //             })
-    //         })
-    // }
-
 
 
     render() {
@@ -81,7 +69,7 @@ export default class CompletePurchase extends Component {
                 <Form onSubmit={this.handleSubmit} >
                     <Form.Select name="shop" onChange={(e) => this.handleChange(e)} aria-label="Default select example">
                         {this.state.shops?.map((elm) =>
-                            <option defaultValue={elm._id[0]} value={elm._id}>{elm.name}</option>
+                            <option value={elm._id}>{elm.name}</option>
                         )}
                     </Form.Select>
                     <Button variant="primary" type='submit' onClick={(e) => this.handleSubmit(e)}>Finalizar Compra</Button>
