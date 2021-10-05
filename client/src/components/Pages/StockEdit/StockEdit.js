@@ -19,7 +19,7 @@ export default class StockEdit extends Component {
                     quantity,
                 })
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 
     handleChange = (e) => {

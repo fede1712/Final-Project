@@ -42,7 +42,7 @@ export default class NewShop extends Component {
                     description: "",
                     address: []
                 })
-                console.log(this.props)
+
                 this.props.history.push('/lista-tiendas')
             })
             .catch(err => console.error(err))
@@ -60,7 +60,6 @@ export default class NewShop extends Component {
         Geocode.fromAddress(this.state.address.direction)
             .then(res => {
                 const { lat, lng } = res.results[0].geometry.location;
-                console.log(lat, lng)
                 this.setState({
                     address: {
                         ...this.state.address,

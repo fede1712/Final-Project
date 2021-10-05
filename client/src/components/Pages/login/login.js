@@ -29,7 +29,7 @@ export default class Login extends Component {
                 this.props.storeUser(res.data)
                 this.props.history.push("/")
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 
     render() {

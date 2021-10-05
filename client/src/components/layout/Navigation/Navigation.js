@@ -14,7 +14,7 @@ export default function Navigation(props) {
     const logout = () => {
         authService.logout()
             .then(res => props.storeUser(null))
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 
     let mobilescreens = document.querySelectorAll('.mouse-inertia'), speedVertical = 0, speedHorizontal = 0, spaceLeft;
@@ -22,11 +22,8 @@ export default function Navigation(props) {
     const applyScrollEffects = () => {
 
         window.scrollY > 100 ?
-            document.querySelector('.navigation').classList.add('sticky') :
-            document.querySelector('.navigation').classList.remove('sticky')
-
-
-
+            document.querySelector('.navigation')?.classList.add('sticky') :
+            document.querySelector('.navigation')?.classList.remove('sticky')
 
         document.querySelectorAll('.parallax').forEach(elm => {
 

@@ -4,6 +4,7 @@ const router = express.Router()
 const Bike = require('../models/Bike.model')
 const Bill = require("../models/Bill.model")
 const mongoose = require("mongoose")
+const { findById } = require("../models/Cart.model")
 
 
 
@@ -68,7 +69,13 @@ router.put('/buy', (req, res) => {
 
     Cart
         .findOne({ userId: req.session.currentUser._id })
-        .then(cart => Bill.create({ userId: cart.userId, products: [...cart.products], shopId, cartId: cart._id }))
+        .then(cart => Bill.create({ userId: cart.userId, products: [...cart.products], shopId, cartId: cart._id, totalPrice: cart.totalPrice }))
+        .then(bill => {
+            const promises = bill.products.map(elm => {
+                return Bike.findByIdAndUpdate(elm, { $inc: { quantity: -1 } })
+            })
+            return Promise.all(promises)
+        })
         .then(() => Cart.updateOne({ userId: req.session.currentUser._id }, { $set: { products: [] } }, { new: true }))
         .then(cart => res.status(200).json({ cart, message: "Bill created" }))
         .catch(err => res.status(500).json({ code: 500, message: "Error empty cart", err }))

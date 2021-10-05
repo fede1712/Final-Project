@@ -30,9 +30,7 @@ export default class Cart extends Component {
     refreshCart() {
         this.cartService.findCart()
             .then(res => {
-                console.log(res.data.cart[0].products)
                 this.setState({
-
                     products: res.data.cart[0].products
                 })
                 this.totalCount()
@@ -74,7 +72,6 @@ export default class Cart extends Component {
                 })
             })
     }
-
 
 
     render() {

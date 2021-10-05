@@ -13,32 +13,30 @@ router.get("/", (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: "Error retrieving user", err }))
 })
 
-router.get("/:id", (req, res) => {
 
+router.get("/:id", (req, res) => {
     const { id } = req.params
+
     User
         .findById(id)
         .then(user => res.status(200).json({ user, message: "User getted" }))
         .catch(err => res.status(500).json({ code: 500, message: "Error retrieving a single user", err }))
 })
 
+
 router.put("/:id", (req, res) => {
     const { userName, email, password } = req.body
     const { id } = req.params;
-
     const query = {}
 
     userName && userName.length > 0 && (query.userName = userName)
     email && email.length > 0 && (query.email = email)
     password && password.trim().length > 0 && (query.password = password)
 
-    console.log(id, query)
-
     User
         .findOne({ email })
         .then(user => {
-
-            if (!user._id.equals(id)) {
+            if (user && !user._id.equals(id)) {
                 res.status(400).json({ code: 400, message: 'Email already exixts' })
                 return
             }

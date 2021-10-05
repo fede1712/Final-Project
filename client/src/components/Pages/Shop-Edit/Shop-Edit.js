@@ -28,7 +28,7 @@ export default class ShopEdit extends Component {
                     address
                 })
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 
     handleChange = (e) => {
@@ -50,7 +50,6 @@ export default class ShopEdit extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.props.match.params.id)
 
         this.shopService.editShop(this.state, this.props.match.params.id)
 
