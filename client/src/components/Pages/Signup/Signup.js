@@ -28,7 +28,7 @@ class Signup extends Component {
         this.authService
             .signup(userName, email, pwd)
             .then(res => this.props.history.push("/"))
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 
 

@@ -32,7 +32,7 @@ export default class CompletePurchase extends Component {
                     shops: res.data
                 })
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 
     handleChange(e) {
@@ -46,7 +46,6 @@ export default class CompletePurchase extends Component {
         e.preventDefault()
         this.cartService.buycart(this.state.shop)
             .then(res => {
-                console.log(res)
                 this.setState({
                     bill: res.data,
                     shops: []

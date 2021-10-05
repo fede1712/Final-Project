@@ -32,13 +32,11 @@ router.put("/:id", (req, res) => {
     email && email.length > 0 && (query.email = email)
     password && password.trim().length > 0 && (query.password = password)
 
-    console.log(id, query)
 
     User
         .findOne({ email })
         .then(user => {
-
-            if (!user._id.equals(id)) {
+            if (user && !user._id.equals(id)) {
                 res.status(400).json({ code: 400, message: 'Email already exixts' })
                 return
             }

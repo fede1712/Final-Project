@@ -16,12 +16,11 @@ export default class SalesDetails extends Component {
     componentDidMount() {
         this.billService.findOneBill(this.props.match.params.id)
             .then(res => {
-                console.log('---------------', res.data.bill)
                 this.setState({
                     bill: res.data.bill
                 })
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 
 

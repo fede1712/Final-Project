@@ -9,10 +9,9 @@ import Logo from '../../layout/Navigation/logo_tricycle.svg'
 export default function NavBarAdmin() {
     return (
         <>
-            <div className='logo-admin'>
+            <Row className='logo-admin'>
                 <Link to="/" ><img className='logo-admin' src={Logo} alt='logo'></img></Link>
-            </div>
-
+            </Row>
             <Row className='admin-link'>
                 <Link to={'/admin-panel'} className='admin-brand'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" className="bi bi-tools" viewBox="0 0 16 16">

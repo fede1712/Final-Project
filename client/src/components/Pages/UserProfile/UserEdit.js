@@ -30,7 +30,7 @@ export default class UserEdit extends Component {
                     email
                 })
             })
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
     }
 
     handleChange = (e) => {
@@ -45,7 +45,6 @@ export default class UserEdit extends Component {
     handleSubmit = (e) => {
 
         e.preventDefault();
-        console.log(this.props.match.params.id)
 
         this.userService.editUser(this.state, this.props.match.params.id)
 

@@ -9,7 +9,6 @@ function Map(props) {
         const coords = props.shop.map(elm => elm.address.coordinates)
 
     }
-    console.log(getMarker())
     return (
         <>
             <GoogleMap defaultZoom={10} defaultCenter={{ lat: 40.392631471366755, lng: - 3.6986193540171675 }} />
