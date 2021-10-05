@@ -30,21 +30,22 @@ export default class NewBike extends Component {
     uploadService = new UploadsService()
 
     handleFile = (e) => {
+
+        const { name } = e.target
+
         this.setState({
-            ...this.state,
             isLoading: true
         })
 
         const uploadData = new FormData()
-        // uploadData.append('imageData', e.target.files[0])
-        uploadData.append('imageData', e.target.array("imgFile"))
+        uploadData.append('imageData', e.target.files[0])
+        // uploadData.append('imageData', e.target.single(name))
         this.uploadService.uploadImg(uploadData)
             .then(res => {
                 console.log(res.data)
                 this.setState({
-                    imageModel: res.data.cloudinary_url,
-                    imageDetail: res.data.cloudinary_url,
-                    imageHero: res.data.cloudinary_url
+                    [name]: res.data.cloudinary_url,
+                    isLoading: false
                 })
             })
             .catch(err => alert("Fallo en la subida de imagenes", (err)))
@@ -129,7 +130,7 @@ export default class NewBike extends Component {
 
                     <Form.Group className="mb-3" controlId="imageModel">
                         <Form.Label>Imagen modelo: </Form.Label>
-                        <Form.Control onChange={(e) => this.handleFile(e)} name="imgFile" type="file" placeholder="Introduce imagen modelo" />
+                        <Form.Control disabled={this.state.isLoading} onChange={(e) => this.handleFile(e)} name="imageModel" type="file" placeholder="Introduce imagen modelo" />
                     </Form.Group>
 
                 </Col>
@@ -142,7 +143,7 @@ export default class NewBike extends Component {
 
                     <Form.Group className="mb-3" controlId="imageDetail">
                         <Form.Label>Imagen detalles: </Form.Label>
-                        <Form.Control onChange={(e) => this.handleFile(e)} name="imgFile" type="file" placeholder="Introduce imagen de detalles" />
+                        <Form.Control disabled={this.state.isLoading} onChange={(e) => this.handleFile(e)} name="imageDetail" type="file" placeholder="Introduce imagen de detalles" />
                     </Form.Group>
 
                     {/* <Form.Group className="mb-3" controlId="imageHero">
@@ -152,7 +153,7 @@ export default class NewBike extends Component {
 
                     <Form.Group className="mb-3" controlId="imageHero">
                         <Form.Label>Imagen hero: </Form.Label>
-                        <Form.Control onChange={(e) => this.handleFile(e)} name="imgFile" value={this.state.imageHero} type="file" placeholder="Introduce imagen hero" />
+                        <Form.Control disabled={this.state.isLoading} onChange={(e) => this.handleFile(e)} name="imageHero" type="file" placeholder="Introduce imagen hero" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="batteryRange">
@@ -176,7 +177,7 @@ export default class NewBike extends Component {
                     </Form.Group>
                 </Col>
 
-                <Button variant="primary" type="submit">
+                <Button variant="secondary" type="submit">
                     Crear
                 </Button>
             </Form>

@@ -62,6 +62,7 @@ export default class AdminSales extends Component {
                             </tbody>
                         </Table>
                     </div>
+
                 )
                 :
                 <p>...Cargando</p>

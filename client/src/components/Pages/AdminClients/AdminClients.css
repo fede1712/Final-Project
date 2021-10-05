@@ -1,10 +1,9 @@
 
 .table-wrap {
     overflow-y: auto;	
-    margin-top: 10%;
     margin-left: 5%;
     margin-right: 5%;
-    height: 80vh;
+    height: 60vh;
 }
 
 .table-user{
@@ -18,4 +17,14 @@
 }
 .delete-btn {
     cursor: pointer;
+}
+.admin-title{
+    padding-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    color: #2c3034;
+    border-bottom: 1px solid #2c3034 ;
+    padding-bottom: 15px;
+
 }

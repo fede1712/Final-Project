@@ -18,7 +18,7 @@ export default function Footer() {
             }}
             style={{
                 height: '140px', width: '140px', display: "block",
-                margin: "auto", stroke: "currentColor", fill: "none"
+                margin: "auto", stroke: "white", fill: "none"
             }}
             callback={console.log}
         />

@@ -39,6 +39,7 @@ export default class AdminBikes extends Component {
         return (
             this.state.bike ?
                 <div>
+                    <h2 className='admin-title'>Bicicletas</h2>
                     <Table striped bordered hover className='table-bikes' variant="dark">
                         <thead>
                             <tr>
@@ -66,9 +67,7 @@ export default class AdminBikes extends Component {
                             )}
                         </tbody>
                     </Table>
-                    <Badge pill as={Link} to='/nueva-bici' bg="primary" className='add-bike-btn'>
-                        Nueva bicicleta
-                    </Badge>
+                    <Button as={Link} to='/nueva-bici' bg="secondary" className='add-bike-btn' variant="secondary">Nueva bicicleta</Button>
                 </div>
                 :
                 <p>...Cargando</p>

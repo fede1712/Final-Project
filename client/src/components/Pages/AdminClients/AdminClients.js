@@ -38,27 +38,30 @@ export default class AdminClients extends Component {
     render() {
         return (
             this.state.user ?
-                <div className='table-wrap'>
+                <>
+                    <h2 className='admin-title'>Clientes</h2>
+                    <div className='table-wrap'>
 
-                    <Table striped bordered hover className='table-users' variant="dark">
-                        <thead>
-                            <tr className='table-title'>
-                                <th>Nombre</th>
-                                <th>Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.state.user?.map(elm =>
-                                <tr key={elm._id}>
-                                    <td>{elm.userName}</td>
-                                    <td>
-                                        <span className='delete-btn' onClick={() => this.deleteUser(elm._id)}><Badge pill bg="danger"> Eliminar </Badge></span>
-                                    </td>
+                        <Table striped bordered hover className='table-users' variant="dark">
+                            <thead>
+                                <tr className='table-title'>
+                                    <th>Nombre</th>
+                                    <th>Opciones</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </Table>
-                </div>
+                            </thead>
+                            <tbody>
+                                {this.state.user?.map(elm =>
+                                    <tr key={elm._id}>
+                                        <td>{elm.userName}</td>
+                                        <td>
+                                            <span className='delete-btn' onClick={() => this.deleteUser(elm._id)}><Badge pill bg="danger"> Eliminar </Badge></span>
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </Table>
+                    </div>
+                </>
                 :
                 <p>...Cargando</p>
         )
