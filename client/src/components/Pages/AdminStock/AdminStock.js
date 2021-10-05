@@ -53,9 +53,6 @@ export default class AdminStock extends Component {
                             )}
                         </tbody>
                     </Table>
-                    <Badge pill as={Link} to='/nueva-bici' bg="primary" className='add-bike-btn'>
-                        Nueva bicileta
-                    </Badge>
                 </div>
                 :
                 <p>...Cargando</p>

@@ -32,7 +32,6 @@ export default class Cart extends Component {
             .then(res => {
                 console.log(res.data.cart[0].products)
                 this.setState({
-
                     products: res.data.cart[0].products
                 })
                 this.totalCount()
@@ -74,7 +73,6 @@ export default class Cart extends Component {
                 })
             })
     }
-
 
 
     render() {
