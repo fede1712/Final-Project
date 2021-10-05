@@ -69,7 +69,7 @@ router.put('/buy', (req, res) => {
 
     Cart
         .findOne({ userId: req.session.currentUser._id })
-        .then(cart => Bill.create({ userId: cart.userId, products: [...cart.products], shopId, cartId: cart._id }))
+        .then(cart => Bill.create({ userId: cart.userId, products: [...cart.products], shopId, cartId: cart._id, totalPrice: cart.totalPrice }))
         .then(bill => {
             const promises = bill.products.map(elm => {
                 return Bike.findByIdAndUpdate(elm, { $inc: { quantity: -1 } })

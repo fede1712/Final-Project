@@ -12,7 +12,7 @@ export default class CompletePurchase extends Component {
         this.state = {
             bill: undefined,
             shops: [],
-            shop: '615b420264fdd9104af8dd0e'
+            shop: ''
         }
 
         this.shopService = new ShopService()
@@ -29,7 +29,8 @@ export default class CompletePurchase extends Component {
         this.shopService.findShops()
             .then(res => {
                 this.setState({
-                    shops: res.data
+                    shops: res.data,
+                    shop: res.data[0]._id
                 })
             })
             .catch(err => console.error(err))
