@@ -9,7 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
   white-space: wrap;
-   
+  /* overflow-x: hidden; */
 }
 
 code {

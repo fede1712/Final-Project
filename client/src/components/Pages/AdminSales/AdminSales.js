@@ -84,7 +84,7 @@ export default class AdminSales extends Component {
 
                 )
                 :
-                <p>...Cargando</p>
+                <div></div>
 
         )
     }

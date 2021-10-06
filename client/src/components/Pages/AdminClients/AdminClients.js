@@ -66,7 +66,7 @@ export default class AdminClients extends Component {
                     </div>
                 </>
                 :
-                <p>...Cargando</p>
+                <div></div>
         )
     }
 }

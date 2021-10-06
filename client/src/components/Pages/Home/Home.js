@@ -89,7 +89,7 @@ export default function Home(props) {
 
                             </div>
                             <div className="d-flex justify-content-center">
-                                <Link className="btn btn-secondary buttonHero" variant="outline-secondary" to="/">Más información</Link>
+                                <Link className="btn btn-secondary buttonHero" variant="outline-secondary" to="/615c01f62dfb8072f7431d6b">Más información</Link>
                             </div>
 
                             <div className="mouse_scroll">
@@ -133,7 +133,7 @@ export default function Home(props) {
 
                             </div>
                             <div className="d-flex justify-content-center">
-                                <Link className="btn btn-secondary buttonHero2" variant="outline-secondary" to="/">Más información</Link>
+                                <Link className="btn btn-secondary buttonHero2" variant="outline-secondary" to="/61547d82a1b6776152378f8e">Más información</Link>
                             </div>
 
                         </Col>
@@ -204,7 +204,7 @@ export default function Home(props) {
                         <h1>Tricycle 3</h1>
                         <h3>La conducción más rápida de la ciudad obtiene una alta puntuación por su chasis deportivo y ágil.</h3>
                         <div className="d-flex justify-content-center reveal fadeInUp" data-delay="600s">
-                            <Link className="btn btn-secondary buttonSection3" variant="outline-secondary" to="/">Más información</Link>
+                            <Link className="btn btn-secondary buttonSection3" variant="outline-secondary" to="/61547d68a1b6776152378f8c">Más información</Link>
                         </div>
                         <div className="reveal fadeInUp" data-delay="900s">
                             <p>6 pagos sin comisiones o 1.990 €.<br /> Plazo de entrega 10 días.</p>
