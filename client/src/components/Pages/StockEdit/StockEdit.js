@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import BikeService from '../../../services/bike.service'
+import './StockEdit.css'
 
 export default class StockEdit extends Component {
     constructor(props) {
@@ -45,14 +46,14 @@ export default class StockEdit extends Component {
 
     render() {
         return (
-            <Form onSubmit={this.handleSubmit} className='edit-bike'>
+            <Form onSubmit={this.handleSubmit} className='edit-stock row'>
 
                 <Form.Group className="mb-3" controlId="quantity">
                     <Form.Label>Stock: </Form.Label>
                     <Form.Control onChange={(e) => this.handleChange(e)} name="quantity" value={this.state.quantity} type="number" placeholder={this.state.quantity} />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="secondary" type="submit">
                     Guardar
                 </Button>
             </Form>

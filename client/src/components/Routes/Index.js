@@ -61,8 +61,8 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
             <Route exact path='/carrito' render={(props) => {
                 return (loggedUser ? <><Navigation loggedUser={loggedUser} storeUser={storeUser} /><Cart {...props} /><Footer /></> : <Redirect to='/' />)
             }} />
-            <Route exat path='/comprar' render={() => {
-                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><CompletePurchase /><Footer /></>)
+            <Route exat path='/comprar' render={(props) => {
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><CompletePurchase {...props} /><Footer /></>)
             }} />
 
             {/* admin routes */}

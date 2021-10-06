@@ -6,6 +6,7 @@ const cartRouter = require('./cart.routes')
 const billRouter = require('./bill.routes')
 const userRouter = require('./user.routes')
 const uploadsRouter = require('./uploads.routes')
+const stripeRouter = require('./stripe.routes')
 
 
 router.use("/bikes", bikesRouter)
@@ -15,5 +16,6 @@ router.use("/cart", cartRouter)
 router.use("/bill", billRouter)
 router.use("/user", userRouter)
 router.use("/uploads", uploadsRouter)
+router.use('/checkout', stripeRouter)
 
 module.exports = router;

@@ -4,7 +4,9 @@ import AuthService from '../../../services/auth.service'
 import BillService from '../../../services/bill.service'
 import CartService from '../../../services/cart.services'
 import ShopService from '../../../services/shop.service'
-import UserService from '../../../services/user.services'
+import PaymentGateway from '../PaymentGateway/PaymentGateway'
+
+
 
 export default class CompletePurchase extends Component {
     constructor(props) {
@@ -12,8 +14,12 @@ export default class CompletePurchase extends Component {
         this.state = {
             bill: undefined,
             shops: [],
-            shop: ''
+            shop: '',
+            disabled: true,
+            totalPrice: 0
         }
+
+        // const [bill, setBill] = useState(undefined)
 
         this.shopService = new ShopService()
         this.authService = new AuthService()
@@ -22,7 +28,7 @@ export default class CompletePurchase extends Component {
     }
     componentDidMount() {
         this.findShops()
-
+        this.findTotal()
     }
 
     findShops() {
@@ -45,17 +51,49 @@ export default class CompletePurchase extends Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        this.cartService.buycart(this.state.shop)
+
+        if (this.state.status !== 'succeeded') {
+            console.log('Completado')
+        }
+        else
+
+            this.cartService.buycart(this.state.shop)
+                .then(res => {
+
+                    this.setState({
+                        bill: res.data,
+                        shops: []
+                    })
+                    this.props.history.push('/')
+                })
+                .catch(err => console.error(err))
+    }
+
+    stripeSubmit = () => {
+        this.setState({
+            disabled: false
+        })
+    }
+    findTotal() {
+        this.cartService.findCart()
             .then(res => {
                 this.setState({
-                    bill: res.data,
-                    shops: []
+                    products: res.data.cart[0].products
                 })
-                this.props.history.push('/')
+                this.totalCount()
             })
             .catch(err => console.error(err))
     }
 
+    totalCount() {
+        let total = this.state.products.reduce((previousValue, currentValue) => {
+            return previousValue + currentValue.price
+        }, 0)
+        this.setState({
+            totalPrice: total
+        })
+        return total
+    }
 
     render() {
         return (
@@ -66,13 +104,16 @@ export default class CompletePurchase extends Component {
                 <br />
                 <br />
                 <h1>Pasarela de pago</h1>
+
+                {/* <PaymentGateway /> */}
+                <PaymentGateway amount={this.state.totalPrice} stripeSubmit={this.stripeSubmit} />
                 <Form onSubmit={this.handleSubmit} >
                     <Form.Select name="shop" onChange={(e) => this.handleChange(e)} aria-label="Default select example">
                         {this.state.shops?.map((elm) =>
                             <option value={elm._id}>{elm.name}</option>
                         )}
                     </Form.Select>
-                    <Button variant="primary" type='submit' onClick={(e) => this.handleSubmit(e)}>Finalizar Compra</Button>
+                    <Button variant="primary" type='submit' disabled={this.state.disabled} onClick={(e) => this.handleSubmit(e)}>Finalizar compra</Button>
                 </Form>
             </div >
         )
