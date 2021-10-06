@@ -109,3 +109,16 @@
 /* .nav-link.iconCss.scrollto path:hover  {
     color: rgba(78, 78, 78, 0.7);
 } */
+
+.cartIcon {
+  position: relative;
+}
+
+.cartIcon .length {
+  color: white;
+  z-index: 1;
+  font-size: 15px;
+  position: absolute;
+  top: calc(50% - 7.5px);
+  left: calc(50% - 3.75px);
+}
