@@ -17,6 +17,7 @@ export default class CompletePurchase extends Component {
             shop: '',
             disabled: true,
             totalPrice: 0
+
         }
 
         // const [bill, setBill] = useState(undefined)
@@ -51,9 +52,10 @@ export default class CompletePurchase extends Component {
 
     handleSubmit(e) {
         e.preventDefault()
+        console.log(this.props)
 
         if (this.state.status !== 'succeeded') {
-            console.log('Completado')
+            console.log('No completado')
         }
         else
 
