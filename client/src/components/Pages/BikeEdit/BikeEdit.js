@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Button, Form, Col } from 'react-bootstrap'
 import BikeService from '../../../services/bike.service'
 import UploadsService from '../../../services/uploads.service'
+import './BikeEdit.css'
+
 
 export default class BikeEdit extends Component {
     constructor(props) {
@@ -181,7 +183,7 @@ export default class BikeEdit extends Component {
                     </Form.Group>
                 </Col>
 
-                <Button variant="primary" type="submit">
+                <Button variant="secondary" type="submit">
                     Guardar
                 </Button>
             </Form>

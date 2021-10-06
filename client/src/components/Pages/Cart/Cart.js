@@ -123,7 +123,7 @@ export default class Cart extends Component {
                     </Col>
                     <Col className="total-price">
                         <p>Total: {this.state.totalPrice} €</p>
-                        <center><Button as={Link} to={'/comprar'} variant="primary">Pagar</Button></center>
+                        <center><Button as={Link} to={'/comprar'} variant="secondary">Pagar</Button></center>
                         <center><Button onClick={() => this.emptyshoppingcart()} variant="danger">Vaciar carro</Button></center>
                     </Col>
                 </Row>

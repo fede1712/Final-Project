@@ -4,8 +4,10 @@ require("dotenv/config");
 require("./db");
 
 const express = require("express");
+const stripe = require('stripe')
 
 const app = express();
+
 
 require("./config")(app);
 require("./config/session.config")(app)

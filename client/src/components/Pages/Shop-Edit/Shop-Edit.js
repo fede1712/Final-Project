@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form } from 'react-bootstrap'
 import ShopsService from '../../../services/shop.service'
+import './Shop-Edit.css'
 
 export default class ShopEdit extends Component {
     constructor(props) {
@@ -69,7 +70,7 @@ export default class ShopEdit extends Component {
 
         return (
 
-            <Form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.handleSubmit} className='edit-shop row'>
                 <Form.Group className="mb-3" controlId="name">
                     <Form.Label>Nombre de la tienda: </Form.Label>
                     <Form.Control onChange={(e) => this.handleChange(e)} name="name" value={this.state.name} type="text" placeholder={this.state.name} />
@@ -85,7 +86,7 @@ export default class ShopEdit extends Component {
                     <Form.Control onChange={(e) => this.handleChange(e)} name="address" value={this.state.address.direction} type="text" placeholder={this.state.address} />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="secondary" type="submit">
                     Guardar
                 </Button>
             </Form>
