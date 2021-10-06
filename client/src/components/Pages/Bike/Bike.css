@@ -32,8 +32,6 @@
 .heroImgModel h1{
   color: rgb(255, 255, 255);
   text-align: center; 
-  text-transform: lowercase;  
-  text-transform: capitalize;
   font-size: 5.5em;
 }
 

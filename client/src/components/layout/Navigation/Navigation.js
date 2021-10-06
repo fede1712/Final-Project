@@ -55,8 +55,8 @@ export default function Navigation(props) {
                         {/*  */}
                         <Nav.Link as={Link} to="/61547d68a1b6776152378f8c"><span className="navSpan">Tricycle 3</span></Nav.Link>
                         {/* <Nav.Link as={Link} to={`/${elem.id}`}><span>{`${elem.name}`}</span></Nav.Link> */}
-                        <Nav.Link as={Link} to="/61547d68a1b6776152378f8c"><span className="navSpan">Tricycle 4</span></Nav.Link>
-                        <Nav.Link as={Link} to="/61547d82a1b6776152378f8e"><span className="navSpan">Tricycle 4 rs</span></Nav.Link>
+                        <Nav.Link as={Link} to="/615c01f62dfb8072f7431d6b"><span className="navSpan">Tricycle 4</span></Nav.Link>
+                        <Nav.Link as={Link} to="/61547d82a1b6776152378f8e"><span className="navSpan">Tricycle ST</span></Nav.Link>
                     </Nav>
 
                     <Nav>

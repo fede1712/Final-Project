@@ -63,20 +63,7 @@ export default class AdminSales extends Component {
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    {this.state.bill?.map((elm, i) =>
-                                        <tr key={elm._id}>
-                                            <td>{elm.userId.userName}</td>
-                                            <td><ul>{elm.products.map((elm) => <p>- {elm.name}</p>)}</ul></td>
-                                            <td>{elm.shopId.name}</td>
-                                            <td>{elm.shopId.address.direction}</td>
-                                            <td>{elm.date.toString().substring(0, 10)}</td>
-                                            <td>{this.state.totalPrices[i]}</td>
-                                            <td>
-                                                <Link to={`/detalles-ventas/${elm._id}`}><Badge pill bg="primary">Ver factura</Badge></Link>
-                                            </td>
-                                        </tr>
-                                </thead>
+
                                 <tbody>
                                     {this.state.bill?.map(elm =>
                                         <tr key={elm._id}>

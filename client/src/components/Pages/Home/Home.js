@@ -128,7 +128,7 @@ export default function Home(props) {
                     <Row className="alingItems">
                         <Col md={{ span: 4, offset: 4 }}>
                             <div className="h1Css">
-                                <h1>Tricycle 4 RS</h1>
+                                <h1>Tricycle ST</h1>
                                 <h3>Un marco abierto para una mente abierta.</h3>
 
                             </div>

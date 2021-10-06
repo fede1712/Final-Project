@@ -117,7 +117,7 @@ export default class Bike extends Component {
 
                 <section className="heroImgModel">
 
-                    <div style={{ backgroundImage: `url(${this.state.bike?.imageHero})`, background: `no-repeat center/100% 100% url(${this.state.bike?.imageHero})` }}>
+                    <div style={{ backgroundImage: `url(${this.state.bike?.imageHero})`, background: `no-repeat center/100% 100% cover url(${this.state.bike?.imageHero})`}}>
 
                         <Row className="alingItemsBike">
                             <Col md={{ span: 4, offset: 4 }}>
