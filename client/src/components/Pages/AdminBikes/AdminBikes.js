@@ -72,7 +72,7 @@ export default class AdminBikes extends Component {
                     <Button as={Link} to='/nueva-bici' bg="secondary" className='add-bike-btn' variant="secondary">Nueva bicicleta</Button>
                 </div>
                 :
-                <p>...Cargando</p>
+                <div></div>
         )
     }
 }

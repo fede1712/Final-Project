@@ -42,13 +42,13 @@ export default function Footer() {
                             </li>
                             <hr />
                             <li className="nav-item">
-                                <a className="nav-link" href="#" alt="cycle3">Tricycle 3</a>
+                                <a className="nav-link" href="/61547d68a1b6776152378f8c" alt="cycle3">Tricycle 3</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#" alt="cycle3">Tricycle 4</a>
+                                <a className="nav-link" href="/615c01f62dfb8072f7431d6b" alt="cycle3">Tricycle 4</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#" alt="cycle3">Tricycle 4 RS</a>
+                                <a className="nav-link" href="/61547d82a1b6776152378f8e" alt="cycle3">Tricycle 4 RS</a>
                             </li>
                         </ul>
                     </div>

@@ -82,7 +82,7 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
             {/* id paths */}
 
             <Route path='/:bike' render={(props) => {
-                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><Bike {...props} /><Footer /></>)
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser}><Bike {...props} /></Navigation><Footer /></>)
             }} />
         </Switch >
     )

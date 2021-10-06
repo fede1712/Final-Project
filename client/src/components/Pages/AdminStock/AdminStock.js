@@ -60,7 +60,7 @@ export default class AdminStock extends Component {
                     </Table>
                 </div>
                 :
-                <p>...Cargando</p>
+                <div></div>
         )
     }
 }
