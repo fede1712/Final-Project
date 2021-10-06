@@ -137,6 +137,7 @@ export default class Cart extends Component {
                     }
                 </Row>
             </Container>
+        
         )
     }
 }
