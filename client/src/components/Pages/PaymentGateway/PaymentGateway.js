@@ -40,7 +40,7 @@ export default function PaymentGateway(props) {
         return (
             <form onSubmit={handleSubmit}>
                 <CardElement className='form-control' />
-                <button>Comprar</button>
+                <button>Confirmar datos</button>
             </form>
         )
     }

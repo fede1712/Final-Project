@@ -1,0 +1,63 @@
+
+.card {
+  border: none;
+}
+
+.card-img{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+
+}
+
+.paymentBox {
+  width: 60vw;
+  height: auto;
+  border: 0;
+  
+  box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+  overflow: hidden; 
+}
+
+.backColorForm h1{
+    font-size: 1.8em;
+margin-top: 5%;
+}
+
+.backColorForm p{
+margin-top: 5%;
+margin-bottom: 1%;
+padding-top: 30px;
+margin-bottom: 0px;
+border-top: 1px solid rgba(107, 107, 107, 0.342);
+}
+
+.backColorForm Form{
+margin-top: 5%;
+}
+
+  .backColorForm{
+    padding: 15px 0;
+    padding-left: 5%;
+  }
+
+  .reset-margin{
+    padding: 0px;
+  }
+
+  .button-payment{
+    background-color: rgb(133, 133, 133);
+    border-radius: 50px;
+    padding: 1px 15px;
+    margin-top: 5%;
+  }
+
+  .backColorForm button{
+    background-color: rgb(133, 133, 133);
+    border-radius: 50px;
+    padding: 10px 30px;
+    margin-bottom: 15px;
+    margin-top: 5%;
+    border: none;
+    color: white;
+  }
