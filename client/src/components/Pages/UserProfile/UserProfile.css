@@ -1,7 +1,19 @@
 .user-bills{
-    margin: 10%;
+    margin: 10%; 
 }
 
 .card-user{
     border: 2px solid grey;
+}
+
+.h1SizeProfile {
+  margin-bottom: 30px;
+  font-size: 5em;
+  border-bottom: 1px solid #212529b7;
+}
+
+.h2SizeProfile {
+  margin-bottom: 30px;
+  font-size: 2em;
+  border-bottom: 1px solid #212529b7;
 }

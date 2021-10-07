@@ -38,38 +38,68 @@ export default class UserProfile extends Component {
         return (
             this.state.tickets ?
                 <div className='user-bills'>
+
                     <div>
-                        <h1 className="userProfile">¡Bienvenid@, {this.props.loggedUser.userName}</h1>
+                        <h1 className="h1SizeProfile">Tu perfil</h1>
+                        <h1 className="userProfile">¡Bienvenid@ {this.props.loggedUser.userName}!</h1>
+                        <p>Aquí podras encotrar los datos de perfil y un historico de tus compras.</p>
+                        <hr />
+                        <h5><strong>Nombre de usuario: </strong>{this.props.loggedUser.userName}</h5>
+                        <hr />
+                        <h5><strong>Mail: </strong>{this.props.loggedUser.email}</h5>
+                        <div>
+                            <Link className="btn btn-secondary buttoncartImg paddingButtProfile" to={`/editar-perfil/${this.props.loggedUser._id}`}>Edita tu perfil  {this.props.loggedUser.userName}</Link>
+                        </div>
+                        <hr />
+                        <h2 className="userProfile h2SizeProfile">Listado de compras</h2>
                         <div>
                             <div>
-                                <Container fluid>
+                                <Container fluid >
                                     <Row>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Fecha de compra</th>
+                                                    <th scope="col">Punto de entrega</th>
+                                                    <th scope="col">Productos</th>
+                                                    <th scope="col">Precios</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
                                         {this.state.tickets?.map(elm =>
-                                            <Col xs={4}>
-                                                <Card className='card-user' style={{ width: '18rem' }}>
-                                                    <Card.Body>
-                                                        <Card.Title>{elm.date.toString().substring(0, 10)}</Card.Title>
-                                                        <Card.Subtitle className="mb-2 text-muted">{elm.shopId.name}</Card.Subtitle>
-                                                        <Card.Text>{elm.products.name}</Card.Text>
-                                                        <Card.Text >
-                                                            {elm.products.map((elm) =>
+                                            <div>
+                                                <table class="table">
+
+                                                    <tbody>
+
+                                                        <tr>
+                                                            <th scope="row">{elm.date.toString().substring(0, 10)}</th>
+                                                            <td><p>{elm.products.name}</p></td>
+
+                                                            <td>{elm.shopId.name}</td>
+                                                            <td>{elm.products.map((elm) =>
                                                                 <div key={elm._id}>
-                                                                    <p>{elm.name} <p>{elm.price}</p></p>
+                                                                    <p>{elm.name}</p>
                                                                 </div>
-                                                            )}
-                                                        </Card.Text>
-                                                        <Card.Text ></Card.Text>
-                                                    </Card.Body>
-                                                </Card>
-                                            </Col>
+                                                            )}</td>
+                                                            <td>{elm.products.map((elm) =>
+                                                                <div key={elm._id}>
+                                                                    <p>{elm.price}</p>
+                                                                </div>
+                                                            )}</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+
                                         )}
                                     </Row>
                                 </Container>
                             </div>
                         </div>
-                        <div>
-                            <Link className="btn btn-dark" to={`/editar-perfil/${this.props.loggedUser._id}`}><Badge pill bg="warning"> Editar mi perfil </Badge></Link>
-                        </div>
+
                     </div>
                 </div>
                 :
