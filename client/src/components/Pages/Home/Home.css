@@ -26,6 +26,7 @@
 .alingItems{
   height: 100vh;
   align-items: center;
+  margin-right: 0;
 }
 
 .buttonHero{
@@ -530,4 +531,8 @@ a.carousel-control-next{
 
 [data-delay='900ms'] {
     transition-delay: 900ms;
+}
+
+.row-margin {
+  margin-right: 0;
 }
