@@ -5,10 +5,10 @@ import React from 'react'
 
 function Map(props) {
 
-    const getMarker = () => {
-        const coords = props.shop.map(elm => elm.address.coordinates)
+    // const getMarker = () => {
+    //     const coords = props.shop.map(elm => elm.address.coordinates)
 
-    }
+    // }
     return (
         <>
             <GoogleMap defaultZoom={10} defaultCenter={{ lat: 40.392631471366755, lng: - 3.6986193540171675 }} />

@@ -76,7 +76,7 @@ export default function Home(props) {
 
     return (
 
-        <div>
+        <div className="home-scroll-x">
             <section className="heroImg">
 
                 <div >
@@ -196,7 +196,7 @@ export default function Home(props) {
 
             <div className="container-fluid section3">
 
-                <Row xs="2">
+                <Row xs={2} className='row-margin'>
                     <Col className="colSection3 reveal fadeInUp" data-delay="300s">
                         <div className="section3Img"></div>
                     </Col>
@@ -217,7 +217,7 @@ export default function Home(props) {
 
             <section className="paddingSection">
 
-                <Row>
+                <Row className='row-margin'>
 
                     <Col >
                         <Col >

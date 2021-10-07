@@ -1,9 +1,7 @@
 import './App.css';
-import Navigation from './components/layout/Navigation/Navigation';
 import Routes from './components/Routes/Index';
 import React, { Component } from 'react'
 import AuthService from './services/auth.service';
-import Footer from './components/layout/Footer/Footer';
 
 export default class App extends Component {
   constructor() {

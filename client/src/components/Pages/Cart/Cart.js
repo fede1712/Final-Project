@@ -3,7 +3,7 @@ import CartService from '../../../services/cart.services'
 import UserService from '../../../services/user.services'
 import AuthService from '../../../services/auth.service'
 import './Cart.css'
-import { Card, Button, Form, Container, Row, Col } from 'react-bootstrap'
+import { Button, Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import ShopService from '../../../services/shop.service'
 

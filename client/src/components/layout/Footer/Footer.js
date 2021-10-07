@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Logo from './basic_bolt.svg'
 import './Footer.css'
 import ReactVivus from 'react-vivus'
