@@ -96,12 +96,7 @@ export default class CompletePurchase extends Component {
         return (
 
             <div>
-                <br />
-                <br />
-                <br />
-                <br />
-                <br />
-
+                
                 <div>
                     <div className='payment'>
 
