@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
     Bike
         .find()
         .then(bike => res.status(200).json(bike))
-        .catch(err => res.status(500).json({ code: 500, message: "Error retrieving shop", err }))
+        .catch(err => res.status(500).json({ code: 500, message: "Error retrieving bike", err }))
 })
 
 router.get("/last-bike", (req, res) => {

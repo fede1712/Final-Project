@@ -25,10 +25,12 @@ export default class CompletePurchase extends Component {
         this.billService = new BillService()
         this.cartService = new CartService()
     }
+
     componentDidMount() {
         this.findShops()
         this.findTotal()
     }
+
     findShops() {
         this.shopService.findShops()
             .then(res => {
@@ -39,16 +41,18 @@ export default class CompletePurchase extends Component {
             })
             .catch(err => console.error(err))
     }
+
     handleChange(e) {
         const { value, name } = e.target
         this.setState({
             [name]: value
         })
     }
+
     handleSubmit(e) {
         e.preventDefault()
 
-        if (this.state.status !== 'succeeded') {
+        if (this.state.status !== 200) {
             console.log('No completado')
         }
         else
@@ -62,11 +66,15 @@ export default class CompletePurchase extends Component {
                 })
                 .catch(err => console.error(err))
     }
-    stripeSubmit = () => {
+
+    stripeSubmit = (res) => {
+        console.log(res)
         this.setState({
+            status: res.status,
             disabled: false
         })
     }
+
     findTotal() {
         this.cartService.findCart()
             .then(res => {
@@ -77,6 +85,7 @@ export default class CompletePurchase extends Component {
             })
             .catch(err => console.error(err))
     }
+
     totalCount() {
         let total = this.state.products.reduce((previousValue, currentValue) => {
             return previousValue + currentValue.price
@@ -86,12 +95,6 @@ export default class CompletePurchase extends Component {
         })
         return total
     }
-
-
-
-
-
-
 
 
     render() {
@@ -127,15 +130,12 @@ export default class CompletePurchase extends Component {
                                                     <Button className="button-payment" variant="secondary" type='submit' disabled={this.state.disabled} onClick={(e) => this.handleSubmit(e)}>Finalizar compra</Button>
                                                 </Form>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                    {/* <PaymentGateway /> */}
                 </div>
             </div>
         )

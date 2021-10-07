@@ -3,7 +3,7 @@ const { Schema, model } = require("mongoose");
 const userSchema = new Schema({
   userName: {
     type: String,
-    required: true,
+    required: [true, 'Nombre obligatorio'],
     default: 'Unknown name',
     minlength: 3,
     maxlength: 100,
@@ -20,7 +20,7 @@ const userSchema = new Schema({
     type: String,
     trim: true,
     unique: true,
-    required: [true, 'Email address is required'],
+    required: [true, 'Email obligatorio'],
     match: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,63})$/,
   },
   password: {
