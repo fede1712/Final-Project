@@ -18,7 +18,7 @@ export default function PaymentGateway(props) {
         const handleSubmit = async (e) => {
             e.preventDefault()
 
-            console.log(props.amount)
+            console.log(props)
 
             const { error, paymentMethod } = await stripe.createPaymentMethod({
                 type: 'card',

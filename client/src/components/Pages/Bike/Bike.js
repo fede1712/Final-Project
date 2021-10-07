@@ -199,7 +199,7 @@ export default class Bike extends Component {
                             <p>Una vez acoplado en el soporte, el teléfono está en estado de carga.</p>
                         </div>
 
-                        <Row >
+                        <Row className='row-margin'>
                             <div className="col-5">
                                 <img className="imgBikeSection4details" src={this.state.bike?.imageDetail} alt="Pedal" />
                             </div>
@@ -227,9 +227,9 @@ export default class Bike extends Component {
                     <div className="sectionSecurity">
                         <h1>Seguridad</h1>
 
-                        <Row className="justify-content-center">
+                        <Row className="row-margin justify-content-center">
 
-                            <div class="row mb-3 securityColums">
+                            <div className="row mb-3 securityColums">
 
                                 <div onClick={this.changeImage} id="columnSeguriy1" className="col-4 linkopacity">
                                     <h4>Detección de robo</h4>
@@ -251,7 +251,7 @@ export default class Bike extends Component {
 
                             </div>
 
-                            <Row >
+                            <Row className='row-margin' >
 
 
                                 <div className="col-5" id="contenido1">
@@ -274,9 +274,9 @@ export default class Bike extends Component {
                     <div className="sectionSecurity">
                         <h1>Detalles</h1>
 
-                        <Row className="justify-content-center">
+                        <Row className="row-margin justify-content-center">
 
-                            <div class="row mb-3 securityColums">
+                            <div className="row-margin row mb-3 securityColums">
 
                                 <div className="col-4 detailsColum linkopacityDetails" >
                                     <img src={Details1} alt={Details1} />
@@ -327,146 +327,146 @@ export default class Bike extends Component {
                     </div>
                 </section>
 
-                <section className="accordionCss row justify-content-center">
+                <section className="accordionCss row-margin row justify-content-center">
 
                     <div className="col-11">
 
-                        <div class="tab colorBackAccordion">
+                        <div className="tab colorBackAccordion">
                             <input className="input-acordion" type="checkbox" id="chck1" />
 
                             <label className="tab-label" for="chck1"><h4>Especificaciones generales</h4></label>
                             <hr />
-                            <div class="container tab-content">
+                            <div className="container tab-content">
 
-                                <div class="row tab">
+                                <div className="row row-margin tab">
                                     <input className="input-acordion" type="checkbox" id="chck1" />
-                                    <div class="col-md-11" for="chck1">
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Precio</p></div>
-                                            <div class="col-md-6"><p>{this.state.bike?.price} €</p></div>
+                                    <div className="col-md-11" for="chck1">
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Precio</p></div>
+                                            <div className="col-md-6"><p>{this.state.bike?.price} €</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Colores</p></div>
-                                            <div class="col-md-6"><p>Negro, Caqui, Arena</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Colores</p></div>
+                                            <div className="col-md-6"><p>Negro, Caqui, Arena</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>La altura del ciclista</p></div>
-                                            <div class="col-md-6"><p>Optimizado para ciclistas entre 170-195 cm de altura</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>La altura del ciclista</p></div>
+                                            <div className="col-md-6"><p>Optimizado para ciclistas entre 170-195 cm de altura</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Peso</p></div>
-                                            <div class="col-md-6"><p>18,9 kg de peso total, incluida la batería</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Peso</p></div>
+                                            <div className="col-md-6"><p>18,9 kg de peso total, incluida la batería</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Alcance de la batería</p></div>
-                                            <div class="col-md-6"><p>Autonomía de hasta {this.state.bike?.specifications.batteryRange} km</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Alcance de la batería</p></div>
+                                            <div className="col-md-6"><p>Autonomía de hasta {this.state.bike?.specifications.batteryRange} km</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Tiempo de carga</p></div>
-                                            <div class="col-md-6"><p>100% recargado en 3h20min</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Tiempo de carga</p></div>
+                                            <div className="col-md-6"><p>100% recargado en 3h20min</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Velocidad de asistencia</p></div>
-                                            <div class="col-md-6"><p>{this.state.bike?.specifications.assistSpeed} km/h</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Velocidad de asistencia</p></div>
+                                            <div className="col-md-6"><p>{this.state.bike?.specifications.assistSpeed} km/h</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Garantía</p></div>
-                                            <div class="col-md-6"><p>2 años</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Garantía</p></div>
+                                            <div className="col-md-6"><p>2 años</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Modo de control</p></div>
-                                            <div class="col-md-6"><p>Teléfono conectado con aplicación + desbloqueo de batería</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Modo de control</p></div>
+                                            <div className="col-md-6"><p>Teléfono conectado con aplicación + desbloqueo de batería</p></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="tab">
+                        <div className="tab">
                             <input className="input-acordion" type="checkbox" id="chck2" />
 
                             <label className="tab-label" for="chck2"><h4>Bicicleta </h4></label>
                             <hr />
-                            <div class="container tab-content">
+                            <div className="container tab-content">
 
-                                <div class="row tab colorBackAccordion">
+                                <div className="row row-margin tab colorBackAccordion">
                                     <input className="input-acordion" type="checkbox" id="chck2" />
-                                    <div class="col-md-11" for="chck2">
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Cuadro</p></div>
-                                            <div class="col-md-6"><p>Aluminio 6061</p></div>
+                                    <div className="col-md-11" for="chck2">
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Cuadro</p></div>
+                                            <div className="col-md-6"><p>Aluminio 6061</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Horquilla</p></div>
-                                            <div class="col-md-6"><p>Aluminio 6061</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Horquilla</p></div>
+                                            <div className="col-md-6"><p>Aluminio 6061</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Transmisión</p></div>
-                                            <div class="col-md-6"><p>Correa de carbono Gates, relación de transmisión 60/21 (2,85).</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Transmisión</p></div>
+                                            <div className="col-md-6"><p>Correa de carbono Gates, relación de transmisión 60/21 (2,85).</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Piñones</p></div>
-                                            <div class="col-md-6"><p>60 dientes delanteros y 21 traseros</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Piñones</p></div>
+                                            <div className="col-md-6"><p>60 dientes delanteros y 21 traseros</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Manillar</p></div>
-                                            <div class="col-md-6"><p>540 mm de ancho, barrido de 7 grados, aumento de 0 mm</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Manillar</p></div>
+                                            <div className="col-md-6"><p>540 mm de ancho, barrido de 7 grados, aumento de 0 mm</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Frenos</p></div>
-                                            <div class="col-md-6"><p>Tricycle personalizado.</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Frenos</p></div>
+                                            <div className="col-md-6"><p>Tricycle personalizado.</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Llantas</p></div>
-                                            <div class="col-md-6"><p>Neumáticos personalizados Cowboy de 44 mm, neumáticos resistentes a los pinchazos con un agarre flexible y una capa de protección contra pinchazos</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Llantas</p></div>
+                                            <div className="col-md-6"><p>Neumáticos personalizados Cowboy de 44 mm, neumáticos resistentes a los pinchazos con un agarre flexible y una capa de protección contra pinchazos</p></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="tab">
+                        <div className="tab">
                             <input className="input-acordion" type="checkbox" id="chck3" />
 
                             <label className="tab-label" for="chck3"><h4>Electrónica</h4></label>
                             <hr />
-                            <div class="container tab-content">
+                            <div className="container tab-content">
 
-                                <div class="row tab colorBackAccordion">
+                                <div className="row row-margin tab colorBackAccordion">
                                     <input className="input-acordion" type="checkbox" id="chck3" />
-                                    <div class="col-md-11" for="chck3">
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Motor</p></div>
-                                            <div class="col-md-6"><p>{this.state.bike?.specifications.motor}</p></div>
+                                    <div className="col-md-11" for="chck3">
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Motor</p></div>
+                                            <div className="col-md-6"><p>{this.state.bike?.specifications.motor}</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Conectividad</p></div>
-                                            <div class="col-md-6"><p>Bluetooth de baja energía</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Conectividad</p></div>
+                                            <div className="col-md-6"><p>Bluetooth de baja energía</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Batería</p></div>
-                                            <div class="col-md-6"><p>{this.state.bike?.specifications.battery}</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Batería</p></div>
+                                            <div className="col-md-6"><p>{this.state.bike?.specifications.battery}</p></div>
                                         </div>
                                         <hr />
-                                        <div class="row">
-                                            <div class="col-md-6"><p>Cargador</p></div>
-                                            <div class="col-md-6"><p>Cargador de 36 V / 4 A de diseño personalizado</p></div>
+                                        <div className="row row-margin">
+                                            <div className="col-md-6"><p>Cargador</p></div>
+                                            <div className="col-md-6"><p>Cargador de 36 V / 4 A de diseño personalizado</p></div>
                                         </div>
 
                                     </div>
@@ -488,7 +488,7 @@ export default class Bike extends Component {
                             <Col xs={2} className="backBoton">
 
                                 <Row className="justify-content-center">
-                                    <Col xs={12} className='row justify-content-center'>
+                                    <Col xs={12} className='row row-margin justify-content-center'>
 
                                         <div onClick={this.changeImageColor} id="bikeColor1" className="col-4 boton1"><a></a></div>
 
@@ -500,7 +500,7 @@ export default class Bike extends Component {
                                 </Row>
                             </Col>
 
-                            <Col xs={12} id="totalcolors" className='row justify-content-center align-center'>
+                            <Col xs={12} id="totalcolors" className='row row-margin justify-content-center align-center'>
                                 <img className="imgBikeSection4details" src={BikeColor1} alt={BikeColor1} />
                             </Col>
 
