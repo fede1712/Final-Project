@@ -16,42 +16,49 @@ export default class SalesDetails extends Component {
 
     componentDidMount() {
         this.refreshBills()
+
     }
 
     refreshBills() {
         this.billService.findOneBill(this.props.match.params.id)
-
-        let pop = res => res.data.bill.products.map(elm => {
-            elm.reduce((previousValue, currentValue) => {
-                return previousValue + currentValue.price
-            }, 0)
-        })
-        this.setState({
-            totalPrices: pop
-        })
-
-    }
-
-    // totalCount() {
-    //     let totals = this.state.bill.map(elm => {
-    //         return elm.products.reduce((previousValue, currentValue) => {
-    //             return previousValue + currentValue.price
-    //         }, 0)
-    //     })
-    //     this.setState({
-    //         totalPrices: [...totals]
-    //     })
-    // }
-
-    totalCount() {
-        this.billService.findOneBill(this.props.match.params.id)
             .then(res => {
                 this.setState({
                     bill: res.data.bill
-                })
+                }, () => this.totalCount())
             })
             .catch(err => console.error(err))
     }
+
+    // totalCount() {
+    //     let pop = this.billService.findOneBill(this.props.match.params.id)
+    //         .then(res => res.data.bill.map(elm => {
+    //             console.log(elm)
+    //             elm.products.reduce((previousValue, currentValue) => {
+    //                 return previousValue + currentValue.price
+    //             }, 0)
+    //         }))
+    //     this.setState({
+    //         totalPrices: pop
+    //     })
+
+    // }
+
+    totalCount() {
+        console.log(this.state.bill.products)
+        let totals = this.state.bill.products.reduce((previousValue, currentValue) => {
+            return previousValue + currentValue.price
+        }, 0)
+        // let totals = this.state.bill.products.map(elm => {
+        //     console.log(elm)
+        //     return elm.reduce((previousValue, currentValue) => {
+        //         return previousValue + currentValue.price
+        //     }, 0)
+        // })
+        this.setState({
+            totalPrices: totals
+        })
+    }
+
 
 
     render() {
@@ -101,7 +108,7 @@ export default class SalesDetails extends Component {
                                     </thead>
                                     <tbody>
                                         {this.state.bill.products.map(elm =>
-                                            <tr>
+                                            <tr key={elm._id}>
                                                 <td>1</td>
                                                 <td>{elm.name}</td>
                                                 <td>{elm.price} €</td>
@@ -113,8 +120,7 @@ export default class SalesDetails extends Component {
                                     <tr>
                                         <th></th>
                                         <th></th>
-                                        <th>Total Factura: </th>
-                                        <th>{this.state.totalPrices}</th>
+                                        <th>Total Factura: {this.state.totalPrices} €</th>
                                     </tr>
                                 </tfoot>
                             </div>
