@@ -83,7 +83,7 @@ export default function Home(props) {
 
                     <Row className="alingItems">
                         <Col md={{ span: 4, offset: 4 }}>
-                            <div className="h1Css">
+                            <div>
                                 <h1>Tricycle 4</h1>
                                 <h3 className="heroImghH3">Un viaje suave y ágil.</h3>
 
@@ -129,7 +129,7 @@ export default function Home(props) {
                         <Col md={{ span: 4, offset: 4 }}>
                             <div className="h1Css">
                                 <h1>Tricycle ST</h1>
-                                <h3>Un marco abierto para una mente abierta.</h3>
+                                <h3 className='subtitle'>Un marco abierto para una mente abierta.</h3>
 
                             </div>
                             <div className="d-flex justify-content-center">
