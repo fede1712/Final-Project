@@ -44,7 +44,7 @@ export default class SalesDetails extends Component {
     // }
 
     totalCount() {
-        this.billService.findOneBill(this.props.match.params.is)
+        this.billService.findOneBill(this.props.match.params.id)
             .then(res => {
                 this.setState({
                     bill: res.data.bill

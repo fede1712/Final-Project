@@ -24,6 +24,7 @@ import SalesDetails from '../Pages/SalesDetails/SalesDetails.js';
 import Navigation from '../layout/Navigation/Navigation.js';
 import Footer from '../layout/Footer/Footer.js';
 import StockEdit from '../Pages/StockEdit/StockEdit.js';
+import Creators from '../Pages/Creators/Creators.js';
 
 
 const Routes = ({ storeUser, loggedUser, fetchUser }) => {
@@ -53,6 +54,10 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
 
             <Route exact path='/sobre-nosotros' render={() => {
                 return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><AboutUs /><Footer /></>)
+            }} />
+
+            <Route exact path='/creadores' render={() => {
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><Creators /><Footer /></>)
             }} />
 
             <Route exact path='/editar-perfil/:id' render={(props) => {
