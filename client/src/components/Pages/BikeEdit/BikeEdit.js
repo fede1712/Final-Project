@@ -40,7 +40,6 @@ export default class BikeEdit extends Component {
 
         const uploadData = new FormData()
         uploadData.append('imageData', e.target.files[0])
-        // uploadData.append('imageData', e.target.single(name))
         this.uploadService.uploadImg(uploadData)
             .then(res => {
                 this.setState({

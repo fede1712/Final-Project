@@ -47,7 +47,6 @@ export default class CompletePurchase extends Component {
     }
     handleSubmit(e) {
         e.preventDefault()
-        console.log(this.props)
 
         if (this.state.status !== 'succeeded') {
             console.log('No completado')
@@ -99,7 +98,7 @@ export default class CompletePurchase extends Component {
         return (
 
             <div>
-                
+
                 <div>
                     <div className='payment'>
 

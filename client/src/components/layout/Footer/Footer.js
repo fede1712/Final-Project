@@ -47,7 +47,7 @@ export default function Footer() {
                                 <a className="nav-link" href="/615c01f62dfb8072f7431d6b" alt="cycle3">Tricycle 4</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/61547d82a1b6776152378f8e" alt="cycle3">Tricycle 4 RS</a>
+                                <a className="nav-link" href="/61547d82a1b6776152378f8e" alt="cycle3">Tricycle 4 ST</a>
                             </li>
                         </ul>
                     </div>
@@ -114,17 +114,3 @@ export default function Footer() {
 
     )
 }
-
-
-/* <div>
-            <Container>
-                <Row>
-                    <Col>
-                        <Link to='/sobre-nosotros'>Sobre nosotros</Link>
-                    </Col>
-                    <Col>
-                        <Link to='/contacto'>Contacto</Link>
-                    </Col>
-                </Row>
-            </Container>
-        </div> */

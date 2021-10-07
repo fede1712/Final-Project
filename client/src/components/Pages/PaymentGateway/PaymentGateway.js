@@ -29,7 +29,10 @@ export default function PaymentGateway(props) {
             if (!error) {
                 const { id } = paymentMethod
                 stripeService.createPayment({ id, amount: props.amount * 100 })
-                    .then(e => props.stripeSubmit())
+                    .then(e => {
+                        console.log(e)
+                        props.stripeSubmit()
+                    })
                     .catch(err => console.error(err))
             }
         }

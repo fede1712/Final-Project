@@ -54,9 +54,6 @@ export default class UserEdit extends Component {
                 this.props.fetchUser()
 
                 this.setState({
-
-                    //     userName: "",
-                    //     email: "",
                     password: ""
                 })
 

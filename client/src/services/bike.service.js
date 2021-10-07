@@ -13,6 +13,7 @@ class BikeService {
     createBike = (data) => this.instance.post('/', data)
     editBike = (data, id) => this.instance.put(`/${id}`, data)
     deleteBike = (id) => this.instance.delete(`/${id}`)
+    getLastBike = () => this.instance.get('/last-bike')
 }
 
 export default BikeService;

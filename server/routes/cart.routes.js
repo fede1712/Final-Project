@@ -4,33 +4,46 @@ const router = express.Router()
 const Bike = require('../models/Bike.model')
 const Bill = require("../models/Bill.model")
 const mongoose = require("mongoose")
-const { findById } = require("../models/Cart.model")
 
-
+let fetching = false;
 
 router.get("/", (req, res) => {
-    // let bikeId
 
-    // Bike
-    //     .find()
-    //     .then(res => bikeId = res.map(elm => elm._id))
+    fetching && res.status(500).json({ code: 500, message: "Server is occupied" })
+
+    fetching = true
+
     Cart
-        .find({ userId: req.session.currentUser._id })
+        .findOne({ userId: req.session.currentUser._id })
         .populate('products')
         .then(cart => {
-            res.status(200).json({ cart, message: "Cart getted" })
+            fetching = false;
+            res.status(201).json({ cart, message: "Cart getted" })
         })
-        .catch(err => res.status(500).json({ code: 500, message: "Error retrieving a cart", err }))
+        .catch(err => {
+            fetching = false
+            res.status(500).json({ code: 500, message: "Error retrieving a cart", err })
+        })
 })
 
 router.put("/push", (req, res) => {
 
     const { productId } = req.body
 
+    fetching && res.status(500).json({ code: 500, message: "Server is occupied" })
+
+    fetching = true
+
     Cart
         .updateOne({ userId: req.session.currentUser._id }, { $push: { products: productId } }, { new: true })
-        .then(cart => res.status(200).json({ cart, message: "Add product to cart" }))
-        .catch(err => res.status(500).json({ code: 500, message: "Error adding product to cart", err }))
+        .then(cart => {
+            fetching = false
+            res.status(200).json({ cart, message: "Add product to cart" })
+        })
+        .catch(err => {
+            fetching = false
+            res.status(500).json({ code: 500, message: "Error adding product to cart", err })
+        })
 })
 
 router.put('/pull', (req, res) => {
