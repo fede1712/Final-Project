@@ -67,7 +67,7 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
                 return (loggedUser ? <><Navigation loggedUser={loggedUser} storeUser={storeUser}><Cart {...props} /></Navigation><Footer /></> : <Redirect to='/' />)
             }} />
             <Route exat path='/comprar' render={(props) => {
-                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><CompletePurchase {...props} /><Footer /></>)
+                return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} ><CompletePurchase {...props} /></Navigation><Footer /></>)
             }} />
 
             {/* admin routes */}

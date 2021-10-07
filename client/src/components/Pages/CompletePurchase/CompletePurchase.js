@@ -62,6 +62,7 @@ export default class CompletePurchase extends Component {
                         bill: res.data,
                         shops: []
                     })
+                    this.props.refreshCart()
                     this.props.history.push('/')
                 })
                 .catch(err => console.error(err))

@@ -18,6 +18,7 @@ export default function Navigation(props) {
     const [products, setProducts] = useState(0)
     const [lastBike, setLastBike] = useState(undefined)
 
+
     useEffect(() => {
         totalProducts()
         fetchLastBike()
@@ -81,12 +82,15 @@ export default function Navigation(props) {
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav className="me-auto">
-                            {/*  */}
+
                             <Nav.Link as={Link} to="/61547d68a1b6776152378f8c"><span className="navSpan">Tricycle 3</span></Nav.Link>
-                            {/* <Nav.Link as={Link} to={`/${elem.id}`}><span>{`${elem.name}`}</span></Nav.Link> */}
                             <Nav.Link as={Link} to="/615c01f62dfb8072f7431d6b"><span className="navSpan">Tricycle 4</span></Nav.Link>
                             <Nav.Link as={Link} to="/61547d82a1b6776152378f8e"><span className="navSpan">Tricycle ST</span></Nav.Link>
-                            {lastBike && <Nav.Link as={Link} to={`/${lastBike._id}`}><span className="navSpan">{lastBike.name}</span></Nav.Link>}
+                            {lastBike?.name === 'Tricycle 4' ||
+                                <>
+                                    {lastBike && <Nav.Link as={Link} to={`/${lastBike._id}`}><span className="navSpan">{lastBike.name}</span></Nav.Link>}
+                                </>
+                            }
                         </Nav>
 
                         <Nav>
