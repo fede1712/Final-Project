@@ -17,7 +17,7 @@ const allRoutes = require("./routes");
 app.use("/api", allRoutes);
 
 
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, '..', "public")))
 app.use((req, res) => res.sendFile(__dirname + "/public/index.html"));
 
 
