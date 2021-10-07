@@ -76,145 +76,145 @@ export default class Cart extends Component {
 
     render() {
         return (
-            <Container className='cart'>
+            <>
+                <Container className='cart'>
 
-                <Row>
-                    <Col>
-                        {this.state.products.length === 0 ||
-                            <div class="px-4 px-lg-0">
-                                <div class="pb-5">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-                                                <div class="table-responsive">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <div class="row">
-                                                                <div class="col">
-                                                                    <div class="p-2 px-3 text-uppercase">Producto</div>
+                    <Row>
+                        <Col>
+                            {this.state.products.length === 0 ||
+                                <div className="px-4 px-lg-0">
+                                    <div className="pb-5">
+                                        <div className="container">
+                                            <div className="row cart-padding">
+                                                <div className="col-lg-12 bg-white rounded shadow-sm mb-5">
+                                                    <div >
+                                                        <br />
+                                                        <br />
+                                                        <h2>Cesta de la compra</h2>
+                                                        <br />
+                                                        <table className="table">
+
+                                                            <thead>
+                                                                <div className="row bg-dark justify-content-lg-center">
+                                                                    <div className="col">
+                                                                        <div className="p-2 px-3 text-uppercase justify-content-lg-center colorHead">Producto</div>
+                                                                    </div>
+
+                                                                    <div className="col-7">
+                                                                        <div className="py-2 text-uppercase justify-content-lg-center colorHead">Descripción</div>
+                                                                    </div>
+                                                                    <div className="col">
+                                                                        <div className="py-2 text-uppercase justify-content-lg-center colorHead">Precio</div>
+                                                                    </div>
+
+                                                                    <div className="col">
+                                                                        <div className="py-2 text-uppercase justify-content-lg-center colorHead">Eliminar</div>
+                                                                    </div>
                                                                 </div>
 
-                                                                <div class="col-8">
-                                                                    <div class="py-2 text-uppercase">Descripción</div>
-                                                                </div>
-                                                                <div class="col">
-                                                                    <div class="py-2 text-uppercase">Precio</div>
-                                                                </div>
+                                                            </thead>
 
-                                                                <div class="col">
-                                                                    <div class="py-2 text-uppercase"></div>
-                                                                </div>
-
-                                                            </div>
-                                                            {/* <tr>
-                                                                <th scope="col" class="border-0 bg-light">
-                                                                    <div class="p-2 px-3 text-uppercase">Producto</div>
-                                                                </th>
-                                                                <th scope="col" class="border-0 bg-light">
-                                                                    <div class="py-2 text-uppercase">Precio</div>
-                                                                </th>
-                                                                <th scope="col" class="border-0 bg-light">
-                                                                    <div class="py-2 text-uppercase">Eliminar</div>
-                                                                </th>
-                                                            </tr> */}
-                                                        </thead>
-
-                                                        <tbody>
-                                                            {this.state.products.length > 0 &&
-                                                                <tr>
-                                                                    {this.state.products?.map((elm, idx) =>
-                                                                        <div key={elm._id + idx}>
+                                                            <tbody>
+                                                                {this.state.products.length > 0 &&
+                                                                    <tr>
+                                                                        {this.state.products?.map((elm, idx) =>
+                                                                            <div key={elm._id + idx}>
 
 
-                                                                            <div class="row">
+                                                                                <div className="row border-bottom colCart">
 
-                                                                                <div class="col">
-                                                                                    <img src={elm.imageModel} alt={elm.imageModel} width="70" class="img-fluid rounded shadow-sm" />
+                                                                                    <div className="col justify-content-lg-center">
+                                                                                        <img src={elm.imageModel} alt={elm.imageModel} width="300" class="img-fluid rounded shadow-sm" />
 
-                                                                                </div>
+                                                                                    </div>
 
-                                                                                <div class="col-8">
-                                                                                    <h5 class="mb-0"> <p href="#" class="text-dark d-inline-block align-middle">{elm.name}</p></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
+                                                                                    <div className="col-7 justify-content-lg-center text-muted">
+                                                                                        <h5 className="mb-0"> <p href="#" class="text-dark d-inline-block align-middle">{elm.name}</p></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
 
-                                                                                </div>
+                                                                                    </div>
 
-                                                                                <div class="col">
-                                                                                    <td class="border-0 align-middle"><strong>{elm.price} €</strong></td>
-                                                                                </div>
+                                                                                    <div className="col justify-content-lg-center">
+                                                                                        <td className="border-0 align-middle" ><strong>{elm.price} €</strong></td>
+                                                                                    </div>
 
-                                                                                <div class="col">
-                                                                                    <button className='btn-delete' onClick={() => this.pullOneProduct(elm._id)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                                                                        <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
-                                                                                    </svg></button>
-                                                                                </div>
-
-                                                                            </div>
-                                                                            {/* <th scope="row" class="border-0">
-                                                                                <div class="p-2">
-                                                                                    <img src={elm.imageModel} alt={elm.imageModel} width="70" class="img-fluid rounded shadow-sm" />
-                                                                                    <div class="ml-3 d-inline-block align-middle">
-
-                                                                                        <h5 class="mb-0"> <p href="#" class="text-dark d-inline-block align-middle">{elm.name}</p></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
+                                                                                    <div className="col ">
+                                                                                        <button className='btn-delete' onClick={() => this.pullOneProduct(elm._id)}><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                                                                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                                                                            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                                                                        </svg></button>
 
                                                                                     </div>
 
                                                                                 </div>
-                                                                                <button className='btn-delete' onClick={() => this.pullOneProduct(elm._id)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-                                                                                    <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z" />
-                                                                                </svg></button>
-                                                                            </th> */}
 
-                                                                            {/* <td class="border-0 align-middle"><strong>{elm.price} €</strong></td> */}
+                                                                            </div>
 
-                                                                        </div>
-                                                                    )}
+                                                                        )}
 
-                                                                </tr>
-                                                            }
-                                                        </tbody>
+                                                                    </tr>
+                                                                }
+                                                            </tbody>
 
-                                                    </table>
-                                                    <div class="col-lg-6">
-                                                        <div class="p-4">
+                                                        </table>
+                                                        <div className=" col-12 flex-row-reverse">
+                                                            <div className="p-4">
 
-                                                            <ul class="list-unstyled mb-4">
-                                                                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                                                                    <h5 class="font-weight-bold">{this.state.totalPrice} €</h5>
-                                                                </li>
-                                                            </ul>
+                                                                <ul className="list-unstyled mb-4">
+                                                                    <li className="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                                                                        <h5 className="font-weight-bold">{this.state.totalPrice} €</h5>
+                                                                    </li>
+                                                                </ul>
 
 
-                                                            <Button className="btn btn-dark rounded-pill py-2 btn-block" as={Link} to={'/comprar'} variant="secondary">Pagar</Button>
-                                                            <Button className="btn btn-danger rounded-pill py-2 btn-block" onClick={() => this.emptyshoppingcart()} variant="danger">Vaciar carro</Button>
+                                                                <Button className="btn btn-seconday rounded-pill py-2 btn-block button-cart" as={Link} to={'/comprar'} variant="secondary">Pagar</Button>
+                                                                <Button className="btn btn-secondary rounded-pill py-2 btn-block button-cart button-cart-margin" onClick={() => this.emptyshoppingcart()} variant="secondary">Vaciar carro</Button>
+                                                            </div>
                                                         </div>
                                                     </div>
+
                                                 </div>
-
                                             </div>
+
                                         </div>
-
-
                                     </div>
                                 </div>
-                            </div>
 
+                            }
 
+                        </Col>
+                    </Row>
+                </Container>
 
-                        }
+                {
+                    this.state.products.length === 0 &&
 
-                        {this.state.products.length === 0 &&
-                            <div className="buyNow">
-                                <Link as={Link} className="buyButtomLink" to={'/61547d68a1b6776152378f8c'}>Compra ya tu Tricycle</Link >
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="white" className="bi bi-arrow-right arrow" viewBox="0 0 16 16" >
-                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                </svg>
-                            </div>
-                        }
+                    <section className="cartImg">
 
-                    </Col>
-                </Row>
-            </Container>
+                        <div >
 
+                            <Row className="alingItems">
+                                <div>
+                                    <div>
+                                        <h1>Unete al movimiento Trycycle</h1>
+                                        <div className="d-flex justify-content-center">
+                                            <h3 className="cartImghH3">Descubre nuestra gama de bicicletas</h3>
+
+                                        </div>
+
+                                    </div>
+                                    <div className="d-flex justify-content-center">
+                                        <Link className="btn btn-secondary buttoncartImg" variant="outline-secondary" to="/">Más información</Link>
+                                    </div>
+                                </div>
+
+                            </Row>
+
+                        </div>
+
+                    </section>
+
+                }
+            </>
         )
     }
 }

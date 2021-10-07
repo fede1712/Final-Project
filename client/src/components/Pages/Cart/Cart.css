@@ -1,6 +1,6 @@
-.cart{
+.cart-padding{
     padding: 5% 5% 5% 5%;
-}
+} 
 
 .total-price {
     border: 2px solid grey;
@@ -38,4 +38,58 @@
 .btn-delete{
     border: none;
     background-color: white;
+}
+
+.colCart{
+    padding: 20px 0px;
+}
+
+.colCart img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    border: none;
+}
+
+.colorHead{
+    color: white;
+}
+
+.button-cart{
+    width: 180px;
+}
+.button-cart-margin{
+    margin-left: 20px;
+}
+
+.cartImg{
+  height: 100vh;
+  background-position: left;
+  object-fit: scale-down;
+  /* background-position-x: center; */
+  background-image: url(./cartImg.png);
+  overflow-x: hidden;
+}
+
+.cartImghH3{
+      text-align: center;
+      background-color: rgba(66, 66, 66, 0.39);
+      padding: 2px 20px; 
+      color: #e0e0e0;
+}
+
+
+.cartImg h1{
+  color: rgb(255, 255, 255);
+  text-align: center; 
+  font-size: 5em;
+}
+
+
+.buttoncartImg{
+  background-color:rgba(94, 94, 94, 0.849);
+  margin-top: 20px;
+  border-radius: 50px;
+  padding: 15px 40px;
+  border-color: rgba(182, 182, 182, 0);
 }

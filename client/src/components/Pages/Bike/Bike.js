@@ -151,15 +151,16 @@ export default class Bike extends Component {
 
                                 <Col md={12}>
 
-                                    <div className="buyNow">
-                                        <span as={Link} className="buyButtomLink" onClick={() => {
-                                            this.addBike(this.state.bike?._id)
-                                            this.props.refreshCart()
-                                        }}>Compra ya tu Tricycle 4</span>
+
+                                    <span as={Link} className="buyButtomLink buyNow" onClick={() => {
+                                        this.addBike(this.state.bike?._id)
+                                        this.props.refreshCart()
+                                    }}>Compra ya tu Tricycle 4
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="white" className="bi bi-arrow-right arrow" viewBox="0 0 16 16" >
                                             <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                                         </svg>
-                                    </div>
+                                    </span>
+
                                 </Col>
                             </Row>
 
@@ -206,7 +207,7 @@ export default class Bike extends Component {
                             <p>Una vez acoplado en el soporte, el teléfono está en estado de carga.</p>
                         </div>
 
-                        <Row className='row-margin'>
+                        <Row>
                             <div className="col-5">
                                 <img className="imgBikeSection4details" src={this.state.bike?.imageDetail} alt="Pedal" />
                             </div>
@@ -258,7 +259,7 @@ export default class Bike extends Component {
 
                             </div>
 
-                            <Row className='row-margin' >
+                            <Row>
 
 
                                 <div className="col-5" id="contenido1">
@@ -518,12 +519,12 @@ export default class Bike extends Component {
 
                 <Col md={12}>
 
-                    <div className="buyNow">
-                        <span className="buyButtomLink" onClick={() => this.addBike(this.state.bike?._id)}>Compra ya tu {this.state.bike?.name}</span>
+
+                    <span className="buyButtomLink buyNow" onClick={() => this.addBike(this.state.bike?._id)}>Compra ya tu {this.state.bike?.name}
                         <svg xmlns="http://www.w3.org/2000/svg" fill="white" className="bi bi-arrow-right arrow" viewBox="0 0 16 16" >
                             <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
                         </svg>
-                    </div>
+                    </span>
                 </Col >
 
             </div >

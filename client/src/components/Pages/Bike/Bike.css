@@ -7,7 +7,7 @@
 .alingItemsBike{
   height: 100vh;
   align-items:flex-end;
-  margin-right: 0;
+  /* margin-right: 0; */
 }
 
 .heroImgModel{
@@ -103,7 +103,7 @@ object-fit: cover;
 .colPadding4{
     padding-left: 30px;
     padding-right: 30px;
-    margin-right: 0;
+    /* margin-right: 0; */
 }
 
 .gradient{
@@ -236,7 +236,7 @@ div.linkopacityDetails:hover img  {
 .accordionCss h4{
     font-size: 2.8vw;
     line-height: 36px;
-    margin-right: 0;
+    /* margin-right: 0; */
 }
 
 .input-acordion {
@@ -445,8 +445,4 @@ background: radial-gradient(ellipse at center, #515151, #181818);
 #bolt svg path {
   stroke: white;
   stroke-width: 1px;
-}
-
-.row-margin {
-  margin-right: 0;
 }
