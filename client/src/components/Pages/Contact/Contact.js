@@ -1,10 +1,8 @@
 import { Col, Row } from 'react-bootstrap'
 import './Contact.css'
 import ShopService from '../../../services/shop.service'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 import React, { Component } from 'react'
 import Map from './Map'
-import Markers from './Marker'
 
 export default class Contact extends Component {
     constructor(props) {

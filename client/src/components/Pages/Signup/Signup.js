@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Form, Button } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import AuthService from '../../../services/auth.service'
 import './Signup.css'

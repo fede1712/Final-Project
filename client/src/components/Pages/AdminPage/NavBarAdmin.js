@@ -1,6 +1,6 @@
 import 'bootstrap'
 import './NavBarAdmin.css'
-import { Navbar, Container, Nav, Row, Col } from 'react-bootstrap'
+import { Row } from 'react-bootstrap'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../../layout/Navigation/logo_tricycle.svg'

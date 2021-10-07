@@ -1,4 +1,4 @@
-import { Container, Button, Form } from 'react-bootstrap'
+import { Button, Form } from 'react-bootstrap'
 import './UserEdit.css'
 import React, { Component } from 'react'
 import UserService from '../../../services/user.services'

@@ -76,7 +76,7 @@ export default function Home(props) {
 
     return (
 
-        <div>
+        <div className="home-scroll-x">
             <section className="heroImg">
 
                 <div >

@@ -1,6 +1,6 @@
 body {
    overscroll-behavior-x: none !important;
-    overscroll-behavior-y: none !important;
+    overscroll-behavior-y: none !;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -9,7 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-y: scroll;
   white-space: wrap;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 code {

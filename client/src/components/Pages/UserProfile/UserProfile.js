@@ -21,7 +21,6 @@ export default class UserProfile extends Component {
     refresTickets() {
         this.billService.findBills()
             .then(tik => {
-                console.log(tik)
                 let userTickets = []
                 tik.data.bills.map(elm => {
                     if (elm.userId._id === this.props.loggedUser._id)
