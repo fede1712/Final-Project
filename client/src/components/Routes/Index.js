@@ -64,7 +64,7 @@ const Routes = ({ storeUser, loggedUser, fetchUser }) => {
                 return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><UserEdit storeUser={storeUser} fetchUser={fetchUser} {...props} /><Footer /></>)
             }} />
             <Route exact path='/carrito' render={(props) => {
-                return (loggedUser ? <><Navigation loggedUser={loggedUser} storeUser={storeUser} /><Cart {...props} /><Footer /></> : <Redirect to='/' />)
+                return (loggedUser ? <><Navigation loggedUser={loggedUser} storeUser={storeUser}><Cart {...props} /></Navigation><Footer /></> : <Redirect to='/' />)
             }} />
             <Route exat path='/comprar' render={(props) => {
                 return (<><Navigation loggedUser={loggedUser} storeUser={storeUser} /><CompletePurchase {...props} /><Footer /></>)

@@ -37,13 +37,11 @@ export default function Home(props) {
             elm.style.transform = `translate(${speedHorizontal}px, ${speedVertical}px)`
         })
 
-        // Reveal effects
         document.querySelectorAll('.reveal').forEach(elm => {
             isInViewport(elm) ? elm.classList.add('visible') : elm.classList.remove('visible')
         })
 
 
-        // Dynamic background generator
         document.querySelectorAll('.change-background').forEach(elm => {
             if (isInViewport(elm)) {
                 document.querySelector('.fake-bg').style.backgroundColor = elm.dataset.color
@@ -56,17 +54,6 @@ export default function Home(props) {
 
     document.addEventListener('scroll', applyScrollEffects)
 
-    // Scroll navigation links
-    // const scrollButtons = document.querySelectorAll('.scrollto');
-    // scrollButtons.forEach(elm => {
-    //     elm.onclick = e => {
-    //         e.preventDefault()
-    //         const href = elm.getAttribute('href')
-    //         document.querySelector(href).scrollIntoView({ behavior: 'smooth' })
-    //     }
-    // })
-
-    // Object viewport detection
     const isInViewport = el => {
         const rect = el.getBoundingClientRect()
         const vertInView = (rect.top <= window.innerHeight) && ((rect.top + rect.height) >= 0)

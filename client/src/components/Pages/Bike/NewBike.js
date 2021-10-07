@@ -6,8 +6,8 @@ import UploadsService from '../../../services/uploads.service'
 
 export default class NewBike extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             name: "",
             subtitle: "",
@@ -39,7 +39,6 @@ export default class NewBike extends Component {
 
         const uploadData = new FormData()
         uploadData.append('imageData', e.target.files[0])
-        // uploadData.append('imageData', e.target.single(name))
         this.uploadService.uploadImg(uploadData)
             .then(res => {
                 this.setState({
@@ -87,7 +86,7 @@ export default class NewBike extends Component {
                         motor: "",
                         battery: ""
                     }
-                })
+                }, () => this.props.history.push('/lista-bicis'))
             })
             .catch(err => console.error(err))
     }

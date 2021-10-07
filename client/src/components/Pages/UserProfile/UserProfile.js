@@ -99,7 +99,9 @@ export default class UserProfile extends Component {
                                 </Container>
                             </div>
                         </div>
-
+                        <div>
+                            <Link className="btn btn-dark" to={`/editar-perfil/${this.props.loggedUser._id}`}>Editar mi perfil</Link>
+                        </div>
                     </div>
                 </div>
                 :

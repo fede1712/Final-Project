@@ -3,6 +3,7 @@ const router = express.Router();
 
 const User = require('./../models/User.model')
 const Cart = require('./../models/Cart.model')
+const { handleMongoooseError, isValidIdFormat } = require('../utils/index')
 const bcrypt = require("bcrypt")
 const bcryptSalt = 10
 
@@ -24,7 +25,7 @@ router.post('/signup', (req, res) => {
                 .create({ userName, email, password: hashPass })
                 .then((createdUser) => Cart.create({ userId: createdUser._id, products: [], totalPrice: 0 }))
                 .then(() => res.json({ code: 200, message: 'User created' }))
-                .catch(err => res.status(500).json({ code: 500, message: 'DB error while creating user', err: err.message }))
+                .catch(err => res.status(500).json({ code: 500, message: 'DB error while creating user', errors: handleMongoooseError(err) }))
         })
         .catch(err => res.status(500).json({ code: 500, message: 'DB error while fetching user', err: err.message }))
 })
@@ -52,7 +53,7 @@ router.post('/login', (req, res) => {
             req.session.currentUser = user
             res.json(req.session.currentUser)
         })
-        .catch(err => res.status(500).json({ code: 500, message: 'DB error while fetching user', err: err.message }))
+        .catch(err => res.status(500).json({ code: 500, message: 'DB error while fetching user', errors: handleMongoooseError(err) }))
 })
 
 
