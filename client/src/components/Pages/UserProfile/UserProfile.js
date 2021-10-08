@@ -23,7 +23,7 @@ export default class UserProfile extends Component {
             .then(tik => {
                 let userTickets = []
                 tik.data.bills.map(elm => {
-                    if (elm.userId._id === this.props.loggedUser._id)
+                    if (elm.userId?._id === this.props.loggedUser._id)
                         userTickets.push(elm)
                 })
                 this.setState({
@@ -92,16 +92,12 @@ export default class UserProfile extends Component {
                                                     </tbody>
                                                 </table>
                                             </div>
-
-
                                         )}
                                     </Row>
                                 </Container>
                             </div>
                         </div>
-                        <div>
-                            <Link className="btn btn-dark" to={`/editar-perfil/${this.props.loggedUser._id}`}>Editar mi perfil</Link>
-                        </div>
+
                     </div>
                 </div>
                 :

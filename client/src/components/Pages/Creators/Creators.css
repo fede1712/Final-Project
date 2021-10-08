@@ -1,60 +1,50 @@
-/* .creators{
-    margin: 10%
-} */
-
-/* @import "compass/css3"; */
-
-@font-face {
-  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/Anders.ttf');
-  font-family: test;
+.heroFounders{
+  height: 100vh;
+  background-color: rgb(26, 26, 26);
+ /* background-size: cover;
+  background-image: url("./FOTO\ CO\ FOUNDERS BN.jpg"); */
+  overflow-x: hidden;
 }
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
+ 
+.heroFounders h1{
+  color: rgb(255, 255, 255);
+  text-align: center; 
+  text-transform: lowercase;  
+  text-transform: capitalize;
+  font-size: 4em;
 }
-html,body {
-  font-size: 62.5%;
-  height: 100%;
-  overflow: hidden;
-}
-.scene {
-  position: relative;
-  height: 100%;
-  background: #1d1f20;
-  padding: 20rem;
-  text-align: center;
-}
-h1 {
-  position: relative;
-  font-size: 8rem;
-  text-transform: uppercase;
-  font-family: test;
-  color: #fff;
-  z-index: 10;
-}
-.magic {
-  z-index: 5;
-  position: absolute;
-  top: calc(50% - 10rem);
-  left: calc(50% - 10rem);
-  width: 20rem;
-  height: 20rem;
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/hover-reveal.jpg') 50% 50% no-repeat fixed;
-  background-size: cover;
-  border-radius: 50%;
-}
-.check-out {
-  z-index: 100;
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  color: #fff;
-  font-family: test;
-  
+.heroFoundershH3{
+      text-align: center;
+      color: #ffffff;
 }
 
-.check-out  a {
-    color: rgba(255,170,170,1);
-  }
+.heroFounders h4{
+  color: rgb(255, 255, 255);
+  text-align: center;    
+}
+
+.alingItems{
+  height: 100vh;
+  align-items: center;
+  margin-right: 0;
+}
+
+.buttonHero{
+  background-color:rgba(255, 255, 255, 0.24);
+  margin-top: 20px;
+  border-radius: 50px;
+  padding: 15px 40px;
+  border-color: rgba(182, 182, 182, 0);
+}
+
+.buttomHeroAling{
+  justify-content: center;
+}
+
+.buyNow{
+  border-top: rgba(255, 255, 255, 0.548) 0.5px solid;
+  display: flex;
+  padding: 20px 0px;
+  background-color: rgba(94, 94, 94, 0.637);
+  transition: all .3s ease-in-out;
+}
