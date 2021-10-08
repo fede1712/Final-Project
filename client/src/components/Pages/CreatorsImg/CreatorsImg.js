@@ -1,12 +1,13 @@
 import React from 'react';
-import { Row } from 'react-bootstrap'
 import './CreatorsImg.css'
-import { Link } from 'react-router-dom'
+import imgCreators from './cofoundersImg.jpg'
 
 
 export default function CreatorsImg() {
 
     return (
-        <section className="heroCreators"></section>
+        <section>
+            <img src={imgCreators} alt="creators" className='heroCreators' />
+        </section>
     )
 }
