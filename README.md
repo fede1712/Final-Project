@@ -1,12 +1,11 @@
 # Tricycle Project
 
 ## Project Description
-Web application for online commerce for the sale of electric designer bicycles.
+Market place application for electric design bicycles.
 
-## SET UP 🚀
+## SET UP   🚀
 
-First we have to download the dependencies for the application to work. We will have to download the dependencies of both the backend (server) and the frontend (client). We enter through the console in the client or server folder, and we launch the following command:
-
+Through the terminal, go to the server folder and download the necessary dependencies. Then go to the client folder and download the corresponding dependencies. To do this, just run the following command in the terminal in each folder:
 ```
 npm install
 ```
