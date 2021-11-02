@@ -1,27 +1,37 @@
 .contact{
-    padding: 0 10% 0 10%;
-    margin-bottom: 50px;
-}
-/* 
-.map{
-    background-color: brown;
-    height: 400px;
-    width: 624px;
-    padding-top: 300px;
-    padding-right: 10%;
-} */
-
-.contact-title{
-    text-align: center;
-    margin-top: 10%;
-    margin-bottom: 50px;
+    padding: 12% 10% 10% 10%;
+    background-color:#151515;
+    justify-content: center;
 }
 
-.shop-list{
-    list-style: none;
-    text-align: end;
+.contact h1 {
+  color: rgb(255, 255, 255);
+  width: 100%;
+  /* text-align: right;  */
+  font-size: 4em;
+  /* align-content: right; */
+  border-bottom: 3px rgba(255, 255, 255, 0.856) solid;
+  margin-bottom: 30px;
 }
 
-.shop-list li{
-    margin-top: 20px;
+.contact h4 {
+  color: rgb(255, 255, 255);
+  /* text-align: right;  */
+  font-size: 1.3em;
+}
+
+.contact p {
+  color: #ea4335;
+  /* text-align: right;  */
+  font-size: 0.8em;
+  /* border-bottom: 1px  rgba(255, 255, 255, 0.24) solid; */
+  width: 60%;
+  /* align-content: right; */
+  padding-bottom: 10px; 
+}
+
+.map {
+    padding: 10px;
+    border-bottom: 0.2px rgba(255, 255, 255, 0.151) solid;
+    border-right: 0.2px rgba(255, 255, 255, 0.151) solid;
 }

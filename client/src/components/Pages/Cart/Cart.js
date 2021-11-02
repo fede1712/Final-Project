@@ -31,7 +31,7 @@ export default class Cart extends Component {
         this.cartService.findCart()
             .then(res => {
                 this.setState({
-                    products: res.data.cart[0].products
+                    products: res.data.cart.products
                 })
                 this.totalCount()
             })
@@ -51,6 +51,7 @@ export default class Cart extends Component {
     pullOneProduct(id) {
         this.cartService.pullCart(id)
             .then(() => {
+                this.props.refreshCart()
                 this.refreshCart()
             })
             .catch(err => console.error(err))
@@ -59,6 +60,7 @@ export default class Cart extends Component {
     emptyshoppingcart() {
         this.cartService.emptyCart()
             .then(() => {
+                this.props.refreshCart()
                 this.refreshCart()
             })
             .catch(err => console.error(err))
@@ -195,7 +197,7 @@ export default class Cart extends Component {
                             <Row className="alingItems">
                                 <div>
                                     <div>
-                                        <h1>Unete al movimiento Trycycle</h1>
+                                        <h1>Únete al movimiento Trycycle</h1>
                                         <div className="d-flex justify-content-center">
                                             <h3 className="cartImghH3">Descubre nuestra gama de bicicletas</h3>
 

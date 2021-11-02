@@ -11,6 +11,16 @@ router.get("/", (req, res) => {
         .catch(err => res.status(500).json({ code: 500, message: "Error retrieving bike", err }))
 })
 
+router.get("/last-bike", (req, res) => {
+
+    Bike
+        .find()
+        .sort({ createdAt: -1 })
+        .limit(1)
+        .then(bikes => res.status(200).json(bikes))
+        .catch(err => res.status(500).json({ code: 500, message: "Error retrieving shop", err }))
+})
+
 router.get("/:id", (req, res) => {
 
     const { id } = req.params
@@ -47,5 +57,7 @@ router.delete("/:id", (req, res) => {
         .then(() => res.status(200).json({ message: `Bike ${id} deleted` }))
         .catch(err => res.status(500).json({ code: 500, message: "Error deleting bike", err }))
 })
+
+
 
 module.exports = router

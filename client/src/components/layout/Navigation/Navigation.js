@@ -3,26 +3,26 @@ import { Container, Nav, Navbar } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import AuthService from '../../../services/auth.service'
 import CartService from '../../../services/cart.services'
+import BikeService from '../../../services/bike.service'
 import './Navigation.css'
 import Logo from './logo_tricycle.svg'
 
 
 const authService = new AuthService()
 const cartService = new CartService()
+const bikeService = new BikeService()
 
 
 export default function Navigation(props) {
 
     const [products, setProducts] = useState(0)
+    const [lastBike, setLastBike] = useState(undefined)
+
 
     useEffect(() => {
         totalProducts()
+        fetchLastBike()
     }, [])
-
-    useEffect(() => {
-        totalProducts()
-        console.log('asdf', props.children)
-    })
 
     const logout = () => {
         authService.logout()
@@ -30,7 +30,18 @@ export default function Navigation(props) {
             .catch(err => console.error(err))
     }
 
-    let mobilescreens = document.querySelectorAll('.mouse-inertia'), speedVertical = 0, speedHorizontal = 0, spaceLeft;
+    const fetchLastBike = () => {
+        bikeService.getLastBike()
+            .then(res => {
+                console.log(res.data)
+                setLastBike(res.data[0])
+            })
+            .catch(err => console.error(err))
+    }
+
+    let speedVertical = 0
+    let speedHorizontal = 0
+    let spaceLeft
 
     const applyScrollEffects = () => {
 
@@ -40,7 +51,7 @@ export default function Navigation(props) {
 
         document.querySelectorAll('.parallax').forEach(elm => {
 
-            spaceLeft = elm.getBoundingClientRect().top     // Returns remaining space between the element and viewport's top
+            spaceLeft = elm.getBoundingClientRect().top
 
             elm.dataset.axis === 'vertical' ? speedVertical = elm.dataset.speed * spaceLeft : speedVertical = 0
             elm.dataset.axis === 'horizontal' ? speedHorizontal = elm.dataset.speed * spaceLeft : speedHorizontal = 0
@@ -53,8 +64,7 @@ export default function Navigation(props) {
     const totalProducts = () => {
         cartService.findCart()
             .then(res => {
-                // console.log('huh', res.data.cart[0].products.length)
-                setProducts(res.data.cart[0].products.length)
+                setProducts(res.data.cart.products.length)
             })
             .catch(err => console.error(err))
     }
@@ -72,11 +82,15 @@ export default function Navigation(props) {
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav className="me-auto">
-                            {/*  */}
+
                             <Nav.Link as={Link} to="/61547d68a1b6776152378f8c"><span className="navSpan">Tricycle 3</span></Nav.Link>
-                            {/* <Nav.Link as={Link} to={`/${elem.id}`}><span>{`${elem.name}`}</span></Nav.Link> */}
                             <Nav.Link as={Link} to="/615c01f62dfb8072f7431d6b"><span className="navSpan">Tricycle 4</span></Nav.Link>
                             <Nav.Link as={Link} to="/61547d82a1b6776152378f8e"><span className="navSpan">Tricycle ST</span></Nav.Link>
+                            {lastBike?.name === 'Tricycle 4' ||
+                                <>
+                                    {lastBike && <Nav.Link as={Link} to={`/${lastBike._id}`}><span className="navSpan">{lastBike.name}</span></Nav.Link>}
+                                </>
+                            }
                         </Nav>
 
                         <Nav>
@@ -137,8 +151,6 @@ export default function Navigation(props) {
                 </Container>
 
             </Navbar>
-
-            {/* {props.children} */}
             {props.children && React.cloneElement(props.children, { refreshCart: totalProducts })}
         </>
     )

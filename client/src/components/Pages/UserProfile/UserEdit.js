@@ -54,9 +54,6 @@ export default class UserEdit extends Component {
                 this.props.fetchUser()
 
                 this.setState({
-
-                    //     userName: "",
-                    //     email: "",
                     password: ""
                 })
 
@@ -108,37 +105,6 @@ export default class UserEdit extends Component {
                     </div>
                 </div>
 
-
-                {/* 
-                <Container>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-
-                    <Form onSubmit={this.handleSubmit}>
-                        <Form.Group className="mb-3" controlId="formBasicName">
-                            <Form.Label>Name</Form.Label>
-                            <Form.Control onChange={(e) => this.handleChange(e)} name="userName" value={this.state.userName} type="text" placeholder={this.state.userName} />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                            <Form.Label>Email</Form.Label>
-                            <Form.Control onChange={(e) => this.handleChange(e)} name="email" value={this.state.email} type="text" placeholder={this.state.email} />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>New Password</Form.Label>
-                            <Form.Control onChange={(e) => this.handleChange(e)} name="password" value={this.state.password} type="password" placeholder='********' />
-                        </Form.Group>
-
-                        <Button variant="primary" type="submit">
-                            Submit
-                        </Button>
-                    </Form>
-
-                </Container> */}
             </div>
         )
     }

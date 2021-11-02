@@ -51,7 +51,6 @@ export default class CompletePurchase extends Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        console.log(this.state)
 
         if (this.state.status !== 200) {
             console.log('No completado')
@@ -63,6 +62,7 @@ export default class CompletePurchase extends Component {
                         bill: res.data,
                         shops: []
                     })
+                    this.props.refreshCart()
                     this.props.history.push('/')
                 })
                 .catch(err => console.error(err))
