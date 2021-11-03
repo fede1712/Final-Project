@@ -33,7 +33,6 @@ export default function Navigation(props) {
     const fetchLastBike = () => {
         bikeService.getLastBike()
             .then(res => {
-                console.log(res.data)
                 setLastBike(res.data[0])
             })
             .catch(err => console.error(err))

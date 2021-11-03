@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const transporter = require('./../config/mailing.config')
 
 const User = require('./../models/User.model')
 const Cart = require('./../models/Cart.model')
@@ -21,6 +22,18 @@ router.post('/signup', (req, res) => {
             }
             const salt = bcrypt.genSaltSync(bcryptSalt)
             const hashPass = bcrypt.hashSync(password, salt)
+
+            transporter
+                .sendMail({
+                    from: `Bienvenido/a ${userName} <tricycle.project.ironhack@gmail.com>`,
+                    to: email,
+                    subject: `Welcome ${userName}`,
+                    text: 'Hello',
+                    html: `<b>Hello ${userName}!<br>Welcome to Tricycle He really hope you enjoy your stay.<br>Sicerely, the Tricycle team.</b>`
+                })
+                .then(algo => console.log(algo))
+                .catch(err => console.log(err))
+
             User
                 .create({ userName, email, password: hashPass })
                 .then((createdUser) => Cart.create({ userId: createdUser._id, products: [], totalPrice: 0 }))
